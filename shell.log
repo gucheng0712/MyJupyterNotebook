@@ -1,0 +1,670 @@
+2019-01-11 09:59:03 - using System;
+2019-01-11 09:59:03 - using System.Collections.Generic;
+2019-01-11 09:59:03 - using System.Linq;
+2019-01-11 09:59:03 - using System.Text;
+2019-01-11 09:59:03 - using System.Threading.Tasks;
+2019-01-11 09:59:03 - using ICSharp.Kernel;
+2019-01-11 09:59:03 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-11 09:59:04 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-11 09:59:17 - Console.WriteLine("Hello");
+2019-01-11 10:00:05 - using System;
+2019-01-11 10:00:05 - using System.Collections.Generic;
+2019-01-11 10:00:05 - using System.Linq;
+2019-01-11 10:00:05 - using System.Text;
+2019-01-11 10:00:05 - using System.Threading.Tasks;
+2019-01-11 10:00:05 - using ICSharp.Kernel;
+2019-01-11 10:00:05 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-11 10:00:06 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-11 10:00:47 - shutdown request
+2019-01-13 11:20:48 - shutdown request
+2019-01-15 08:05:38 - using System;
+2019-01-15 08:05:38 - using System.Collections.Generic;
+2019-01-15 08:05:38 - using System.Linq;
+2019-01-15 08:05:38 - using System.Text;
+2019-01-15 08:05:38 - using System.Threading.Tasks;
+2019-01-15 08:05:38 - using ICSharp.Kernel;
+2019-01-15 08:05:38 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-15 08:05:39 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-15 08:06:31 - int n;
+2019-01-15 08:06:31 - n =int.Parse(Console.ReadLine());
+2019-01-15 08:06:31 - Console.WriteLine("输入的10进制为：{0}",n);
+2019-01-15 08:06:31 - Console.Write("转换为8进制数为: "); 
+2019-01-15 08:06:31 - d2o(n);
+2019-01-15 08:06:31 - void d2o(int n) 
+2019-01-15 08:06:31 - {
+2019-01-15 08:06:31 -      if (n > 7) 
+2019-01-15 08:06:31 -      {
+2019-01-15 08:06:31 -           d2o(n / 8);
+2019-01-15 08:06:31 -      } 
+2019-01-15 08:06:31 -      Console.Write(n%8);
+2019-01-15 08:06:31 - }
+2019-01-15 08:06:32 - One or more errors occurred.
+2019-01-15 08:06:32 - Value cannot be null.
+2019-01-15 08:06:32 - Parameter name: String
+2019-01-15 08:07:05 - int n;
+2019-01-15 08:07:05 - n =10;
+2019-01-15 08:07:05 - Console.WriteLine("输入的10进制为：{0}",n);
+2019-01-15 08:07:05 - Console.Write("转换为8进制数为: "); 
+2019-01-15 08:07:05 - d2o(n);
+2019-01-15 08:07:05 - void d2o(int n) 
+2019-01-15 08:07:05 - {
+2019-01-15 08:07:05 -      if (n > 7) 
+2019-01-15 08:07:05 -      {
+2019-01-15 08:07:05 -           d2o(n / 8);
+2019-01-15 08:07:05 -      } 
+2019-01-15 08:07:05 -      Console.Write(n%8);
+2019-01-15 08:07:05 - }
+2019-01-15 08:20:41 -     int [][]a= new int[7][] ;
+2019-01-15 08:20:41 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:20:41 -     a[1] = new int[2] ;
+2019-01-15 08:20:41 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:20:41 -         a[i] = new int[i+1] ;  
+2019-01-15 08:20:41 -         a[i][0] =1;
+2019-01-15 08:20:41 -         a[i][i]=1;
+2019-01-15 08:20:41 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:20:41 -     for(int j=1;j<i; j++){
+2019-01-15 08:20:41 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:20:41 -             }
+2019-01-15 08:20:41 -         }
+2019-01-15 08:20:41 -      }
+2019-01-15 08:20:46 - using System;
+2019-01-15 08:20:46 - using System.Collections.Generic;
+2019-01-15 08:20:46 - using System.Linq;
+2019-01-15 08:20:46 - using System.Text;
+2019-01-15 08:20:46 - using System.Threading.Tasks;
+2019-01-15 08:20:46 - using ICSharp.Kernel;
+2019-01-15 08:20:46 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-15 08:21:04 -     int [][]a= new int[7][] ;
+2019-01-15 08:21:04 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:21:04 -     a[1] = new int[2] ;
+2019-01-15 08:21:04 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:21:04 -         a[i] = new int[i+1] ;  
+2019-01-15 08:21:04 -         a[i][0] =1;
+2019-01-15 08:21:04 -         a[i][i]=1;
+2019-01-15 08:21:04 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:21:04 -     for(int j=1;j<i; j++){
+2019-01-15 08:21:04 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:21:04 -             }
+2019-01-15 08:21:04 -         }
+2019-01-15 08:21:04 -      }
+2019-01-15 08:21:07 - using System;
+2019-01-15 08:21:07 - using System.Collections.Generic;
+2019-01-15 08:21:07 - using System.Linq;
+2019-01-15 08:21:07 - using System.Text;
+2019-01-15 08:21:07 - using System.Threading.Tasks;
+2019-01-15 08:21:07 - using ICSharp.Kernel;
+2019-01-15 08:21:07 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-15 08:21:30 - using System;
+2019-01-15 08:21:30 - using System.Collections.Generic;
+2019-01-15 08:21:30 - using System.Linq;
+2019-01-15 08:21:30 - using System.Text;
+2019-01-15 08:21:30 - using System.Threading.Tasks;
+2019-01-15 08:21:30 - using ICSharp.Kernel;
+2019-01-15 08:21:30 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-15 08:21:31 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-15 08:21:36 -     int [][]a= new int[7][] ;
+2019-01-15 08:21:36 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:21:36 -     a[1] = new int[2] ;
+2019-01-15 08:21:36 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:21:36 -         a[i] = new int[i+1] ;  
+2019-01-15 08:21:36 -         a[i][0] =1;
+2019-01-15 08:21:36 -         a[i][i]=1;
+2019-01-15 08:21:36 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:21:36 -     for(int j=1;j<i; j++){
+2019-01-15 08:21:36 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:21:36 -             }
+2019-01-15 08:21:36 -         }
+2019-01-15 08:21:36 -      }
+2019-01-15 08:22:03 - using System;
+2019-01-15 08:22:03 - using System.Collections.Generic;
+2019-01-15 08:22:03 - using System.Linq;
+2019-01-15 08:22:03 - using System.Text;
+2019-01-15 08:22:03 - using System.Threading.Tasks;
+2019-01-15 08:22:03 - using ICSharp.Kernel;
+2019-01-15 08:22:03 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-15 08:22:09 -     int [][]a= new int[7][] ;
+2019-01-15 08:22:09 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:22:09 -     a[1] = new int[2] ;
+2019-01-15 08:22:09 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:22:09 -         a[i] = new int[i+1] ;  
+2019-01-15 08:22:09 -         a[i][0] =1;
+2019-01-15 08:22:09 -         a[i][i]=1;
+2019-01-15 08:22:09 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:22:09 -     for(int j=1;j<i; j++){
+2019-01-15 08:22:09 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:22:09 -             }
+2019-01-15 08:22:09 -         }
+2019-01-15 08:22:09 -      }
+2019-01-15 08:22:09 -      for (int i=0; i<a.Length; i++) {
+2019-01-15 08:22:09 -          for (int k = 0; k < a.Length-1-i; k++) {
+2019-01-15 08:22:09 -              Console.Write("");
+2019-01-15 08:22:09 -          }
+2019-01-15 08:22:09 -          for(int j=0;j<a[i].Length; j++ ) {
+2019-01-15 08:22:09 -              Console.Write(a[i][j] + "");
+2019-01-15 08:22:09 -          }
+2019-01-15 08:22:09 -          Console.WriteLine();
+2019-01-15 08:22:09 -      }
+2019-01-15 08:22:36 - using System;
+2019-01-15 08:22:36 - using System.Collections.Generic;
+2019-01-15 08:22:36 - using System.Linq;
+2019-01-15 08:22:36 - using System.Text;
+2019-01-15 08:22:36 - using System.Threading.Tasks;
+2019-01-15 08:22:36 - using ICSharp.Kernel;
+2019-01-15 08:22:36 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-15 08:22:39 -     int [][]a= new int[7][] ;
+2019-01-15 08:22:39 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:22:39 -     a[1] = new int[2] ;
+2019-01-15 08:22:39 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:22:39 -         a[i] = new int[i+1] ;  
+2019-01-15 08:22:39 -         a[i][0] =1;
+2019-01-15 08:22:39 -         a[i][i]=1;
+2019-01-15 08:22:39 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:22:39 -     for(int j=1;j<i; j++){
+2019-01-15 08:22:39 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:22:39 -             }
+2019-01-15 08:22:39 -         }
+2019-01-15 08:22:39 -      }
+2019-01-15 08:22:39 -      for (int i=0; i<a.Length; i++) {
+2019-01-15 08:22:39 -          for (int k = 0; k < a.Length-1-i; k++) {
+2019-01-15 08:22:39 -              Console.Write(" ");
+2019-01-15 08:22:39 -          }
+2019-01-15 08:22:39 -          for(int j=0;j<a[i].Length; j++ ) {
+2019-01-15 08:22:39 -              Console.Write(a[i][j] + " ");
+2019-01-15 08:22:39 -          }
+2019-01-15 08:22:39 -          Console.WriteLine();
+2019-01-15 08:22:39 -      }
+2019-01-15 08:23:09 -     int [][]a= new int[7][] ;
+2019-01-15 08:23:09 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:23:09 -     a[1] = new int[2] ;
+2019-01-15 08:23:09 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:23:09 -         a[i] = new int[i+1] ;  
+2019-01-15 08:23:09 -         a[i][0] =1;
+2019-01-15 08:23:09 -         a[i][i]=1;
+2019-01-15 08:23:09 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:23:09 -     for(int j=1;j<i; j++){
+2019-01-15 08:23:09 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:23:09 -             }
+2019-01-15 08:23:09 -         }
+2019-01-15 08:23:09 -      }
+2019-01-15 08:23:09 -      for (int i=0; i<a.Length; i++) {
+2019-01-15 08:23:09 -          for (int k = 0; k < a.Length-1-i; k++) {
+2019-01-15 08:23:09 -              Console.Write("  ");
+2019-01-15 08:23:09 -          }
+2019-01-15 08:23:09 -          for(int j=0;j<a[i].Length; j++ ) {
+2019-01-15 08:23:09 -              Console.Write(a[i][j] + "  ");
+2019-01-15 08:23:09 -          }
+2019-01-15 08:23:09 -          Console.WriteLine();
+2019-01-15 08:23:09 -      }
+2019-01-15 08:23:29 -     int [][]a= new int[7][] ;
+2019-01-15 08:23:29 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:23:29 -     a[1] = new int[2] ;
+2019-01-15 08:23:29 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:23:29 -         a[i] = new int[i+1] ;  
+2019-01-15 08:23:29 -         a[i][0] =1;
+2019-01-15 08:23:29 -         a[i][i]=1;
+2019-01-15 08:23:29 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:23:29 -     for(int j=1;j<i; j++){
+2019-01-15 08:23:29 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:23:29 -             }
+2019-01-15 08:23:29 -         }
+2019-01-15 08:23:29 -      }
+2019-01-15 08:23:29 -      for (int i=0; i<a.Length; i++) {
+2019-01-15 08:23:29 -          for (int k = 0; k < a.Length-1-i; k++) {
+2019-01-15 08:23:29 -              Console.Write("");
+2019-01-15 08:23:29 -          }
+2019-01-15 08:23:29 -          for(int j=0;j<a[i].Length; j++ ) {
+2019-01-15 08:23:29 -              Console.Write(a[i][j] + " ");
+2019-01-15 08:23:29 -          }
+2019-01-15 08:23:29 -          Console.WriteLine();
+2019-01-15 08:23:29 -      }
+2019-01-15 08:23:41 -     int [][]a= new int[7][] ;
+2019-01-15 08:23:41 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:23:41 -     a[1] = new int[2] ;
+2019-01-15 08:23:41 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:23:41 -         a[i] = new int[i+1] ;  
+2019-01-15 08:23:41 -         a[i][0] =1;
+2019-01-15 08:23:41 -         a[i][i]=1;
+2019-01-15 08:23:41 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:23:41 -     for(int j=1;j<i; j++){
+2019-01-15 08:23:41 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:23:41 -             }
+2019-01-15 08:23:41 -         }
+2019-01-15 08:23:41 -      }
+2019-01-15 08:23:41 -      for (int i=0; i<a.Length; i++) {
+2019-01-15 08:23:41 -          for (int k = 0; k < a.Length-1-i; k++) {
+2019-01-15 08:23:41 -              Console.Write(" ");
+2019-01-15 08:23:41 -          }
+2019-01-15 08:23:41 -          for(int j=0;j<a[i].Length; j++ ) {
+2019-01-15 08:23:41 -              Console.Write(a[i][j] + "");
+2019-01-15 08:23:41 -          }
+2019-01-15 08:23:41 -          Console.WriteLine();
+2019-01-15 08:23:41 -      }
+2019-01-15 08:23:46 -     int [][]a= new int[7][] ;
+2019-01-15 08:23:46 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:23:46 -     a[1] = new int[2] ;
+2019-01-15 08:23:46 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:23:46 -         a[i] = new int[i+1] ;  
+2019-01-15 08:23:46 -         a[i][0] =1;
+2019-01-15 08:23:46 -         a[i][i]=1;
+2019-01-15 08:23:46 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:23:46 -     for(int j=1;j<i; j++){
+2019-01-15 08:23:46 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:23:46 -             }
+2019-01-15 08:23:46 -         }
+2019-01-15 08:23:46 -      }
+2019-01-15 08:23:46 -      for (int i=0; i<a.Length; i++) {
+2019-01-15 08:23:46 -          for (int k = 0; k < a.Length-1-i; k++) {
+2019-01-15 08:23:46 -              Console.Write(" ");
+2019-01-15 08:23:46 -          }
+2019-01-15 08:23:46 -          for(int j=0;j<a[i].Length; j++ ) {
+2019-01-15 08:23:46 -              Console.Write(a[i][j] + " ");
+2019-01-15 08:23:46 -          }
+2019-01-15 08:23:46 -          Console.WriteLine();
+2019-01-15 08:23:46 -      }
+2019-01-15 08:25:15 -     int [][]a= new int[7][] ;
+2019-01-15 08:25:15 -     a[0] = new int[1];  //a[0][0]=1; 
+2019-01-15 08:25:15 -     a[1] = new int[2] ;
+2019-01-15 08:25:15 -     for (int i = 0; i < 7; i++) {
+2019-01-15 08:25:15 -         a[i] = new int[i+1] ;  
+2019-01-15 08:25:15 -         a[i][0] =1;
+2019-01-15 08:25:15 -         a[i][i]=1;
+2019-01-15 08:25:15 -         if(i>1) {  //求出中间的数据
+2019-01-15 08:25:15 -     for(int j=1;j<i; j++){
+2019-01-15 08:25:15 -                 a[i][j]= a[i-1][j-1]+a[i-1][j];
+2019-01-15 08:25:15 -             }
+2019-01-15 08:25:15 -         }
+2019-01-15 08:25:15 -      }
+2019-01-15 08:25:15 -      for (int i=0; i<a.Length; i++) {
+2019-01-15 08:25:15 -          for (int k = 0; k < a.Length-1-i; k++) {
+2019-01-15 08:25:15 -              Console.Write(" ");
+2019-01-15 08:25:15 -          }
+2019-01-15 08:25:15 -          for(int j=0;j<a[i].Length; j++ ) {
+2019-01-15 08:25:15 -              if(a[i][j]<10){
+2019-01-15 08:25:15 -                   Console.Write(a[i][j] + "  ");
+2019-01-15 08:25:15 -              }else{
+2019-01-15 08:25:15 -                   Console.Write(a[i][j] + " ");
+2019-01-15 08:25:15 -              }
+2019-01-15 08:25:15 -          }
+2019-01-15 08:25:15 -          Console.WriteLine();
+2019-01-15 08:25:15 -      }
+2019-01-15 08:26:48 - Console.WriteLine ((DateTime.Now - DateTime.Parse("2000-01-01")).Days%5<3?"打鱼":"晒网");
+2019-01-15 08:30:12 - shutdown request
+2019-01-15 08:58:34 - using System;
+2019-01-15 08:58:34 - using System.Collections.Generic;
+2019-01-15 08:58:34 - using System.Linq;
+2019-01-15 08:58:34 - using System.Text;
+2019-01-15 08:58:34 - using System.Threading.Tasks;
+2019-01-15 08:58:34 - using ICSharp.Kernel;
+2019-01-15 08:58:34 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-15 08:58:35 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-15 08:59:43 - HashSet<int> hs = new HashSet<int>();
+2019-01-15 08:59:43 - hs.Add(11);
+2019-01-15 08:59:43 - hs.Add(12);
+2019-01-15 08:59:43 - hs.Add(11);
+2019-01-15 08:59:43 - foreach(var i in hs){
+2019-01-15 08:59:43 -     Console.WriteLine(i);
+2019-01-15 08:59:43 - }
+2019-01-17 10:33:42 - using System;
+2019-01-17 10:33:42 - using System.Collections.Generic;
+2019-01-17 10:33:42 - using System.Linq;
+2019-01-17 10:33:42 - using System.Text;
+2019-01-17 10:33:42 - using System.Threading.Tasks;
+2019-01-17 10:33:42 - using ICSharp.Kernel;
+2019-01-17 10:33:42 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-17 10:33:43 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-17 10:34:08 - Console.WriteLine(0&0);
+2019-01-17 10:34:17 - Console.WriteLine(0|0);
+2019-01-17 10:34:28 - Console.WriteLine(0&&0);
+2019-01-17 10:34:28 - (1,19): error CS0019: Operator '&&' cannot be applied to operands of type 'int' and 'int'
+2019-01-18 10:49:35 - shutdown request
+2019-01-28 10:32:45 - using System;
+2019-01-28 10:32:45 - using System.Collections.Generic;
+2019-01-28 10:32:45 - using System.Linq;
+2019-01-28 10:32:45 - using System.Text;
+2019-01-28 10:32:45 - using System.Threading.Tasks;
+2019-01-28 10:32:45 - using ICSharp.Kernel;
+2019-01-28 10:32:45 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-28 10:32:47 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-28 10:36:48 - List<int> a = {0,1,3,4,5,3,1,2,1};
+2019-01-28 10:36:48 - List<int> b = {2,4,1,3,5,8,5,1,6,4,6,2};
+2019-01-28 10:36:48 - List<int> c = a.Union(b);
+2019-01-28 10:36:48 - foreach(var i in c){
+2019-01-28 10:36:48 -     Console.WriteLine(i);
+2019-01-28 10:36:48 - }
+2019-01-28 10:36:48 - (1,15): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+2019-01-28 10:36:48 - (2,15): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+2019-01-28 10:36:48 - (4,15): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-01-28 10:37:05 - List<int> a = {0,1,3,4,5,3,1,2,1};
+2019-01-28 10:37:05 - List<int> b = {2,4,1,3,5,8,5,1,6,4,6,2};
+2019-01-28 10:37:05 - List<int> c = a.Union(b).ToList();
+2019-01-28 10:37:05 - foreach(var i in c){
+2019-01-28 10:37:05 -     Console.WriteLine(i);
+2019-01-28 10:37:05 - }
+2019-01-28 10:37:05 - (1,15): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+2019-01-28 10:37:05 - (2,15): error CS0622: Can only use array initializer expressions to assign to array types. Try using a new expression instead.
+2019-01-28 10:37:30 - List<int> a = new List<int>() {0,1,3,4,5,3,1,2,1};
+2019-01-28 10:37:30 - List<int> b = new List<int>() {2,4,1,3,5,8,5,1,6,4,6,2};
+2019-01-28 10:37:30 - List<int> c = a.Union(b).ToList();
+2019-01-28 10:37:30 - foreach(var i in c){
+2019-01-28 10:37:30 -     Console.WriteLine(i);
+2019-01-28 10:37:30 - }
+2019-01-29 09:50:35 - shutdown request
+2019-01-29 18:49:59 - using System;
+2019-01-29 18:49:59 - using System.Collections.Generic;
+2019-01-29 18:49:59 - using System.Linq;
+2019-01-29 18:49:59 - using System.Text;
+2019-01-29 18:49:59 - using System.Threading.Tasks;
+2019-01-29 18:49:59 - using ICSharp.Kernel;
+2019-01-29 18:49:59 - // Adding default usings. This file is included for each notebook when it starts.
+2019-01-29 18:50:00 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-01-29 18:50:27 - int[] insertionSort(int[] arr) {
+2019-01-29 18:50:27 -     // Pseudocode:
+2019-01-29 18:50:27 -     //
+2019-01-29 18:50:27 -     // for i from 1 through n-1
+2019-01-29 18:50:27 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:50:27 -     //   remove i'th element
+2019-01-29 18:50:27 -     //   insert it into the "sorted side" in order
+2019-01-29 18:50:27 -     for (var i = 1; i < arr.length; i++) {
+2019-01-29 18:50:27 -         // You will need another loop in here
+2019-01-29 18:50:27 -         var temp = arr[i];
+2019-01-29 18:50:27 -         for (var j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:50:27 -             arr[j + 1] = arr[j]
+2019-01-29 18:50:27 -         }
+2019-01-29 18:50:27 -         arr[j + 1] = temp;
+2019-01-29 18:50:27 -     }
+2019-01-29 18:50:27 -     return arr;
+2019-01-29 18:50:27 - }
+2019-01-29 18:50:27 - (13,32): error CS1002: ; expected
+2019-01-29 18:50:32 - int[] insertionSort(int[] arr) {
+2019-01-29 18:50:32 -     // Pseudocode:
+2019-01-29 18:50:32 -     //
+2019-01-29 18:50:32 -     // for i from 1 through n-1
+2019-01-29 18:50:32 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:50:32 -     //   remove i'th element
+2019-01-29 18:50:32 -     //   insert it into the "sorted side" in order
+2019-01-29 18:50:32 -     for (var i = 1; i < arr.length; i++) {
+2019-01-29 18:50:32 -         // You will need another loop in here
+2019-01-29 18:50:32 -         var temp = arr[i];
+2019-01-29 18:50:32 -         for (var j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:50:32 -             arr[j + 1] = arr[j];
+2019-01-29 18:50:32 -         }
+2019-01-29 18:50:32 -         arr[j + 1] = temp;
+2019-01-29 18:50:32 -     }
+2019-01-29 18:50:32 -     return arr;
+2019-01-29 18:50:32 - }
+2019-01-29 18:50:32 - (9,29): error CS1061: 'int[]' does not contain a definition for 'length' and no extension method 'length' accepting a first argument of type 'int[]' could be found (are you missing a using directive or an assembly reference?)
+2019-01-29 18:50:32 - (15,13): error CS0103: The name 'j' does not exist in the current context
+2019-01-29 18:50:40 - int[] insertionSort(int[] arr) {
+2019-01-29 18:50:40 -     // Pseudocode:
+2019-01-29 18:50:40 -     //
+2019-01-29 18:50:40 -     // for i from 1 through n-1
+2019-01-29 18:50:40 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:50:40 -     //   remove i'th element
+2019-01-29 18:50:40 -     //   insert it into the "sorted side" in order
+2019-01-29 18:50:40 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:50:40 -         // You will need another loop in here
+2019-01-29 18:50:40 -         var temp = arr[i];
+2019-01-29 18:50:40 -         for (var j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:50:40 -             arr[j + 1] = arr[j];
+2019-01-29 18:50:40 -         }
+2019-01-29 18:50:40 -         arr[j + 1] = temp;
+2019-01-29 18:50:40 -     }
+2019-01-29 18:50:40 -     return arr;
+2019-01-29 18:50:40 - }
+2019-01-29 18:50:40 - (15,13): error CS0103: The name 'j' does not exist in the current context
+2019-01-29 18:51:05 - int[] insertionSort(int[] arr) {
+2019-01-29 18:51:05 -     // Pseudocode:
+2019-01-29 18:51:05 -     //
+2019-01-29 18:51:05 -     // for i from 1 through n-1
+2019-01-29 18:51:05 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:51:05 -     //   remove i'th element
+2019-01-29 18:51:05 -     //   insert it into the "sorted side" in order
+2019-01-29 18:51:05 -     var j;
+2019-01-29 18:51:05 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:51:05 -         // You will need another loop in here
+2019-01-29 18:51:05 -         var temp = arr[i];
+2019-01-29 18:51:05 -         for (var j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:51:05 -             arr[j + 1] = arr[j];
+2019-01-29 18:51:05 -         }
+2019-01-29 18:51:05 -         arr[j + 1] = temp;
+2019-01-29 18:51:05 -     }
+2019-01-29 18:51:05 -     return arr;
+2019-01-29 18:51:05 - }
+2019-01-29 18:51:05 - (8,9): error CS0818: Implicitly-typed variables must be initialized
+2019-01-29 18:51:05 - (12,18): error CS0136: A local or parameter named 'j' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+2019-01-29 18:51:12 - int[] insertionSort(int[] arr) {
+2019-01-29 18:51:12 -     // Pseudocode:
+2019-01-29 18:51:12 -     //
+2019-01-29 18:51:12 -     // for i from 1 through n-1
+2019-01-29 18:51:12 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:51:12 -     //   remove i'th element
+2019-01-29 18:51:12 -     //   insert it into the "sorted side" in order
+2019-01-29 18:51:12 -     var j = 0;
+2019-01-29 18:51:12 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:51:12 -         // You will need another loop in here
+2019-01-29 18:51:12 -         var temp = arr[i];
+2019-01-29 18:51:12 -         for (var j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:51:12 -             arr[j + 1] = arr[j];
+2019-01-29 18:51:12 -         }
+2019-01-29 18:51:12 -         arr[j + 1] = temp;
+2019-01-29 18:51:12 -     }
+2019-01-29 18:51:12 -     return arr;
+2019-01-29 18:51:12 - }
+2019-01-29 18:51:12 - (12,18): error CS0136: A local or parameter named 'j' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter
+2019-01-29 18:51:19 - int[] insertionSort(int[] arr) {
+2019-01-29 18:51:19 -     // Pseudocode:
+2019-01-29 18:51:19 -     //
+2019-01-29 18:51:19 -     // for i from 1 through n-1
+2019-01-29 18:51:19 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:51:19 -     //   remove i'th element
+2019-01-29 18:51:19 -     //   insert it into the "sorted side" in order
+2019-01-29 18:51:19 -     var j = 0;
+2019-01-29 18:51:19 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:51:19 -         // You will need another loop in here
+2019-01-29 18:51:19 -         var temp = arr[i];
+2019-01-29 18:51:19 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:51:19 -             arr[j + 1] = arr[j];
+2019-01-29 18:51:19 -         }
+2019-01-29 18:51:19 -         arr[j + 1] = temp;
+2019-01-29 18:51:19 -     }
+2019-01-29 18:51:19 -     return arr;
+2019-01-29 18:51:19 - }
+2019-01-29 18:52:24 - int[] insertionSort(int[] arr) {
+2019-01-29 18:52:24 -     // Pseudocode:
+2019-01-29 18:52:24 -     //
+2019-01-29 18:52:24 -     // for i from 1 through n-1
+2019-01-29 18:52:24 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:52:24 -     //   remove i'th element
+2019-01-29 18:52:24 -     //   insert it into the "sorted side" in order
+2019-01-29 18:52:24 -     var j = 0;
+2019-01-29 18:52:24 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:52:24 -         // You will need another loop in here
+2019-01-29 18:52:24 -         var temp = arr[i];
+2019-01-29 18:52:24 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:52:24 -             arr[j + 1] = arr[j];
+2019-01-29 18:52:24 -         }
+2019-01-29 18:52:24 -         arr[j + 1] = temp;
+2019-01-29 18:52:24 -     }
+2019-01-29 18:52:24 -     return arr;
+2019-01-29 18:52:24 - }
+2019-01-29 18:52:24 - foreach i in insertionSort([3,2,13,12,22,5,1]);
+2019-01-29 18:52:24 -     Console.Write(i+", ");
+2019-01-29 18:52:24 - (20,9): error CS1003: Syntax error, '(' expected
+2019-01-29 18:52:24 - (20,11): error CS0230: Type and identifier are both required in a foreach statement
+2019-01-29 18:52:24 - (20,28): error CS1026: ) expected
+2019-01-29 18:52:49 - int[] insertionSort(int[] arr) {
+2019-01-29 18:52:49 -     // Pseudocode:
+2019-01-29 18:52:49 -     //
+2019-01-29 18:52:49 -     // for i from 1 through n-1
+2019-01-29 18:52:49 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:52:49 -     //   remove i'th element
+2019-01-29 18:52:49 -     //   insert it into the "sorted side" in order
+2019-01-29 18:52:49 -     var j = 0;
+2019-01-29 18:52:49 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:52:49 -         // You will need another loop in here
+2019-01-29 18:52:49 -         var temp = arr[i];
+2019-01-29 18:52:49 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:52:49 -             arr[j + 1] = arr[j];
+2019-01-29 18:52:49 -         }
+2019-01-29 18:52:49 -         arr[j + 1] = temp;
+2019-01-29 18:52:49 -     }
+2019-01-29 18:52:49 -     return arr;
+2019-01-29 18:52:49 - }
+2019-01-29 18:52:49 - foreach( var i in insertionSort([3,2,13,12,22,5,1]))
+2019-01-29 18:52:49 -     Console.Write(i+", ");
+2019-01-29 18:52:49 - (20,33): error CS1026: ) expected
+2019-01-29 18:52:49 - (20,52): error CS1525: Invalid expression term ')'
+2019-01-29 18:52:49 - (20,52): error CS1002: ; expected
+2019-01-29 18:52:49 - (20,52): error CS7017: Member definition, statement, or end-of-file expected
+2019-01-29 18:53:13 - int[] insertionSort(int[] arr) {
+2019-01-29 18:53:13 -     // Pseudocode:
+2019-01-29 18:53:13 -     //
+2019-01-29 18:53:13 -     // for i from 1 through n-1
+2019-01-29 18:53:13 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:53:13 -     //   remove i'th element
+2019-01-29 18:53:13 -     //   insert it into the "sorted side" in order
+2019-01-29 18:53:13 -     var j = 0;
+2019-01-29 18:53:13 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:53:13 -         // You will need another loop in here
+2019-01-29 18:53:13 -         var temp = arr[i];
+2019-01-29 18:53:13 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:53:13 -             arr[j + 1] = arr[j];
+2019-01-29 18:53:13 -         }
+2019-01-29 18:53:13 -         arr[j + 1] = temp;
+2019-01-29 18:53:13 -     }
+2019-01-29 18:53:13 -     return arr;
+2019-01-29 18:53:13 - }
+2019-01-29 18:53:13 - foreach( var i in insertionSort([3,2,13,12,22,5,1])){
+2019-01-29 18:53:13 -    Console.Write(i+", ");
+2019-01-29 18:53:13 - }
+2019-01-29 18:53:13 - (20,33): error CS1026: ) expected
+2019-01-29 18:53:13 - (20,52): error CS1525: Invalid expression term ')'
+2019-01-29 18:53:13 - (20,52): error CS1002: ; expected
+2019-01-29 18:53:13 - (20,52): error CS7017: Member definition, statement, or end-of-file expected
+2019-01-29 18:53:26 - int[] insertionSort(int[] arr) {
+2019-01-29 18:53:26 -     // Pseudocode:
+2019-01-29 18:53:26 -     //
+2019-01-29 18:53:26 -     // for i from 1 through n-1
+2019-01-29 18:53:26 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:53:26 -     //   remove i'th element
+2019-01-29 18:53:26 -     //   insert it into the "sorted side" in order
+2019-01-29 18:53:26 -     var j = 0;
+2019-01-29 18:53:26 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:53:26 -         // You will need another loop in here
+2019-01-29 18:53:26 -         var temp = arr[i];
+2019-01-29 18:53:26 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:53:26 -             arr[j + 1] = arr[j];
+2019-01-29 18:53:26 -         }
+2019-01-29 18:53:26 -         arr[j + 1] = temp;
+2019-01-29 18:53:26 -     }
+2019-01-29 18:53:26 -     return arr;
+2019-01-29 18:53:26 - }
+2019-01-29 18:53:26 - foreach var i in insertionSort([3,2,13,12,22,5,1])
+2019-01-29 18:53:26 -    Console.Write(i+", ");
+2019-01-29 18:53:26 - (20,9): error CS1003: Syntax error, '(' expected
+2019-01-29 18:53:26 - (20,32): error CS1026: ) expected
+2019-01-29 18:53:46 - int[] insertionSort(params int[] arr) {
+2019-01-29 18:53:46 -     // Pseudocode:
+2019-01-29 18:53:46 -     //
+2019-01-29 18:53:46 -     // for i from 1 through n-1
+2019-01-29 18:53:46 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:53:46 -     //   remove i'th element
+2019-01-29 18:53:46 -     //   insert it into the "sorted side" in order
+2019-01-29 18:53:46 -     var j = 0;
+2019-01-29 18:53:46 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:53:46 -         // You will need another loop in here
+2019-01-29 18:53:46 -         var temp = arr[i];
+2019-01-29 18:53:46 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:53:46 -             arr[j + 1] = arr[j];
+2019-01-29 18:53:46 -         }
+2019-01-29 18:53:46 -         arr[j + 1] = temp;
+2019-01-29 18:53:46 -     }
+2019-01-29 18:53:46 -     return arr;
+2019-01-29 18:53:46 - }
+2019-01-29 18:53:46 - foreach var i in insertionSort([3,2,13,12,22,5,1])
+2019-01-29 18:53:46 -    Console.Write(i+", ");
+2019-01-29 18:53:46 - (20,9): error CS1003: Syntax error, '(' expected
+2019-01-29 18:53:46 - (20,32): error CS1026: ) expected
+2019-01-29 18:54:15 - int[] insertionSort(params int[] arr) {
+2019-01-29 18:54:15 -     // Pseudocode:
+2019-01-29 18:54:15 -     //
+2019-01-29 18:54:15 -     // for i from 1 through n-1
+2019-01-29 18:54:15 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:54:15 -     //   remove i'th element
+2019-01-29 18:54:15 -     //   insert it into the "sorted side" in order
+2019-01-29 18:54:15 -     var j = 0;
+2019-01-29 18:54:15 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:54:15 -         // You will need another loop in here
+2019-01-29 18:54:15 -         var temp = arr[i];
+2019-01-29 18:54:15 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:54:15 -             arr[j + 1] = arr[j];
+2019-01-29 18:54:15 -         }
+2019-01-29 18:54:15 -         arr[j + 1] = temp;
+2019-01-29 18:54:15 -     }
+2019-01-29 18:54:15 -     return arr;
+2019-01-29 18:54:15 - }
+2019-01-29 18:54:15 - foreach var i in insertionSort(3,2,13,12,22,5,1){
+2019-01-29 18:54:15 -    Console.Write(i+", ");
+2019-01-29 18:54:15 - }
+2019-01-29 18:54:15 - (20,9): error CS1003: Syntax error, '(' expected
+2019-01-29 18:54:15 - (20,49): error CS1026: ) expected
+2019-01-29 18:54:28 - int[] insertionSort(params int[] arr) {
+2019-01-29 18:54:28 -     // Pseudocode:
+2019-01-29 18:54:28 -     //
+2019-01-29 18:54:28 -     // for i from 1 through n-1
+2019-01-29 18:54:28 -     //   call 0'th through i-1'th elements the "sorted side"
+2019-01-29 18:54:28 -     //   remove i'th element
+2019-01-29 18:54:28 -     //   insert it into the "sorted side" in order
+2019-01-29 18:54:28 -     var j = 0;
+2019-01-29 18:54:28 -     for (var i = 1; i < arr.Length; i++) {
+2019-01-29 18:54:28 -         // You will need another loop in here
+2019-01-29 18:54:28 -         var temp = arr[i];
+2019-01-29 18:54:28 -         for ( j = i - 1; j >= 0 && arr[j] > temp; j--) {
+2019-01-29 18:54:28 -             arr[j + 1] = arr[j];
+2019-01-29 18:54:28 -         }
+2019-01-29 18:54:28 -         arr[j + 1] = temp;
+2019-01-29 18:54:28 -     }
+2019-01-29 18:54:28 -     return arr;
+2019-01-29 18:54:28 - }
+2019-01-29 18:54:28 - foreach (var i in insertionSort(3,2,13,12,22,5,1)){
+2019-01-29 18:54:28 -    Console.Write(i+", ");
+2019-01-29 18:54:28 - }
+2019-01-29 18:56:24 - shutdown request
+2019-02-04 17:37:26 - using System;
+2019-02-04 17:37:26 - using System.Collections.Generic;
+2019-02-04 17:37:26 - using System.Linq;
+2019-02-04 17:37:26 - using System.Text;
+2019-02-04 17:37:26 - using System.Threading.Tasks;
+2019-02-04 17:37:26 - using ICSharp.Kernel;
+2019-02-04 17:37:26 - // Adding default usings. This file is included for each notebook when it starts.
+2019-02-04 17:37:27 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-02-04 17:37:38 - shutdown request
+2019-02-05 11:02:40 - using System;
+2019-02-05 11:02:40 - using System.Collections.Generic;
+2019-02-05 11:02:40 - using System.Linq;
+2019-02-05 11:02:40 - using System.Text;
+2019-02-05 11:02:40 - using System.Threading.Tasks;
+2019-02-05 11:02:40 - using ICSharp.Kernel;
+2019-02-05 11:02:40 - // Adding default usings. This file is included for each notebook when it starts.
+2019-02-05 11:02:41 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-02-05 13:14:53 - shutdown request
+2019-02-12 09:50:25 - using System;
+2019-02-12 09:50:25 - using System.Collections.Generic;
+2019-02-12 09:50:25 - using System.Linq;
+2019-02-12 09:50:25 - using System.Text;
+2019-02-12 09:50:25 - using System.Threading.Tasks;
+2019-02-12 09:50:25 - using ICSharp.Kernel;
+2019-02-12 09:50:25 - // Adding default usings. This file is included for each notebook when it starts.
+2019-02-12 09:50:26 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-02-12 10:48:25 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-02-12 11:37:42 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-02-12 13:55:29 - shutdown request
+2019-02-13 10:48:44 - using System;
+2019-02-13 10:48:44 - using System.Collections.Generic;
+2019-02-13 10:48:44 - using System.Linq;
+2019-02-13 10:48:44 - using System.Text;
+2019-02-13 10:48:44 - using System.Threading.Tasks;
+2019-02-13 10:48:44 - using ICSharp.Kernel;
+2019-02-13 10:48:44 - // Adding default usings. This file is included for each notebook when it starts.
+2019-02-13 10:48:45 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-02-13 10:48:53 - shutdown request
