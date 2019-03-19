@@ -2965,3 +2965,1842 @@
 2019-03-18 16:24:55 -     return arr;
 2019-03-18 16:24:55 - }
 2019-03-18 16:24:55 - SelectionSort(arr);
+2019-03-18 17:45:14 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:45:14 - {
+2019-03-18 17:45:14 -     n = arr.Length-1;
+2019-03-18 17:45:14 -     bool swap = false;
+2019-03-18 17:45:14 -     do{
+2019-03-18 17:45:14 -         swap = false;
+2019-03-18 17:45:14 -         for(int i = 0;i< n;i++)
+2019-03-18 17:45:14 -         {
+2019-03-18 17:45:14 -             if(arr[i]>arr[i+1])
+2019-03-18 17:45:14 -             {
+2019-03-18 17:45:14 -                 Swap(arr[i],arr[i+1]);
+2019-03-18 17:45:14 -                 swap = true;
+2019-03-18 17:45:14 -             }
+2019-03-18 17:45:14 -         }
+2019-03-18 17:45:14 -         PrintSteps(arr,i);
+2019-03-18 17:45:14 -         n--;
+2019-03-18 17:45:14 -     }while(swap)
+2019-03-18 17:45:14 -     return arr;
+2019-03-18 17:45:14 - }
+2019-03-18 17:45:14 - (17,17): error CS1002: ; expected
+2019-03-18 17:45:20 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:45:20 - {
+2019-03-18 17:45:20 -     n = arr.Length-1;
+2019-03-18 17:45:20 -     bool swap = false;
+2019-03-18 17:45:20 -     do{
+2019-03-18 17:45:20 -         swap = false;
+2019-03-18 17:45:20 -         for(int i = 0;i< n;i++)
+2019-03-18 17:45:20 -         {
+2019-03-18 17:45:20 -             if(arr[i]>arr[i+1])
+2019-03-18 17:45:20 -             {
+2019-03-18 17:45:20 -                 Swap(arr[i],arr[i+1]);
+2019-03-18 17:45:20 -                 swap = true;
+2019-03-18 17:45:20 -             }
+2019-03-18 17:45:20 -         }
+2019-03-18 17:45:20 -         PrintSteps(arr,i);
+2019-03-18 17:45:20 -         n--;
+2019-03-18 17:45:20 -     }while(swap);
+2019-03-18 17:45:20 -     return arr;
+2019-03-18 17:45:20 - }
+2019-03-18 17:45:20 - (3,5): error CS0103: The name 'n' does not exist in the current context
+2019-03-18 17:45:20 - (7,26): error CS0103: The name 'n' does not exist in the current context
+2019-03-18 17:45:20 - (11,22): error CS1620: Argument 1 must be passed with the 'ref' keyword
+2019-03-18 17:45:20 - (11,29): error CS1620: Argument 2 must be passed with the 'ref' keyword
+2019-03-18 17:45:20 - (15,24): error CS0103: The name 'i' does not exist in the current context
+2019-03-18 17:45:20 - (16,9): error CS0103: The name 'n' does not exist in the current context
+2019-03-18 17:45:31 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:45:31 - {
+2019-03-18 17:45:31 -     int n = arr.Length-1;
+2019-03-18 17:45:31 -     bool swap = false;
+2019-03-18 17:45:31 -     do{
+2019-03-18 17:45:31 -         swap = false;
+2019-03-18 17:45:31 -         for(int i = 0;i< n;i++)
+2019-03-18 17:45:31 -         {
+2019-03-18 17:45:31 -             if(arr[i]>arr[i+1])
+2019-03-18 17:45:31 -             {
+2019-03-18 17:45:31 -                 Swap(arr[i],arr[i+1]);
+2019-03-18 17:45:31 -                 swap = true;
+2019-03-18 17:45:31 -             }
+2019-03-18 17:45:31 -         }
+2019-03-18 17:45:31 -         PrintSteps(arr,i);
+2019-03-18 17:45:31 -         n--;
+2019-03-18 17:45:31 -     }while(swap);
+2019-03-18 17:45:31 -     return arr;
+2019-03-18 17:45:31 - }
+2019-03-18 17:45:31 - (11,22): error CS1620: Argument 1 must be passed with the 'ref' keyword
+2019-03-18 17:45:31 - (11,29): error CS1620: Argument 2 must be passed with the 'ref' keyword
+2019-03-18 17:45:31 - (15,24): error CS0103: The name 'i' does not exist in the current context
+2019-03-18 17:45:41 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:45:41 - {
+2019-03-18 17:45:41 -     int n = arr.Length-1;
+2019-03-18 17:45:41 -     bool swap = false;
+2019-03-18 17:45:41 -     do{
+2019-03-18 17:45:41 -         swap = false;
+2019-03-18 17:45:41 -         for(int i = 0;i< n;i++)
+2019-03-18 17:45:41 -         {
+2019-03-18 17:45:41 -             if(arr[i]>arr[i+1])
+2019-03-18 17:45:41 -             {
+2019-03-18 17:45:41 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:45:41 -                 swap = true;
+2019-03-18 17:45:41 -             }
+2019-03-18 17:45:41 -         }
+2019-03-18 17:45:41 -         PrintSteps(arr,i);
+2019-03-18 17:45:41 -         n--;
+2019-03-18 17:45:41 -     }while(swap);
+2019-03-18 17:45:41 -     return arr;
+2019-03-18 17:45:41 - }
+2019-03-18 17:45:41 - (15,24): error CS0103: The name 'i' does not exist in the current context
+2019-03-18 17:46:48 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:46:48 - {
+2019-03-18 17:46:48 -     int n = arr.Length-1;
+2019-03-18 17:46:48 -     bool swap = false;
+2019-03-18 17:46:48 -     do{
+2019-03-18 17:46:48 -         swap = false;
+2019-03-18 17:46:48 -         for(int i = 0;i< n;i++)
+2019-03-18 17:46:48 -         {
+2019-03-18 17:46:48 -             if(arr[i]>arr[i+1])
+2019-03-18 17:46:48 -             {
+2019-03-18 17:46:48 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:46:48 -                 swap = true;
+2019-03-18 17:46:48 -             }
+2019-03-18 17:46:48 -         }
+2019-03-18 17:46:48 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:46:48 -         n--;
+2019-03-18 17:46:48 -     }while(swap);
+2019-03-18 17:46:48 -     return arr;
+2019-03-18 17:46:48 - }
+2019-03-18 17:46:57 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:46:57 - {
+2019-03-18 17:46:57 -     int n = arr.Length-1;
+2019-03-18 17:46:57 -     bool swap = false;
+2019-03-18 17:46:57 -     do{
+2019-03-18 17:46:57 -         swap = false;
+2019-03-18 17:46:57 -         for(int i = 0;i< n;i++)
+2019-03-18 17:46:57 -         {
+2019-03-18 17:46:57 -             if(arr[i]>arr[i+1])
+2019-03-18 17:46:57 -             {
+2019-03-18 17:46:57 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:46:57 -                 swap = true;
+2019-03-18 17:46:57 -             }
+2019-03-18 17:46:57 -         }
+2019-03-18 17:46:57 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:46:57 -         n--;
+2019-03-18 17:46:57 -     }while(swap);
+2019-03-18 17:46:57 -     return arr;
+2019-03-18 17:46:57 - }
+2019-03-18 17:47:01 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:01 - {
+2019-03-18 17:47:01 -     int n = arr.Length-1;
+2019-03-18 17:47:01 -     bool swap = false;
+2019-03-18 17:47:01 -     do{
+2019-03-18 17:47:01 -         swap = false;
+2019-03-18 17:47:01 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:01 -         {
+2019-03-18 17:47:01 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:01 -             {
+2019-03-18 17:47:01 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:01 -                 swap = true;
+2019-03-18 17:47:01 -             }
+2019-03-18 17:47:01 -         }
+2019-03-18 17:47:01 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:01 -         n--;
+2019-03-18 17:47:01 -     }while(swap);
+2019-03-18 17:47:01 -     return arr;
+2019-03-18 17:47:01 - }
+2019-03-18 17:47:03 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:03 - {
+2019-03-18 17:47:03 -     int n = arr.Length-1;
+2019-03-18 17:47:03 -     bool swap = false;
+2019-03-18 17:47:03 -     do{
+2019-03-18 17:47:03 -         swap = false;
+2019-03-18 17:47:03 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:03 -         {
+2019-03-18 17:47:03 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:03 -             {
+2019-03-18 17:47:03 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:03 -                 swap = true;
+2019-03-18 17:47:03 -             }
+2019-03-18 17:47:03 -         }
+2019-03-18 17:47:03 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:03 -         n--;
+2019-03-18 17:47:03 -     }while(swap);
+2019-03-18 17:47:03 -     return arr;
+2019-03-18 17:47:03 - }
+2019-03-18 17:47:10 - public void PrintSteps(int[] arr, int i)  
+2019-03-18 17:47:10 - {
+2019-03-18 17:47:10 -     Console.Write(string.Format("Step{0}: ", i));
+2019-03-18 17:47:10 -     foreach(var a in arr)
+2019-03-18 17:47:10 -         Console.Write(a+" ");
+2019-03-18 17:47:10 -     Console.WriteLine();
+2019-03-18 17:47:10 - }
+2019-03-18 17:47:10 - public void Swap(ref int a, ref int b)
+2019-03-18 17:47:10 - {
+2019-03-18 17:47:10 -     int temp = a;
+2019-03-18 17:47:10 -     a = b;
+2019-03-18 17:47:10 -     b = temp;
+2019-03-18 17:47:10 - }
+2019-03-18 17:47:10 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 17:47:13 - public int[] InsertSort(int[] arr)
+2019-03-18 17:47:13 - {
+2019-03-18 17:47:13 -     for (int i = 1; i<arr.Length;i++)
+2019-03-18 17:47:13 -     {
+2019-03-18 17:47:13 -         int temp = arr[i];
+2019-03-18 17:47:13 -         int j = i;
+2019-03-18 17:47:13 -         while(j>0 &&arr[j-1]>temp)
+2019-03-18 17:47:13 -         {
+2019-03-18 17:47:13 -             arr[j]=arr[j-1];
+2019-03-18 17:47:13 -             j--;
+2019-03-18 17:47:13 -         }
+2019-03-18 17:47:13 -         arr[j]=temp;
+2019-03-18 17:47:13 -         PrintSteps(arr,i);
+2019-03-18 17:47:13 -     }
+2019-03-18 17:47:13 -     return arr;
+2019-03-18 17:47:13 - }
+2019-03-18 17:47:13 - // Call the function
+2019-03-18 17:47:13 - InsertSort(arr);
+2019-03-18 17:47:16 - public int[] SelectionSort(int[] arr){
+2019-03-18 17:47:16 -     for(int i = 0; i<arr.Length;i++)
+2019-03-18 17:47:16 -     {
+2019-03-18 17:47:16 -         int minIndex = i; // smallest index
+2019-03-18 17:47:16 -         for(int j = i+1;j<arr.Length;j++)
+2019-03-18 17:47:16 -         {
+2019-03-18 17:47:16 -             if(arr[j]<arr[minIndex])
+2019-03-18 17:47:16 -                 minIndex = j;
+2019-03-18 17:47:16 -         }
+2019-03-18 17:47:16 -         // Only swap when minIndex changed
+2019-03-18 17:47:16 -         if(minIndex!=i)
+2019-03-18 17:47:16 -             Swap(ref arr[minIndex], ref arr[i]);
+2019-03-18 17:47:16 -         PrintSteps(arr,i);
+2019-03-18 17:47:16 -     }
+2019-03-18 17:47:16 -     return arr;
+2019-03-18 17:47:16 - }
+2019-03-18 17:47:16 - SelectionSort(arr);
+2019-03-18 17:47:20 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:20 - {
+2019-03-18 17:47:20 -     int n = arr.Length-1;
+2019-03-18 17:47:20 -     bool swap = false;
+2019-03-18 17:47:20 -     do{
+2019-03-18 17:47:20 -         swap = false;
+2019-03-18 17:47:20 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:20 -         {
+2019-03-18 17:47:20 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:20 -             {
+2019-03-18 17:47:20 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:20 -                 swap = true;
+2019-03-18 17:47:20 -             }
+2019-03-18 17:47:20 -         }
+2019-03-18 17:47:20 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:20 -         n--;
+2019-03-18 17:47:20 -     }while(swap);
+2019-03-18 17:47:20 -     return arr;
+2019-03-18 17:47:20 - }
+2019-03-18 17:47:22 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:22 - {
+2019-03-18 17:47:22 -     int n = arr.Length-1;
+2019-03-18 17:47:22 -     bool swap = false;
+2019-03-18 17:47:22 -     do{
+2019-03-18 17:47:22 -         swap = false;
+2019-03-18 17:47:22 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:22 -         {
+2019-03-18 17:47:22 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:22 -             {
+2019-03-18 17:47:22 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:22 -                 swap = true;
+2019-03-18 17:47:22 -             }
+2019-03-18 17:47:22 -         }
+2019-03-18 17:47:22 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:22 -         n--;
+2019-03-18 17:47:22 -     }while(swap);
+2019-03-18 17:47:22 -     return arr;
+2019-03-18 17:47:22 - }
+2019-03-18 17:47:23 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:23 - {
+2019-03-18 17:47:23 -     int n = arr.Length-1;
+2019-03-18 17:47:23 -     bool swap = false;
+2019-03-18 17:47:23 -     do{
+2019-03-18 17:47:23 -         swap = false;
+2019-03-18 17:47:23 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:23 -         {
+2019-03-18 17:47:23 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:23 -             {
+2019-03-18 17:47:23 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:23 -                 swap = true;
+2019-03-18 17:47:23 -             }
+2019-03-18 17:47:23 -         }
+2019-03-18 17:47:23 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:23 -         n--;
+2019-03-18 17:47:23 -     }while(swap);
+2019-03-18 17:47:23 -     return arr;
+2019-03-18 17:47:23 - }
+2019-03-18 17:47:23 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:23 - {
+2019-03-18 17:47:23 -     int n = arr.Length-1;
+2019-03-18 17:47:23 -     bool swap = false;
+2019-03-18 17:47:23 -     do{
+2019-03-18 17:47:23 -         swap = false;
+2019-03-18 17:47:23 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:23 -         {
+2019-03-18 17:47:23 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:23 -             {
+2019-03-18 17:47:23 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:23 -                 swap = true;
+2019-03-18 17:47:23 -             }
+2019-03-18 17:47:23 -         }
+2019-03-18 17:47:23 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:23 -         n--;
+2019-03-18 17:47:23 -     }while(swap);
+2019-03-18 17:47:23 -     return arr;
+2019-03-18 17:47:23 - }
+2019-03-18 17:47:24 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:24 - {
+2019-03-18 17:47:24 -     int n = arr.Length-1;
+2019-03-18 17:47:24 -     bool swap = false;
+2019-03-18 17:47:24 -     do{
+2019-03-18 17:47:24 -         swap = false;
+2019-03-18 17:47:24 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:24 -         {
+2019-03-18 17:47:24 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:24 -             {
+2019-03-18 17:47:24 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:24 -                 swap = true;
+2019-03-18 17:47:24 -             }
+2019-03-18 17:47:24 -         }
+2019-03-18 17:47:24 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:24 -         n--;
+2019-03-18 17:47:24 -     }while(swap);
+2019-03-18 17:47:24 -     return arr;
+2019-03-18 17:47:24 - }
+2019-03-18 17:47:24 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:24 - {
+2019-03-18 17:47:24 -     int n = arr.Length-1;
+2019-03-18 17:47:24 -     bool swap = false;
+2019-03-18 17:47:24 -     do{
+2019-03-18 17:47:24 -         swap = false;
+2019-03-18 17:47:24 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:24 -         {
+2019-03-18 17:47:24 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:24 -             {
+2019-03-18 17:47:24 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:24 -                 swap = true;
+2019-03-18 17:47:24 -             }
+2019-03-18 17:47:24 -         }
+2019-03-18 17:47:24 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:24 -         n--;
+2019-03-18 17:47:24 -     }while(swap);
+2019-03-18 17:47:24 -     return arr;
+2019-03-18 17:47:24 - }
+2019-03-18 17:47:24 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:47:24 - {
+2019-03-18 17:47:24 -     int n = arr.Length-1;
+2019-03-18 17:47:24 -     bool swap = false;
+2019-03-18 17:47:24 -     do{
+2019-03-18 17:47:24 -         swap = false;
+2019-03-18 17:47:24 -         for(int i = 0;i< n;i++)
+2019-03-18 17:47:24 -         {
+2019-03-18 17:47:24 -             if(arr[i]>arr[i+1])
+2019-03-18 17:47:24 -             {
+2019-03-18 17:47:24 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:47:24 -                 swap = true;
+2019-03-18 17:47:24 -             }
+2019-03-18 17:47:24 -         }
+2019-03-18 17:47:24 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:47:24 -         n--;
+2019-03-18 17:47:24 -     }while(swap);
+2019-03-18 17:47:24 -     return arr;
+2019-03-18 17:47:24 - }
+2019-03-18 17:48:01 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:01 - {
+2019-03-18 17:48:01 -     int n = arr.Length-1;
+2019-03-18 17:48:01 -     bool swap = false;
+2019-03-18 17:48:01 -     do{
+2019-03-18 17:48:01 -         swap = false;
+2019-03-18 17:48:01 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:01 -         {
+2019-03-18 17:48:01 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:01 -             {
+2019-03-18 17:48:01 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:01 -                 swap = true;
+2019-03-18 17:48:01 -             }
+2019-03-18 17:48:01 -         }
+2019-03-18 17:48:01 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:01 -         n--;
+2019-03-18 17:48:01 -     }while(swap);
+2019-03-18 17:48:01 -     return arr;
+2019-03-18 17:48:01 - }
+2019-03-18 17:48:01 - Console.WriteLne("aa");
+2019-03-18 17:48:01 - (21,9): error CS0117: 'Console' does not contain a definition for 'WriteLne'
+2019-03-18 17:48:05 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:05 - {
+2019-03-18 17:48:05 -     int n = arr.Length-1;
+2019-03-18 17:48:05 -     bool swap = false;
+2019-03-18 17:48:05 -     do{
+2019-03-18 17:48:05 -         swap = false;
+2019-03-18 17:48:05 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:05 -         {
+2019-03-18 17:48:05 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:05 -             {
+2019-03-18 17:48:05 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:05 -                 swap = true;
+2019-03-18 17:48:05 -             }
+2019-03-18 17:48:05 -         }
+2019-03-18 17:48:05 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:05 -         n--;
+2019-03-18 17:48:05 -     }while(swap);
+2019-03-18 17:48:05 -     return arr;
+2019-03-18 17:48:05 - }
+2019-03-18 17:48:05 - Console.WriteLine("aa");
+2019-03-18 17:48:10 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:10 - {
+2019-03-18 17:48:10 -     int n = arr.Length-1;
+2019-03-18 17:48:10 -     bool swap = false;
+2019-03-18 17:48:10 -     do{
+2019-03-18 17:48:10 -         swap = false;
+2019-03-18 17:48:10 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:10 -         {
+2019-03-18 17:48:10 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:10 -             {
+2019-03-18 17:48:10 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:10 -                 swap = true;
+2019-03-18 17:48:10 -             }
+2019-03-18 17:48:10 -         }
+2019-03-18 17:48:10 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:10 -         n--;
+2019-03-18 17:48:10 -     }while(swap);
+2019-03-18 17:48:10 -     return arr;
+2019-03-18 17:48:10 - }
+2019-03-18 17:48:11 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:11 - {
+2019-03-18 17:48:11 -     int n = arr.Length-1;
+2019-03-18 17:48:11 -     bool swap = false;
+2019-03-18 17:48:11 -     do{
+2019-03-18 17:48:11 -         swap = false;
+2019-03-18 17:48:11 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:11 -         {
+2019-03-18 17:48:11 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:11 -             {
+2019-03-18 17:48:11 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:11 -                 swap = true;
+2019-03-18 17:48:11 -             }
+2019-03-18 17:48:11 -         }
+2019-03-18 17:48:11 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:11 -         n--;
+2019-03-18 17:48:11 -     }while(swap);
+2019-03-18 17:48:11 -     return arr;
+2019-03-18 17:48:11 - }
+2019-03-18 17:48:11 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:11 - {
+2019-03-18 17:48:11 -     int n = arr.Length-1;
+2019-03-18 17:48:11 -     bool swap = false;
+2019-03-18 17:48:11 -     do{
+2019-03-18 17:48:11 -         swap = false;
+2019-03-18 17:48:11 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:11 -         {
+2019-03-18 17:48:11 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:11 -             {
+2019-03-18 17:48:11 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:11 -                 swap = true;
+2019-03-18 17:48:11 -             }
+2019-03-18 17:48:11 -         }
+2019-03-18 17:48:11 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:11 -         n--;
+2019-03-18 17:48:11 -     }while(swap);
+2019-03-18 17:48:11 -     return arr;
+2019-03-18 17:48:11 - }
+2019-03-18 17:48:11 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:11 - {
+2019-03-18 17:48:11 -     int n = arr.Length-1;
+2019-03-18 17:48:11 -     bool swap = false;
+2019-03-18 17:48:11 -     do{
+2019-03-18 17:48:11 -         swap = false;
+2019-03-18 17:48:11 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:11 -         {
+2019-03-18 17:48:11 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:11 -             {
+2019-03-18 17:48:11 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:11 -                 swap = true;
+2019-03-18 17:48:11 -             }
+2019-03-18 17:48:11 -         }
+2019-03-18 17:48:11 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:11 -         n--;
+2019-03-18 17:48:11 -     }while(swap);
+2019-03-18 17:48:11 -     return arr;
+2019-03-18 17:48:11 - }
+2019-03-18 17:48:12 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:12 - {
+2019-03-18 17:48:12 -     int n = arr.Length-1;
+2019-03-18 17:48:12 -     bool swap = false;
+2019-03-18 17:48:12 -     do{
+2019-03-18 17:48:12 -         swap = false;
+2019-03-18 17:48:12 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:12 -         {
+2019-03-18 17:48:12 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:12 -             {
+2019-03-18 17:48:12 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:12 -                 swap = true;
+2019-03-18 17:48:12 -             }
+2019-03-18 17:48:12 -         }
+2019-03-18 17:48:12 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:12 -         n--;
+2019-03-18 17:48:12 -     }while(swap);
+2019-03-18 17:48:12 -     return arr;
+2019-03-18 17:48:12 - }
+2019-03-18 17:48:12 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:12 - {
+2019-03-18 17:48:12 -     int n = arr.Length-1;
+2019-03-18 17:48:12 -     bool swap = false;
+2019-03-18 17:48:12 -     do{
+2019-03-18 17:48:12 -         swap = false;
+2019-03-18 17:48:12 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:12 -         {
+2019-03-18 17:48:12 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:12 -             {
+2019-03-18 17:48:12 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:12 -                 swap = true;
+2019-03-18 17:48:12 -             }
+2019-03-18 17:48:12 -         }
+2019-03-18 17:48:12 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:12 -         n--;
+2019-03-18 17:48:12 -     }while(swap);
+2019-03-18 17:48:12 -     return arr;
+2019-03-18 17:48:12 - }
+2019-03-18 17:48:12 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:12 - {
+2019-03-18 17:48:12 -     int n = arr.Length-1;
+2019-03-18 17:48:12 -     bool swap = false;
+2019-03-18 17:48:12 -     do{
+2019-03-18 17:48:12 -         swap = false;
+2019-03-18 17:48:12 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:12 -         {
+2019-03-18 17:48:12 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:12 -             {
+2019-03-18 17:48:12 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:12 -                 swap = true;
+2019-03-18 17:48:12 -             }
+2019-03-18 17:48:12 -         }
+2019-03-18 17:48:12 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:12 -         n--;
+2019-03-18 17:48:12 -     }while(swap);
+2019-03-18 17:48:12 -     return arr;
+2019-03-18 17:48:12 - }
+2019-03-18 17:48:12 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:12 - {
+2019-03-18 17:48:12 -     int n = arr.Length-1;
+2019-03-18 17:48:12 -     bool swap = false;
+2019-03-18 17:48:12 -     do{
+2019-03-18 17:48:12 -         swap = false;
+2019-03-18 17:48:12 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:12 -         {
+2019-03-18 17:48:12 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:12 -             {
+2019-03-18 17:48:12 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:12 -                 swap = true;
+2019-03-18 17:48:12 -             }
+2019-03-18 17:48:12 -         }
+2019-03-18 17:48:12 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:12 -         n--;
+2019-03-18 17:48:12 -     }while(swap);
+2019-03-18 17:48:12 -     return arr;
+2019-03-18 17:48:12 - }
+2019-03-18 17:48:12 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:12 - {
+2019-03-18 17:48:12 -     int n = arr.Length-1;
+2019-03-18 17:48:12 -     bool swap = false;
+2019-03-18 17:48:12 -     do{
+2019-03-18 17:48:12 -         swap = false;
+2019-03-18 17:48:12 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:12 -         {
+2019-03-18 17:48:12 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:12 -             {
+2019-03-18 17:48:12 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:12 -                 swap = true;
+2019-03-18 17:48:12 -             }
+2019-03-18 17:48:12 -         }
+2019-03-18 17:48:12 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:12 -         n--;
+2019-03-18 17:48:12 -     }while(swap);
+2019-03-18 17:48:12 -     return arr;
+2019-03-18 17:48:12 - }
+2019-03-18 17:48:12 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:12 - {
+2019-03-18 17:48:12 -     int n = arr.Length-1;
+2019-03-18 17:48:12 -     bool swap = false;
+2019-03-18 17:48:12 -     do{
+2019-03-18 17:48:12 -         swap = false;
+2019-03-18 17:48:12 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:12 -         {
+2019-03-18 17:48:12 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:12 -             {
+2019-03-18 17:48:12 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:12 -                 swap = true;
+2019-03-18 17:48:12 -             }
+2019-03-18 17:48:12 -         }
+2019-03-18 17:48:12 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:12 -         n--;
+2019-03-18 17:48:12 -     }while(swap);
+2019-03-18 17:48:12 -     return arr;
+2019-03-18 17:48:12 - }
+2019-03-18 17:48:25 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:25 - {
+2019-03-18 17:48:25 -     int n = arr.Length-1;
+2019-03-18 17:48:25 -     bool swap = false;
+2019-03-18 17:48:25 -     do{
+2019-03-18 17:48:25 -         swap = false;
+2019-03-18 17:48:25 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:25 -         {
+2019-03-18 17:48:25 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:25 -             {
+2019-03-18 17:48:25 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:25 -                 swap = true;
+2019-03-18 17:48:25 -             }
+2019-03-18 17:48:25 -         }
+2019-03-18 17:48:25 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:25 -         n--;
+2019-03-18 17:48:25 -     }while(swap);
+2019-03-18 17:48:25 -     return arr;
+2019-03-18 17:48:25 - }
+2019-03-18 17:48:25 - BubbleSort(arr);
+2019-03-18 17:48:44 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:48:44 - {
+2019-03-18 17:48:44 -     int n = arr.Length-1;
+2019-03-18 17:48:44 -     bool swap = false;
+2019-03-18 17:48:44 -     do{
+2019-03-18 17:48:44 -         swap = false;
+2019-03-18 17:48:44 -         for(int i = 0;i< n;i++)
+2019-03-18 17:48:44 -         {
+2019-03-18 17:48:44 -             if(arr[i]>arr[i+1])
+2019-03-18 17:48:44 -             {
+2019-03-18 17:48:44 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:48:44 -                 swap = true;
+2019-03-18 17:48:44 -             }
+2019-03-18 17:48:44 -              PrintSteps(arr,arr.Length-n);
+2019-03-18 17:48:44 -         }
+2019-03-18 17:48:44 -         n--;
+2019-03-18 17:48:44 -     }while(swap);
+2019-03-18 17:48:44 -     return arr;
+2019-03-18 17:48:44 - }
+2019-03-18 17:48:44 - BubbleSort(arr);
+2019-03-18 17:48:58 - public void PrintSteps(int[] arr, int i)  
+2019-03-18 17:48:58 - {
+2019-03-18 17:48:58 -     Console.Write(string.Format("Step{0}: ", i));
+2019-03-18 17:48:58 -     foreach(var a in arr)
+2019-03-18 17:48:58 -         Console.Write(a+" ");
+2019-03-18 17:48:58 -     Console.WriteLine();
+2019-03-18 17:48:58 - }
+2019-03-18 17:48:58 - public void Swap(ref int a, ref int b)
+2019-03-18 17:48:58 - {
+2019-03-18 17:48:58 -     int temp = a;
+2019-03-18 17:48:58 -     a = b;
+2019-03-18 17:48:58 -     b = temp;
+2019-03-18 17:48:58 - }
+2019-03-18 17:48:58 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 17:49:07 - public int[] InsertSort(int[] arr)
+2019-03-18 17:49:07 - {
+2019-03-18 17:49:07 -     for (int i = 1; i<arr.Length;i++)
+2019-03-18 17:49:07 -     {
+2019-03-18 17:49:07 -         int temp = arr[i];
+2019-03-18 17:49:07 -         int j = i;
+2019-03-18 17:49:07 -         while(j>0 &&arr[j-1]>temp)
+2019-03-18 17:49:07 -         {
+2019-03-18 17:49:07 -             arr[j]=arr[j-1];
+2019-03-18 17:49:07 -             j--;
+2019-03-18 17:49:07 -         }
+2019-03-18 17:49:07 -         arr[j]=temp;
+2019-03-18 17:49:07 -         PrintSteps(arr,i);
+2019-03-18 17:49:07 -     }
+2019-03-18 17:49:07 -     return arr;
+2019-03-18 17:49:07 - }
+2019-03-18 17:49:07 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 17:49:07 - // Call the function
+2019-03-18 17:49:07 - InsertSort(arr);
+2019-03-18 17:49:08 - public int[] InsertSort(int[] arr)
+2019-03-18 17:49:08 - {
+2019-03-18 17:49:08 -     for (int i = 1; i<arr.Length;i++)
+2019-03-18 17:49:08 -     {
+2019-03-18 17:49:08 -         int temp = arr[i];
+2019-03-18 17:49:08 -         int j = i;
+2019-03-18 17:49:08 -         while(j>0 &&arr[j-1]>temp)
+2019-03-18 17:49:08 -         {
+2019-03-18 17:49:08 -             arr[j]=arr[j-1];
+2019-03-18 17:49:08 -             j--;
+2019-03-18 17:49:08 -         }
+2019-03-18 17:49:08 -         arr[j]=temp;
+2019-03-18 17:49:08 -         PrintSteps(arr,i);
+2019-03-18 17:49:08 -     }
+2019-03-18 17:49:08 -     return arr;
+2019-03-18 17:49:08 - }
+2019-03-18 17:49:08 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 17:49:08 - // Call the function
+2019-03-18 17:49:08 - InsertSort(arr);
+2019-03-18 17:49:15 - public int[] SelectionSort(int[] arr){
+2019-03-18 17:49:15 -     for(int i = 0; i<arr.Length;i++)
+2019-03-18 17:49:15 -     {
+2019-03-18 17:49:15 -         int minIndex = i; // smallest index
+2019-03-18 17:49:15 -         for(int j = i+1;j<arr.Length;j++)
+2019-03-18 17:49:15 -         {
+2019-03-18 17:49:15 -             if(arr[j]<arr[minIndex])
+2019-03-18 17:49:15 -                 minIndex = j;
+2019-03-18 17:49:15 -         }
+2019-03-18 17:49:15 -         // Only swap when minIndex changed
+2019-03-18 17:49:15 -         if(minIndex!=i)
+2019-03-18 17:49:15 -             Swap(ref arr[minIndex], ref arr[i]);
+2019-03-18 17:49:15 -         PrintSteps(arr,i);
+2019-03-18 17:49:15 -     }
+2019-03-18 17:49:15 -     return arr;
+2019-03-18 17:49:15 - }
+2019-03-18 17:49:15 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 17:49:15 - SelectionSort(arr);
+2019-03-18 17:49:24 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:49:24 - {
+2019-03-18 17:49:24 -     int n = arr.Length-1;
+2019-03-18 17:49:24 -     bool swap = false;
+2019-03-18 17:49:24 -     do{
+2019-03-18 17:49:24 -         swap = false;
+2019-03-18 17:49:24 -         for(int i = 0;i< n;i++)
+2019-03-18 17:49:24 -         {
+2019-03-18 17:49:24 -             if(arr[i]>arr[i+1])
+2019-03-18 17:49:24 -             {
+2019-03-18 17:49:24 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:49:24 -                 swap = true;
+2019-03-18 17:49:24 -             }
+2019-03-18 17:49:24 -              PrintSteps(arr,arr.Length-n);
+2019-03-18 17:49:24 -         }
+2019-03-18 17:49:24 -         n--;
+2019-03-18 17:49:24 -     }while(swap);
+2019-03-18 17:49:24 -     return arr;
+2019-03-18 17:49:24 - }
+2019-03-18 17:49:24 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 17:49:24 - BubbleSort(arr);
+2019-03-18 17:49:35 - public int[] BubbleSort(int[] arr)
+2019-03-18 17:49:35 - {
+2019-03-18 17:49:35 -     int n = arr.Length-1;
+2019-03-18 17:49:35 -     bool swap = false;
+2019-03-18 17:49:35 -     do{
+2019-03-18 17:49:35 -         swap = false;
+2019-03-18 17:49:35 -         for(int i = 0;i< n;i++)
+2019-03-18 17:49:35 -         {
+2019-03-18 17:49:35 -             if(arr[i]>arr[i+1])
+2019-03-18 17:49:35 -             {
+2019-03-18 17:49:35 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 17:49:35 -                 swap = true;
+2019-03-18 17:49:35 -             }
+2019-03-18 17:49:35 -         }
+2019-03-18 17:49:35 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 17:49:35 -         n--;
+2019-03-18 17:49:35 -     }while(swap);
+2019-03-18 17:49:35 -     return arr;
+2019-03-18 17:49:35 - }
+2019-03-18 17:49:35 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 17:49:35 - BubbleSort(arr);
+2019-03-18 18:01:59 - public int[] BubbleSort(int[] arr)
+2019-03-18 18:01:59 - {
+2019-03-18 18:01:59 -     int n = arr.Length-1;
+2019-03-18 18:01:59 -     bool swap = false;
+2019-03-18 18:01:59 -     do{
+2019-03-18 18:01:59 -         swap = false;
+2019-03-18 18:01:59 -         for(int i = 0;i< n;i++)
+2019-03-18 18:01:59 -         {
+2019-03-18 18:01:59 -             if(arr[i]>arr[i+1])
+2019-03-18 18:01:59 -             {
+2019-03-18 18:01:59 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 18:01:59 -                 swap = true;
+2019-03-18 18:01:59 -             }
+2019-03-18 18:01:59 -         }
+2019-03-18 18:01:59 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 18:01:59 -         n--;
+2019-03-18 18:01:59 -     }while(swap);
+2019-03-18 18:01:59 -     return arr;
+2019-03-18 18:01:59 - }
+2019-03-18 18:01:59 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 18:01:59 - BubbleSort(arr);
+2019-03-18 19:27:04 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:27:04 - {
+2019-03-18 19:27:04 -     if(arr.Count<2) return arr;
+2019-03-18 19:27:04 -     List<int> left = new List<int>();
+2019-03-18 19:27:04 -     List<int> right = new List<int>();
+2019-03-18 19:27:04 -     int mid = arr.Count/2;
+2019-03-18 19:27:04 -     left = arr.Take(mid);
+2019-03-18 19:27:04 -     right = arr.Skip(mid+1);
+2019-03-18 19:27:04 - }
+2019-03-18 19:27:04 - (9,12): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:27:04 - (10,13): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:27:04 - (1,18): error CS0161: 'MergeSort(List<int>)': not all code paths return a value
+2019-03-18 19:27:53 - using System.Collections.Generic;
+2019-03-18 19:27:53 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:27:53 - {
+2019-03-18 19:27:53 -     if(arr.Count<2) return arr;
+2019-03-18 19:27:53 -     List<int> left = new List<int>();
+2019-03-18 19:27:53 -     List<int> right = new List<int>();
+2019-03-18 19:27:53 -     int mid = arr.Count/2;
+2019-03-18 19:27:53 -     left = arr.Take(mid);
+2019-03-18 19:27:53 -     right = arr.Skip(mid+1);
+2019-03-18 19:27:53 - }
+2019-03-18 19:27:53 - (11,12): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:27:53 - (12,13): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:27:53 - (3,18): error CS0161: 'MergeSort(List<int>)': not all code paths return a value
+2019-03-18 19:28:09 - using System.Collections.Generic;
+2019-03-18 19:28:09 - using System.Linq;
+2019-03-18 19:28:09 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:28:09 - {
+2019-03-18 19:28:09 -     if(arr.Count<2) return arr;
+2019-03-18 19:28:09 -     List<int> left = new List<int>();
+2019-03-18 19:28:09 -     List<int> right = new List<int>();
+2019-03-18 19:28:09 -     int mid = arr.Count/2;
+2019-03-18 19:28:09 -     left = arr.Take(mid);
+2019-03-18 19:28:09 -     right = arr.Skip(mid+1);
+2019-03-18 19:28:09 - }
+2019-03-18 19:28:09 - (12,12): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:28:09 - (13,13): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:28:09 - (4,18): error CS0161: 'MergeSort(List<int>)': not all code paths return a value
+2019-03-18 19:28:38 - using System.Linq;
+2019-03-18 19:28:38 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:28:38 - {
+2019-03-18 19:28:38 -     if(arr.Count<2) return arr;
+2019-03-18 19:28:38 -     List<int> left = new List<int>();
+2019-03-18 19:28:38 -     List<int> right = new List<int>();
+2019-03-18 19:28:38 -     int mid = arr.Count/2;
+2019-03-18 19:28:38 -     left = arr.Take(mid);
+2019-03-18 19:28:38 -     right = arr.Skip(mid+1);
+2019-03-18 19:28:38 - }
+2019-03-18 19:28:38 - (12,12): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:28:38 - (13,13): error CS0266: Cannot implicitly convert type 'System.Collections.Generic.IEnumerable<int>' to 'System.Collections.Generic.List<int>'. An explicit conversion exists (are you missing a cast?)
+2019-03-18 19:28:38 - (4,18): error CS0161: 'MergeSort(List<int>)': not all code paths return a value
+2019-03-18 19:30:35 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:30:35 - {
+2019-03-18 19:30:35 -     if(arr.Count<2) return arr;
+2019-03-18 19:30:35 -     List<int> left = new List<int>();
+2019-03-18 19:30:35 -     List<int> right = new List<int>();
+2019-03-18 19:30:35 -     int mid = arr.Count/2;
+2019-03-18 19:30:35 -     // Dividing the unsorted list
+2019-03-18 19:30:35 -     for (int i = 0; i < middle;i++) 
+2019-03-18 19:30:35 -     {
+2019-03-18 19:30:35 -         left.Add(unsorted[i]);
+2019-03-18 19:30:35 -     }
+2019-03-18 19:30:35 -     for (int i = middle; i < arr.Count; i++)
+2019-03-18 19:30:35 -     {
+2019-03-18 19:30:35 -         right.Add(unsorted[i]);
+2019-03-18 19:30:35 -     }
+2019-03-18 19:30:35 -     left = MergetSort(left);
+2019-03-18 19:30:35 -     right = MergeSort(right);
+2019-03-18 19:30:35 -     return Merge(left, right);
+2019-03-18 19:30:35 - }
+2019-03-18 19:30:35 - (12,25): error CS0103: The name 'middle' does not exist in the current context
+2019-03-18 19:30:35 - (14,18): error CS0103: The name 'unsorted' does not exist in the current context
+2019-03-18 19:30:35 - (16,18): error CS0103: The name 'middle' does not exist in the current context
+2019-03-18 19:30:35 - (18,19): error CS0103: The name 'unsorted' does not exist in the current context
+2019-03-18 19:30:35 - (21,12): error CS0103: The name 'MergetSort' does not exist in the current context
+2019-03-18 19:30:35 - (23,12): error CS0103: The name 'Merge' does not exist in the current context
+2019-03-18 19:30:53 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:30:53 - {
+2019-03-18 19:30:53 -     if(arr.Count<2) return arr;
+2019-03-18 19:30:53 -     List<int> left = new List<int>();
+2019-03-18 19:30:53 -     List<int> right = new List<int>();
+2019-03-18 19:30:53 -     int mid = arr.Count/2;
+2019-03-18 19:30:53 -     // Dividing the unsorted list
+2019-03-18 19:30:53 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:30:53 -     {
+2019-03-18 19:30:53 -         left.Add(arr[i]);
+2019-03-18 19:30:53 -     }
+2019-03-18 19:30:53 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:30:53 -     {
+2019-03-18 19:30:53 -         right.Add(arr[i]);
+2019-03-18 19:30:53 -     }
+2019-03-18 19:30:53 -     left = MergetSort(left);
+2019-03-18 19:30:53 -     right = MergeSort(right);
+2019-03-18 19:30:53 -     return Merge(left, right);
+2019-03-18 19:30:53 - }
+2019-03-18 19:30:53 - (21,12): error CS0103: The name 'MergetSort' does not exist in the current context
+2019-03-18 19:30:53 - (23,12): error CS0103: The name 'Merge' does not exist in the current context
+2019-03-18 19:31:18 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:31:18 - {
+2019-03-18 19:31:18 -     if(arr.Count<2) return arr;
+2019-03-18 19:31:18 -     List<int> left = new List<int>();
+2019-03-18 19:31:18 -     List<int> right = new List<int>();
+2019-03-18 19:31:18 -     int mid = arr.Count/2;
+2019-03-18 19:31:18 -     // Dividing the unsorted list
+2019-03-18 19:31:18 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:31:18 -     {
+2019-03-18 19:31:18 -         left.Add(arr[i]);
+2019-03-18 19:31:18 -     }
+2019-03-18 19:31:18 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:31:18 -     {
+2019-03-18 19:31:18 -         right.Add(arr[i]);
+2019-03-18 19:31:18 -     }
+2019-03-18 19:31:18 -     left = MergeSort(left);
+2019-03-18 19:31:18 -     right = MergeSort(right);
+2019-03-18 19:31:18 -     return Merge(left, right);
+2019-03-18 19:31:18 - }
+2019-03-18 19:31:18 - (23,12): error CS0103: The name 'Merge' does not exist in the current context
+2019-03-18 19:41:00 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:41:00 - {
+2019-03-18 19:41:00 -     if(arr.Count<2) return arr;
+2019-03-18 19:41:00 -     List<int> left = new List<int>();
+2019-03-18 19:41:00 -     List<int> right = new List<int>();
+2019-03-18 19:41:00 -     int mid = arr.Count/2;
+2019-03-18 19:41:00 -     // Dividing the unsorted list
+2019-03-18 19:41:00 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:41:00 -     {
+2019-03-18 19:41:00 -         left.Add(arr[i]);
+2019-03-18 19:41:00 -     }
+2019-03-18 19:41:00 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:41:00 -     {
+2019-03-18 19:41:00 -         right.Add(arr[i]);
+2019-03-18 19:41:00 -     }
+2019-03-18 19:41:00 -     left = MergeSort(left);
+2019-03-18 19:41:00 -     right = MergeSort(right);
+2019-03-18 19:41:00 -     return Merge(left, right);
+2019-03-18 19:41:00 - }
+2019-03-18 19:41:00 - public List<int> MergeSort(List<int> left, List<int> right)
+2019-03-18 19:41:00 - {
+2019-03-18 19:41:00 -     List<int> res = new List<int>();
+2019-03-18 19:41:00 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:41:00 -     {
+2019-03-18 19:41:00 -         if(left[0]<=right[0])
+2019-03-18 19:41:00 -             result.Add(left.Remove(left[0]));
+2019-03-18 19:41:00 -         else
+2019-03-18 19:41:00 -             result.Add(right.Remove(right[0]));
+2019-03-18 19:41:00 -     }
+2019-03-18 19:41:00 - }
+2019-03-18 19:41:00 - (23,12): error CS0103: The name 'Merge' does not exist in the current context
+2019-03-18 19:41:00 - (33,13): error CS0103: The name 'result' does not exist in the current context
+2019-03-18 19:41:00 - (35,13): error CS0103: The name 'result' does not exist in the current context
+2019-03-18 19:41:00 - (26,18): error CS0161: 'MergeSort(List<int>, List<int>)': not all code paths return a value
+2019-03-18 19:41:19 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:41:19 - {
+2019-03-18 19:41:19 -     if(arr.Count<2) return arr;
+2019-03-18 19:41:19 -     List<int> left = new List<int>();
+2019-03-18 19:41:19 -     List<int> right = new List<int>();
+2019-03-18 19:41:19 -     int mid = arr.Count/2;
+2019-03-18 19:41:19 -     // Dividing the unsorted list
+2019-03-18 19:41:19 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:41:19 -     {
+2019-03-18 19:41:19 -         left.Add(arr[i]);
+2019-03-18 19:41:19 -     }
+2019-03-18 19:41:19 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:41:19 -     {
+2019-03-18 19:41:19 -         right.Add(arr[i]);
+2019-03-18 19:41:19 -     }
+2019-03-18 19:41:19 -     left = MergeSort(left);
+2019-03-18 19:41:19 -     right = MergeSort(right);
+2019-03-18 19:41:19 -     return Merge(left, right);
+2019-03-18 19:41:19 - }
+2019-03-18 19:41:19 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:41:19 - {
+2019-03-18 19:41:19 -     List<int> result = new List<int>();
+2019-03-18 19:41:19 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:41:19 -     {
+2019-03-18 19:41:19 -         if(left[0]<=right[0])
+2019-03-18 19:41:19 -             result.Add(left.Remove(left[0]));
+2019-03-18 19:41:19 -         else
+2019-03-18 19:41:19 -             result.Add(right.Remove(right[0]));
+2019-03-18 19:41:19 -     }
+2019-03-18 19:41:19 - }
+2019-03-18 19:41:19 - (33,24): error CS1503: Argument 1: cannot convert from 'bool' to 'int'
+2019-03-18 19:41:19 - (35,24): error CS1503: Argument 1: cannot convert from 'bool' to 'int'
+2019-03-18 19:41:19 - (26,18): error CS0161: 'Merge(List<int>, List<int>)': not all code paths return a value
+2019-03-18 19:44:19 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:44:19 - {
+2019-03-18 19:44:19 -     if(arr.Count<2) return arr;
+2019-03-18 19:44:19 -     List<int> left = new List<int>();
+2019-03-18 19:44:19 -     List<int> right = new List<int>();
+2019-03-18 19:44:19 -     int mid = arr.Count/2;
+2019-03-18 19:44:19 -     // Dividing the unsorted list
+2019-03-18 19:44:19 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:44:19 -     {
+2019-03-18 19:44:19 -         left.Add(arr[i]);
+2019-03-18 19:44:19 -     }
+2019-03-18 19:44:19 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:44:19 -     {
+2019-03-18 19:44:19 -         right.Add(arr[i]);
+2019-03-18 19:44:19 -     }
+2019-03-18 19:44:19 -     left = MergeSort(left);
+2019-03-18 19:44:19 -     right = MergeSort(right);
+2019-03-18 19:44:19 -     return Merge(left, right);
+2019-03-18 19:44:19 - }
+2019-03-18 19:44:19 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:44:19 - {
+2019-03-18 19:44:19 -     List<int> result = new List<int>();
+2019-03-18 19:44:19 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:44:19 -     {
+2019-03-18 19:44:19 -         if(left[0]<=right[0])
+2019-03-18 19:44:19 -             result.Add(left.RemoveAt(0));
+2019-03-18 19:44:19 -         else
+2019-03-18 19:44:19 -             result.Add(right.RemoveAt(0));
+2019-03-18 19:44:19 -     }
+2019-03-18 19:44:19 - }
+2019-03-18 19:44:19 - (33,24): error CS1503: Argument 1: cannot convert from 'void' to 'int'
+2019-03-18 19:44:19 - (35,24): error CS1503: Argument 1: cannot convert from 'void' to 'int'
+2019-03-18 19:44:19 - (26,18): error CS0161: 'Merge(List<int>, List<int>)': not all code paths return a value
+2019-03-18 19:44:20 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:44:20 - {
+2019-03-18 19:44:20 -     if(arr.Count<2) return arr;
+2019-03-18 19:44:20 -     List<int> left = new List<int>();
+2019-03-18 19:44:20 -     List<int> right = new List<int>();
+2019-03-18 19:44:20 -     int mid = arr.Count/2;
+2019-03-18 19:44:20 -     // Dividing the unsorted list
+2019-03-18 19:44:20 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:44:20 -     {
+2019-03-18 19:44:20 -         left.Add(arr[i]);
+2019-03-18 19:44:20 -     }
+2019-03-18 19:44:20 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:44:20 -     {
+2019-03-18 19:44:20 -         right.Add(arr[i]);
+2019-03-18 19:44:20 -     }
+2019-03-18 19:44:20 -     left = MergeSort(left);
+2019-03-18 19:44:20 -     right = MergeSort(right);
+2019-03-18 19:44:20 -     return Merge(left, right);
+2019-03-18 19:44:20 - }
+2019-03-18 19:44:20 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:44:20 - {
+2019-03-18 19:44:20 -     List<int> result = new List<int>();
+2019-03-18 19:44:20 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:44:20 -     {
+2019-03-18 19:44:20 -         if(left[0]<=right[0])
+2019-03-18 19:44:20 -             result.Add(left.RemoveAt(0));
+2019-03-18 19:44:20 -         else
+2019-03-18 19:44:20 -             result.Add(right.RemoveAt(0));
+2019-03-18 19:44:20 -     }
+2019-03-18 19:44:20 - }
+2019-03-18 19:44:20 - (33,24): error CS1503: Argument 1: cannot convert from 'void' to 'int'
+2019-03-18 19:44:20 - (35,24): error CS1503: Argument 1: cannot convert from 'void' to 'int'
+2019-03-18 19:44:20 - (26,18): error CS0161: 'Merge(List<int>, List<int>)': not all code paths return a value
+2019-03-18 19:53:25 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:53:25 - {
+2019-03-18 19:53:25 -     if(arr.Count<2) return arr;
+2019-03-18 19:53:25 -     List<int> left = new List<int>();
+2019-03-18 19:53:25 -     List<int> right = new List<int>();
+2019-03-18 19:53:25 -     int mid = arr.Count/2;
+2019-03-18 19:53:25 -     // Dividing the unsorted list
+2019-03-18 19:53:25 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:53:25 -     {
+2019-03-18 19:53:25 -         left.Add(arr[i]);
+2019-03-18 19:53:25 -     }
+2019-03-18 19:53:25 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:53:25 -     {
+2019-03-18 19:53:25 -         right.Add(arr[i]);
+2019-03-18 19:53:25 -     }
+2019-03-18 19:53:25 -     left = MergeSort(left);
+2019-03-18 19:53:25 -     right = MergeSort(right);
+2019-03-18 19:53:25 -     return Merge(left, right);
+2019-03-18 19:53:25 - }
+2019-03-18 19:53:25 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:53:25 - {
+2019-03-18 19:53:25 -     List<int> result = new List<int>();
+2019-03-18 19:53:25 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:53:25 -     {
+2019-03-18 19:53:25 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 19:53:25 -         {
+2019-03-18 19:53:25 -             if(left[0]<=right[0])
+2019-03-18 19:53:25 -             {
+2019-03-18 19:53:25 -                 result.Add(left[0]);
+2019-03-18 19:53:25 -                 left.RemoveAt(0);
+2019-03-18 19:53:25 -             }
+2019-03-18 19:53:25 -             else
+2019-03-18 19:53:25 -             {
+2019-03-18 19:53:25 -                 result.Add(right[0]);
+2019-03-18 19:53:25 -                 right.RemoveAt(0);
+2019-03-18 19:53:25 -             }
+2019-03-18 19:53:25 -         }
+2019-03-18 19:53:25 -         else if(left.Count>0)
+2019-03-18 19:53:25 -         {
+2019-03-18 19:53:25 -             result.Add(left[0]);
+2019-03-18 19:53:25 -             left.RemoveAt(0);
+2019-03-18 19:53:25 -         }
+2019-03-18 19:53:25 -         else if(right.Count>0){
+2019-03-18 19:53:25 -             result.Add(right[0]);
+2019-03-18 19:53:25 -             right.RemoveAt(0);        
+2019-03-18 19:53:25 -         }            
+2019-03-18 19:53:25 -     }
+2019-03-18 19:53:25 -     return result;
+2019-03-18 19:53:25 - }
+2019-03-18 19:53:25 - public int Pop(List<int> list, int index)
+2019-03-18 19:53:25 - {
+2019-03-18 19:53:25 -     int res = list[index];
+2019-03-18 19:53:25 -     list.RemoveAt(index);
+2019-03-18 19:53:25 -     return res;
+2019-03-18 19:53:25 - }
+2019-03-18 19:56:43 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:56:43 - {
+2019-03-18 19:56:43 -     if(arr.Count<2) return arr;
+2019-03-18 19:56:43 -     List<int> left = new List<int>();
+2019-03-18 19:56:43 -     List<int> right = new List<int>();
+2019-03-18 19:56:43 -     int mid = arr.Count/2;
+2019-03-18 19:56:43 -     // Dividing the unsorted list
+2019-03-18 19:56:43 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:56:43 -     {
+2019-03-18 19:56:43 -         left.Add(arr[i]);
+2019-03-18 19:56:43 -     }
+2019-03-18 19:56:43 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:56:43 -     {
+2019-03-18 19:56:43 -         right.Add(arr[i]);
+2019-03-18 19:56:43 -     }
+2019-03-18 19:56:43 -     left = MergeSort(left);
+2019-03-18 19:56:43 -     right = MergeSort(right);
+2019-03-18 19:56:43 -     return Merge(left, right);
+2019-03-18 19:56:43 - }
+2019-03-18 19:56:43 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:56:43 - {
+2019-03-18 19:56:43 -     List<int> result = new List<int>();
+2019-03-18 19:56:43 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:56:43 -     {
+2019-03-18 19:56:43 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 19:56:43 -         {
+2019-03-18 19:56:43 -             if(left[0]<=right[0])
+2019-03-18 19:56:43 -             {
+2019-03-18 19:56:43 -                 result.Add(left[0]);
+2019-03-18 19:56:43 -                 left.RemoveAt(0);
+2019-03-18 19:56:43 -             }
+2019-03-18 19:56:43 -             else
+2019-03-18 19:56:43 -             {
+2019-03-18 19:56:43 -                 result.Add(right[0]);
+2019-03-18 19:56:43 -                 right.RemoveAt(0);
+2019-03-18 19:56:43 -             }
+2019-03-18 19:56:43 -         }
+2019-03-18 19:56:43 -         else if(left.Count>0)
+2019-03-18 19:56:43 -         {
+2019-03-18 19:56:43 -             result.Add(left[0]);
+2019-03-18 19:56:43 -             left.RemoveAt(0);
+2019-03-18 19:56:43 -         }
+2019-03-18 19:56:43 -         else if(right.Count>0){
+2019-03-18 19:56:43 -             result.Add(right[0]);
+2019-03-18 19:56:43 -             right.RemoveAt(0);        
+2019-03-18 19:56:43 -         }            
+2019-03-18 19:56:43 -     }
+2019-03-18 19:56:43 -     return result;
+2019-03-18 19:56:43 - }
+2019-03-18 19:56:43 - public int Pop(List<int> list, int index)
+2019-03-18 19:56:43 - {
+2019-03-18 19:56:43 -     int res = list[index];
+2019-03-18 19:56:43 -     list.RemoveAt(index);
+2019-03-18 19:56:43 -     return res;
+2019-03-18 19:56:43 - }
+2019-03-18 19:56:43 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 19:56:43 - MergeSort(arr);
+2019-03-18 19:56:43 - PrintSteps(arr,1);
+2019-03-18 19:56:43 - (67,11): error CS1503: Argument 1: cannot convert from 'int[]' to 'System.Collections.Generic.List<int>'
+2019-03-18 19:58:09 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:58:09 - {
+2019-03-18 19:58:09 -     if(arr.Count<2) return arr;
+2019-03-18 19:58:09 -     List<int> left = new List<int>();
+2019-03-18 19:58:09 -     List<int> right = new List<int>();
+2019-03-18 19:58:09 -     int mid = arr.Count/2;
+2019-03-18 19:58:09 -     // Dividing the unsorted list
+2019-03-18 19:58:09 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:58:09 -     {
+2019-03-18 19:58:09 -         left.Add(arr[i]);
+2019-03-18 19:58:09 -     }
+2019-03-18 19:58:09 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:58:09 -     {
+2019-03-18 19:58:09 -         right.Add(arr[i]);
+2019-03-18 19:58:09 -     }
+2019-03-18 19:58:09 -     left = MergeSort(left);
+2019-03-18 19:58:09 -     right = MergeSort(right);
+2019-03-18 19:58:09 -     return Merge(left, right);
+2019-03-18 19:58:09 - }
+2019-03-18 19:58:09 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:58:09 - {
+2019-03-18 19:58:09 -     List<int> result = new List<int>();
+2019-03-18 19:58:09 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:58:09 -     {
+2019-03-18 19:58:09 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 19:58:09 -         {
+2019-03-18 19:58:09 -             if(left[0]<=right[0])
+2019-03-18 19:58:09 -             {
+2019-03-18 19:58:09 -                 result.Add(left[0]);
+2019-03-18 19:58:09 -                 left.RemoveAt(0);
+2019-03-18 19:58:09 -             }
+2019-03-18 19:58:09 -             else
+2019-03-18 19:58:09 -             {
+2019-03-18 19:58:09 -                 result.Add(right[0]);
+2019-03-18 19:58:09 -                 right.RemoveAt(0);
+2019-03-18 19:58:09 -             }
+2019-03-18 19:58:09 -         }
+2019-03-18 19:58:09 -         else if(left.Count>0)
+2019-03-18 19:58:09 -         {
+2019-03-18 19:58:09 -             result.Add(left[0]);
+2019-03-18 19:58:09 -             left.RemoveAt(0);
+2019-03-18 19:58:09 -         }
+2019-03-18 19:58:09 -         else if(right.Count>0){
+2019-03-18 19:58:09 -             result.Add(right[0]);
+2019-03-18 19:58:09 -             right.RemoveAt(0);        
+2019-03-18 19:58:09 -         }            
+2019-03-18 19:58:09 -     }
+2019-03-18 19:58:09 -     return result;
+2019-03-18 19:58:09 - }
+2019-03-18 19:58:09 - public int Pop(List<int> list, int index)
+2019-03-18 19:58:09 - {
+2019-03-18 19:58:09 -     int res = list[index];
+2019-03-18 19:58:09 -     list.RemoveAt(index);
+2019-03-18 19:58:09 -     return res;
+2019-03-18 19:58:09 - }
+2019-03-18 19:58:09 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 19:58:09 - MergeSort(arr);
+2019-03-18 19:58:09 - foreach(var i in arr)
+2019-03-18 19:58:09 - {
+2019-03-18 19:58:09 -     Console.Write(i+" ");
+2019-03-18 19:58:09 - }
+2019-03-18 19:58:09 - (67,11): error CS1503: Argument 1: cannot convert from 'int[]' to 'System.Collections.Generic.List<int>'
+2019-03-18 19:58:59 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:58:59 - {
+2019-03-18 19:58:59 -     if(arr.Count<2) return arr;
+2019-03-18 19:58:59 -     List<int> left = new List<int>();
+2019-03-18 19:58:59 -     List<int> right = new List<int>();
+2019-03-18 19:58:59 -     int mid = arr.Count/2;
+2019-03-18 19:58:59 -     // Dividing the unsorted list
+2019-03-18 19:58:59 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:58:59 -     {
+2019-03-18 19:58:59 -         left.Add(arr[i]);
+2019-03-18 19:58:59 -     }
+2019-03-18 19:58:59 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:58:59 -     {
+2019-03-18 19:58:59 -         right.Add(arr[i]);
+2019-03-18 19:58:59 -     }
+2019-03-18 19:58:59 -     left = MergeSort(left);
+2019-03-18 19:58:59 -     right = MergeSort(right);
+2019-03-18 19:58:59 -     return Merge(left, right);
+2019-03-18 19:58:59 - }
+2019-03-18 19:58:59 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:58:59 - {
+2019-03-18 19:58:59 -     List<int> result = new List<int>();
+2019-03-18 19:58:59 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:58:59 -     {
+2019-03-18 19:58:59 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 19:58:59 -         {
+2019-03-18 19:58:59 -             if(left[0]<=right[0])
+2019-03-18 19:58:59 -             {
+2019-03-18 19:58:59 -                 result.Add(left[0]);
+2019-03-18 19:58:59 -                 left.RemoveAt(0);
+2019-03-18 19:58:59 -             }
+2019-03-18 19:58:59 -             else
+2019-03-18 19:58:59 -             {
+2019-03-18 19:58:59 -                 result.Add(right[0]);
+2019-03-18 19:58:59 -                 right.RemoveAt(0);
+2019-03-18 19:58:59 -             }
+2019-03-18 19:58:59 -         }
+2019-03-18 19:58:59 -         else if(left.Count>0)
+2019-03-18 19:58:59 -         {
+2019-03-18 19:58:59 -             result.Add(left[0]);
+2019-03-18 19:58:59 -             left.RemoveAt(0);
+2019-03-18 19:58:59 -         }
+2019-03-18 19:58:59 -         else if(right.Count>0){
+2019-03-18 19:58:59 -             result.Add(right[0]);
+2019-03-18 19:58:59 -             right.RemoveAt(0);        
+2019-03-18 19:58:59 -         }            
+2019-03-18 19:58:59 -     }
+2019-03-18 19:58:59 -     return result;
+2019-03-18 19:58:59 - }
+2019-03-18 19:58:59 - public int Pop(List<int> list, int index)
+2019-03-18 19:58:59 - {
+2019-03-18 19:58:59 -     int res = list[index];
+2019-03-18 19:58:59 -     list.RemoveAt(index);
+2019-03-18 19:58:59 -     return res;
+2019-03-18 19:58:59 - }
+2019-03-18 19:58:59 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 19:58:59 - MergeSort(arr);
+2019-03-18 19:58:59 - foreach(var i in arr)
+2019-03-18 19:58:59 - {
+2019-03-18 19:58:59 -     Console.Write(i+" ");
+2019-03-18 19:58:59 - }
+2019-03-18 19:59:46 - public List<int> MergeSort(List<int> arr)
+2019-03-18 19:59:46 - {
+2019-03-18 19:59:46 -     if(arr.Count<2) return arr;
+2019-03-18 19:59:46 -     List<int> left = new List<int>();
+2019-03-18 19:59:46 -     List<int> right = new List<int>();
+2019-03-18 19:59:46 -     int mid = arr.Count/2;
+2019-03-18 19:59:46 -     // Dividing the unsorted list
+2019-03-18 19:59:46 -     for (int i = 0; i < mid;i++) 
+2019-03-18 19:59:46 -     {
+2019-03-18 19:59:46 -         left.Add(arr[i]);
+2019-03-18 19:59:46 -     }
+2019-03-18 19:59:46 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 19:59:46 -     {
+2019-03-18 19:59:46 -         right.Add(arr[i]);
+2019-03-18 19:59:46 -     }
+2019-03-18 19:59:46 -     left = MergeSort(left);
+2019-03-18 19:59:46 -     right = MergeSort(right);
+2019-03-18 19:59:46 -     return Merge(left, right);
+2019-03-18 19:59:46 - }
+2019-03-18 19:59:46 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 19:59:46 - {
+2019-03-18 19:59:46 -     List<int> result = new List<int>();
+2019-03-18 19:59:46 -     while(left.Count>0||right.Count>0)
+2019-03-18 19:59:46 -     {
+2019-03-18 19:59:46 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 19:59:46 -         {
+2019-03-18 19:59:46 -             if(left[0]<=right[0])
+2019-03-18 19:59:46 -             {
+2019-03-18 19:59:46 -                 result.Add(left[0]);
+2019-03-18 19:59:46 -                 left.RemoveAt(0);
+2019-03-18 19:59:46 -             }
+2019-03-18 19:59:46 -             else
+2019-03-18 19:59:46 -             {
+2019-03-18 19:59:46 -                 result.Add(right[0]);
+2019-03-18 19:59:46 -                 right.RemoveAt(0);
+2019-03-18 19:59:46 -             }
+2019-03-18 19:59:46 -         }
+2019-03-18 19:59:46 -         else if(left.Count>0)
+2019-03-18 19:59:46 -         {
+2019-03-18 19:59:46 -             result.Add(left[0]);
+2019-03-18 19:59:46 -             left.RemoveAt(0);
+2019-03-18 19:59:46 -         }
+2019-03-18 19:59:46 -         else if(right.Count>0){
+2019-03-18 19:59:46 -             result.Add(right[0]);
+2019-03-18 19:59:46 -             right.RemoveAt(0);        
+2019-03-18 19:59:46 -         }            
+2019-03-18 19:59:46 -     }
+2019-03-18 19:59:46 -     return result;
+2019-03-18 19:59:46 - }
+2019-03-18 19:59:46 - public int Pop(List<int> list, int index)
+2019-03-18 19:59:46 - {
+2019-03-18 19:59:46 -     int res = list[index];
+2019-03-18 19:59:46 -     list.RemoveAt(index);
+2019-03-18 19:59:46 -     return res;
+2019-03-18 19:59:46 - }
+2019-03-18 19:59:46 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 19:59:46 - MergeSort(arr);
+2019-03-18 19:59:46 - foreach(var i in arr)
+2019-03-18 19:59:46 - {
+2019-03-18 19:59:46 -     Console.Write(i+" ");
+2019-03-18 19:59:46 - }
+2019-03-18 20:01:27 - private List<int> MergeSort(List<int> unsorted)
+2019-03-18 20:01:27 - {
+2019-03-18 20:01:27 -     if (unsorted.Count <= 1)
+2019-03-18 20:01:27 -         return unsorted;
+2019-03-18 20:01:27 -     List<int> left = new List<int>();
+2019-03-18 20:01:27 -     List<int> right = new List<int>();
+2019-03-18 20:01:27 -     int middle = unsorted.Count / 2;
+2019-03-18 20:01:27 -     for (int i = 0; i < middle;i++)  //Dividing the unsorted list
+2019-03-18 20:01:27 -     {
+2019-03-18 20:01:27 -         left.Add(unsorted[i]);
+2019-03-18 20:01:27 -     }
+2019-03-18 20:01:27 -     for (int i = middle; i < unsorted.Count; i++)
+2019-03-18 20:01:27 -     {
+2019-03-18 20:01:27 -         right.Add(unsorted[i]);
+2019-03-18 20:01:27 -     }
+2019-03-18 20:01:27 -     left = MergeSort(left);
+2019-03-18 20:01:27 -     right = MergeSort(right);
+2019-03-18 20:01:27 -     return Merge(left, right);
+2019-03-18 20:01:27 - }
+2019-03-18 20:01:27 - private List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:01:27 - {
+2019-03-18 20:01:27 -     List<int> result = new List<int>();
+2019-03-18 20:01:27 -     while(left.Count > 0 || right.Count>0)
+2019-03-18 20:01:27 -     {
+2019-03-18 20:01:27 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:01:27 -         {
+2019-03-18 20:01:27 -             if (left.First() <= right.First())  //Comparing First two elements to see which is smaller
+2019-03-18 20:01:27 -             {
+2019-03-18 20:01:27 -                 result.Add(left.First());
+2019-03-18 20:01:27 -                 left.Remove(left.First());      //Rest of the list minus the first element
+2019-03-18 20:01:27 -             }
+2019-03-18 20:01:27 -             else
+2019-03-18 20:01:27 -             {
+2019-03-18 20:01:27 -                 result.Add(right.First());
+2019-03-18 20:01:27 -                 right.Remove(right.First());
+2019-03-18 20:01:27 -             }
+2019-03-18 20:01:27 -         }
+2019-03-18 20:01:27 -         else if(left.Count>0)
+2019-03-18 20:01:27 -         {
+2019-03-18 20:01:27 -             result.Add(left.First());
+2019-03-18 20:01:27 -             left.Remove(left.First());
+2019-03-18 20:01:27 -         }
+2019-03-18 20:01:27 -         else if (right.Count > 0)
+2019-03-18 20:01:27 -         {
+2019-03-18 20:01:27 -             result.Add(right.First());
+2019-03-18 20:01:27 -             right.Remove(right.First());    
+2019-03-18 20:01:27 -         }    
+2019-03-18 20:01:27 -     }
+2019-03-18 20:01:27 -     return result;
+2019-03-18 20:01:27 - }
+2019-03-18 20:01:27 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:01:27 - MergeSort(arr);
+2019-03-18 20:01:27 - foreach(var i in arr)
+2019-03-18 20:01:27 - {
+2019-03-18 20:01:27 -     Console.Write(i+" ");
+2019-03-18 20:01:27 - }
+2019-03-18 20:01:27 - (32,17): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (32,33): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (34,28): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (35,29): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (39,28): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (40,30): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (45,24): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (46,25): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (50,24): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:01:27 - (52,26): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:03:09 - private List<int> MergeSort(List<int> unsorted)
+2019-03-18 20:03:09 - {
+2019-03-18 20:03:09 -     if (unsorted.Count <= 1)
+2019-03-18 20:03:09 -         return unsorted;
+2019-03-18 20:03:09 -     List<int> left = new List<int>();
+2019-03-18 20:03:09 -     List<int> right = new List<int>();
+2019-03-18 20:03:09 -     int middle = unsorted.Count / 2;
+2019-03-18 20:03:09 -     for (int i = 0; i < middle;i++)  //Dividing the unsorted list
+2019-03-18 20:03:09 -     {
+2019-03-18 20:03:09 -         left.Add(unsorted[i]);
+2019-03-18 20:03:09 -     }
+2019-03-18 20:03:09 -     for (int i = middle; i < unsorted.Count; i++)
+2019-03-18 20:03:09 -     {
+2019-03-18 20:03:09 -         right.Add(unsorted[i]);
+2019-03-18 20:03:09 -     }
+2019-03-18 20:03:09 -     left = MergeSort(left);
+2019-03-18 20:03:09 -     right = MergeSort(right);
+2019-03-18 20:03:09 -     return Merge(left, right);
+2019-03-18 20:03:09 - }
+2019-03-18 20:03:09 - private List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:03:09 - {
+2019-03-18 20:03:09 -     List<int> result = new List<int>();
+2019-03-18 20:03:09 -     while(left.Count > 0 || right.Count>0)
+2019-03-18 20:03:09 -     {
+2019-03-18 20:03:09 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:03:09 -         {
+2019-03-18 20:03:09 -             if (left[0] <= right[0])  //Comparing First two elements to see which is smaller
+2019-03-18 20:03:09 -             {
+2019-03-18 20:03:09 -                 result.Add(left[0]);
+2019-03-18 20:03:09 -                 left.Remove(left[0] );      //Rest of the list minus the first element
+2019-03-18 20:03:09 -             }
+2019-03-18 20:03:09 -             else
+2019-03-18 20:03:09 -             {
+2019-03-18 20:03:09 -                 result.Add(right[0]);
+2019-03-18 20:03:09 -                 right.Remove(right[0]);
+2019-03-18 20:03:09 -             }
+2019-03-18 20:03:09 -         }
+2019-03-18 20:03:09 -         else if(left.Count>0)
+2019-03-18 20:03:09 -         {
+2019-03-18 20:03:09 -             result.Add(left[0] );
+2019-03-18 20:03:09 -             left.Remove(left[0] );
+2019-03-18 20:03:09 -         }
+2019-03-18 20:03:09 -         else if (right.Count > 0)
+2019-03-18 20:03:09 -         {
+2019-03-18 20:03:09 -             result.Add(right[0]);
+2019-03-18 20:03:09 -             right.Remove(right[0]);    
+2019-03-18 20:03:09 -         }    
+2019-03-18 20:03:09 -     }
+2019-03-18 20:03:09 -     return result;
+2019-03-18 20:03:09 - }
+2019-03-18 20:03:09 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:03:09 - MergeSort(arr);
+2019-03-18 20:03:09 - foreach(var i in arr)
+2019-03-18 20:03:09 - {
+2019-03-18 20:03:09 -     Console.Write(i+" ");
+2019-03-18 20:03:09 - }
+2019-03-18 20:03:15 - private List<int> MergeSort(List<int> unsorted)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     if (unsorted.Count <= 1)
+2019-03-18 20:03:15 -         return unsorted;
+2019-03-18 20:03:15 -     List<int> left = new List<int>();
+2019-03-18 20:03:15 -     List<int> right = new List<int>();
+2019-03-18 20:03:15 -     int middle = unsorted.Count / 2;
+2019-03-18 20:03:15 -     for (int i = 0; i < middle;i++)  //Dividing the unsorted list
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         left.Add(unsorted[i]);
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     for (int i = middle; i < unsorted.Count; i++)
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         right.Add(unsorted[i]);
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     left = MergeSort(left);
+2019-03-18 20:03:15 -     right = MergeSort(right);
+2019-03-18 20:03:15 -     return Merge(left, right);
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - private List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     List<int> result = new List<int>();
+2019-03-18 20:03:15 -     while(left.Count > 0 || right.Count>0)
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             if (left[0] <= right[0])  //Comparing First two elements to see which is smaller
+2019-03-18 20:03:15 -             {
+2019-03-18 20:03:15 -                 result.Add(left[0]);
+2019-03-18 20:03:15 -                 left.Remove(left[0] );      //Rest of the list minus the first element
+2019-03-18 20:03:15 -             }
+2019-03-18 20:03:15 -             else
+2019-03-18 20:03:15 -             {
+2019-03-18 20:03:15 -                 result.Add(right[0]);
+2019-03-18 20:03:15 -                 right.Remove(right[0]);
+2019-03-18 20:03:15 -             }
+2019-03-18 20:03:15 -         }
+2019-03-18 20:03:15 -         else if(left.Count>0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             result.Add(left[0] );
+2019-03-18 20:03:15 -             left.Remove(left[0] );
+2019-03-18 20:03:15 -         }
+2019-03-18 20:03:15 -         else if (right.Count > 0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             result.Add(right[0]);
+2019-03-18 20:03:15 -             right.Remove(right[0]);    
+2019-03-18 20:03:15 -         }    
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     return result;
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:03:15 - MergeSort(arr);
+2019-03-18 20:03:15 - foreach(var i in arr)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     Console.Write(i+" ");
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - private List<int> MergeSort(List<int> unsorted)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     if (unsorted.Count <= 1)
+2019-03-18 20:03:15 -         return unsorted;
+2019-03-18 20:03:15 -     List<int> left = new List<int>();
+2019-03-18 20:03:15 -     List<int> right = new List<int>();
+2019-03-18 20:03:15 -     int middle = unsorted.Count / 2;
+2019-03-18 20:03:15 -     for (int i = 0; i < middle;i++)  //Dividing the unsorted list
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         left.Add(unsorted[i]);
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     for (int i = middle; i < unsorted.Count; i++)
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         right.Add(unsorted[i]);
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     left = MergeSort(left);
+2019-03-18 20:03:15 -     right = MergeSort(right);
+2019-03-18 20:03:15 -     return Merge(left, right);
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - private List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     List<int> result = new List<int>();
+2019-03-18 20:03:15 -     while(left.Count > 0 || right.Count>0)
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             if (left[0] <= right[0])  //Comparing First two elements to see which is smaller
+2019-03-18 20:03:15 -             {
+2019-03-18 20:03:15 -                 result.Add(left[0]);
+2019-03-18 20:03:15 -                 left.Remove(left[0] );      //Rest of the list minus the first element
+2019-03-18 20:03:15 -             }
+2019-03-18 20:03:15 -             else
+2019-03-18 20:03:15 -             {
+2019-03-18 20:03:15 -                 result.Add(right[0]);
+2019-03-18 20:03:15 -                 right.Remove(right[0]);
+2019-03-18 20:03:15 -             }
+2019-03-18 20:03:15 -         }
+2019-03-18 20:03:15 -         else if(left.Count>0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             result.Add(left[0] );
+2019-03-18 20:03:15 -             left.Remove(left[0] );
+2019-03-18 20:03:15 -         }
+2019-03-18 20:03:15 -         else if (right.Count > 0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             result.Add(right[0]);
+2019-03-18 20:03:15 -             right.Remove(right[0]);    
+2019-03-18 20:03:15 -         }    
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     return result;
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:03:15 - MergeSort(arr);
+2019-03-18 20:03:15 - foreach(var i in arr)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     Console.Write(i+" ");
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - private List<int> MergeSort(List<int> unsorted)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     if (unsorted.Count <= 1)
+2019-03-18 20:03:15 -         return unsorted;
+2019-03-18 20:03:15 -     List<int> left = new List<int>();
+2019-03-18 20:03:15 -     List<int> right = new List<int>();
+2019-03-18 20:03:15 -     int middle = unsorted.Count / 2;
+2019-03-18 20:03:15 -     for (int i = 0; i < middle;i++)  //Dividing the unsorted list
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         left.Add(unsorted[i]);
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     for (int i = middle; i < unsorted.Count; i++)
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         right.Add(unsorted[i]);
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     left = MergeSort(left);
+2019-03-18 20:03:15 -     right = MergeSort(right);
+2019-03-18 20:03:15 -     return Merge(left, right);
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - private List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     List<int> result = new List<int>();
+2019-03-18 20:03:15 -     while(left.Count > 0 || right.Count>0)
+2019-03-18 20:03:15 -     {
+2019-03-18 20:03:15 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             if (left[0] <= right[0])  //Comparing First two elements to see which is smaller
+2019-03-18 20:03:15 -             {
+2019-03-18 20:03:15 -                 result.Add(left[0]);
+2019-03-18 20:03:15 -                 left.Remove(left[0] );      //Rest of the list minus the first element
+2019-03-18 20:03:15 -             }
+2019-03-18 20:03:15 -             else
+2019-03-18 20:03:15 -             {
+2019-03-18 20:03:15 -                 result.Add(right[0]);
+2019-03-18 20:03:15 -                 right.Remove(right[0]);
+2019-03-18 20:03:15 -             }
+2019-03-18 20:03:15 -         }
+2019-03-18 20:03:15 -         else if(left.Count>0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             result.Add(left[0] );
+2019-03-18 20:03:15 -             left.Remove(left[0] );
+2019-03-18 20:03:15 -         }
+2019-03-18 20:03:15 -         else if (right.Count > 0)
+2019-03-18 20:03:15 -         {
+2019-03-18 20:03:15 -             result.Add(right[0]);
+2019-03-18 20:03:15 -             right.Remove(right[0]);    
+2019-03-18 20:03:15 -         }    
+2019-03-18 20:03:15 -     }
+2019-03-18 20:03:15 -     return result;
+2019-03-18 20:03:15 - }
+2019-03-18 20:03:15 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:03:15 - MergeSort(arr);
+2019-03-18 20:03:15 - foreach(var i in arr)
+2019-03-18 20:03:15 - {
+2019-03-18 20:03:15 -     Console.Write(i+" ");
+2019-03-18 20:03:15 - }
+2019-03-18 20:05:38 - private List<int> MergeSort(List<int> unsorted)
+2019-03-18 20:05:38 - {
+2019-03-18 20:05:38 -     if (unsorted.Count <= 1)
+2019-03-18 20:05:38 -         return unsorted;
+2019-03-18 20:05:38 -     List<int> left = new List<int>();
+2019-03-18 20:05:38 -     List<int> right = new List<int>();
+2019-03-18 20:05:38 -     int middle = unsorted.Count / 2;
+2019-03-18 20:05:38 -     for (int i = 0; i < middle;i++)  //Dividing the unsorted list
+2019-03-18 20:05:38 -     {
+2019-03-18 20:05:38 -         left.Add(unsorted[i]);
+2019-03-18 20:05:38 -     }
+2019-03-18 20:05:38 -     for (int i = middle; i < unsorted.Count; i++)
+2019-03-18 20:05:38 -     {
+2019-03-18 20:05:38 -         right.Add(unsorted[i]);
+2019-03-18 20:05:38 -     }
+2019-03-18 20:05:38 -     left = MergeSort(left);
+2019-03-18 20:05:38 -     right = MergeSort(right);
+2019-03-18 20:05:38 -     return Merge(left, right);
+2019-03-18 20:05:38 - }
+2019-03-18 20:05:38 - private List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:05:38 - {
+2019-03-18 20:05:38 -     List<int> result = new List<int>();
+2019-03-18 20:05:38 -     while(left.Count > 0 || right.Count>0)
+2019-03-18 20:05:38 -     {
+2019-03-18 20:05:38 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:05:38 -         {
+2019-03-18 20:05:38 -             if (left.First() <= right.First())  //Comparing First two elements to see which is smaller
+2019-03-18 20:05:38 -             {
+2019-03-18 20:05:38 -                 result.Add(left.First());
+2019-03-18 20:05:38 -                 left.Remove(left.First());      //Rest of the list minus the first element
+2019-03-18 20:05:38 -             }
+2019-03-18 20:05:38 -             else
+2019-03-18 20:05:38 -             {
+2019-03-18 20:05:38 -                 result.Add(right.First());
+2019-03-18 20:05:38 -                 right.Remove(right.First());
+2019-03-18 20:05:38 -             }
+2019-03-18 20:05:38 -         }
+2019-03-18 20:05:38 -         else if(left.Count>0)
+2019-03-18 20:05:38 -         {
+2019-03-18 20:05:38 -             result.Add(left.First());
+2019-03-18 20:05:38 -             left.Remove(left.First());
+2019-03-18 20:05:38 -         }
+2019-03-18 20:05:38 -         else if (right.Count > 0)
+2019-03-18 20:05:38 -         {
+2019-03-18 20:05:38 -             result.Add(right.First());
+2019-03-18 20:05:38 -             right.Remove(right.First());    
+2019-03-18 20:05:38 -         }    
+2019-03-18 20:05:38 -     }
+2019-03-18 20:05:38 -     return result;
+2019-03-18 20:05:38 - }
+2019-03-18 20:05:38 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:05:38 - MergeSort(arr);
+2019-03-18 20:05:38 - foreach(var i in arr)
+2019-03-18 20:05:38 - {
+2019-03-18 20:05:38 -     Console.Write(i+" ");
+2019-03-18 20:05:38 - }
+2019-03-18 20:05:38 - (32,17): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (32,33): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (34,28): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (35,29): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (39,28): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (40,30): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (45,24): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (46,25): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (50,24): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:05:38 - (52,26): error CS0012: The type 'ValueType' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+2019-03-18 20:10:04 - public List<int> MergeSort(List<int> arr)
+2019-03-18 20:10:04 - {
+2019-03-18 20:10:04 -     if(arr.Count<2) return arr;
+2019-03-18 20:10:04 -     List<int> left = new List<int>();
+2019-03-18 20:10:04 -     List<int> right = new List<int>();
+2019-03-18 20:10:04 -     int mid = arr.Count/2;
+2019-03-18 20:10:04 -     // Dividing the unsorted list
+2019-03-18 20:10:04 -     for (int i = 0; i < mid;i++) 
+2019-03-18 20:10:04 -     {
+2019-03-18 20:10:04 -         left.Add(arr[i]);
+2019-03-18 20:10:04 -     }
+2019-03-18 20:10:04 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 20:10:04 -     {
+2019-03-18 20:10:04 -         right.Add(arr[i]);
+2019-03-18 20:10:04 -     }
+2019-03-18 20:10:04 -     left = MergeSort(left);
+2019-03-18 20:10:04 -     right = MergeSort(right);
+2019-03-18 20:10:04 -     return Merge(left, right);
+2019-03-18 20:10:04 - }
+2019-03-18 20:10:04 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:10:04 - {
+2019-03-18 20:10:04 -     List<int> result = new List<int>();
+2019-03-18 20:10:04 -     while(left.Count>0||right.Count>0)
+2019-03-18 20:10:04 -     {
+2019-03-18 20:10:04 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:10:04 -         {
+2019-03-18 20:10:04 -             if(left[0]<=right[0])
+2019-03-18 20:10:04 -             {
+2019-03-18 20:10:04 -                 result.Add(left[0]);
+2019-03-18 20:10:04 -                 left.RemoveAt(0);
+2019-03-18 20:10:04 -             }
+2019-03-18 20:10:04 -             else
+2019-03-18 20:10:04 -             {
+2019-03-18 20:10:04 -                 result.Add(right[0]);
+2019-03-18 20:10:04 -                 right.RemoveAt(0);
+2019-03-18 20:10:04 -             }
+2019-03-18 20:10:04 -         }
+2019-03-18 20:10:04 -         else if(left.Count>0)
+2019-03-18 20:10:04 -         {
+2019-03-18 20:10:04 -             result.Add(left[0]);
+2019-03-18 20:10:04 -             left.RemoveAt(0);
+2019-03-18 20:10:04 -         }
+2019-03-18 20:10:04 -         else if(right.Count>0){
+2019-03-18 20:10:04 -             result.Add(right[0]);
+2019-03-18 20:10:04 -             right.RemoveAt(0);        
+2019-03-18 20:10:04 -         }            
+2019-03-18 20:10:04 -     }
+2019-03-18 20:10:04 -     return result;
+2019-03-18 20:10:04 - }
+2019-03-18 20:10:04 - public int Pop(List<int> list, int index)
+2019-03-18 20:10:04 - {
+2019-03-18 20:10:04 -     int res = list[index];
+2019-03-18 20:10:04 -     list.RemoveAt(index);
+2019-03-18 20:10:04 -     return res;
+2019-03-18 20:10:04 - }
+2019-03-18 20:10:04 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:10:04 - MergeSort(arr);
+2019-03-18 20:10:04 - foreach(var i in arr)
+2019-03-18 20:10:04 - {
+2019-03-18 20:10:04 -     Console.Write(i+" ");
+2019-03-18 20:10:04 - }
+2019-03-18 20:10:19 - public List<int> MergeSort(List<int> arr)
+2019-03-18 20:10:19 - {
+2019-03-18 20:10:19 -     if(arr.Count<2) return arr;
+2019-03-18 20:10:19 -     List<int> left = new List<int>();
+2019-03-18 20:10:19 -     List<int> right = new List<int>();
+2019-03-18 20:10:19 -     int mid = arr.Count/2;
+2019-03-18 20:10:19 -     // Dividing the unsorted list
+2019-03-18 20:10:19 -     for (int i = 0; i < mid;i++) 
+2019-03-18 20:10:19 -     {
+2019-03-18 20:10:19 -         left.Add(arr[i]);
+2019-03-18 20:10:19 -     }
+2019-03-18 20:10:19 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 20:10:19 -     {
+2019-03-18 20:10:19 -         right.Add(arr[i]);
+2019-03-18 20:10:19 -     }
+2019-03-18 20:10:19 -     left = MergeSort(left);
+2019-03-18 20:10:19 -     right = MergeSort(right);
+2019-03-18 20:10:19 -     return Merge(left, right);
+2019-03-18 20:10:19 - }
+2019-03-18 20:10:19 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:10:19 - {
+2019-03-18 20:10:19 -     List<int> result = new List<int>();
+2019-03-18 20:10:19 -     while(left.Count>0||right.Count>0)
+2019-03-18 20:10:19 -     {
+2019-03-18 20:10:19 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:10:19 -         {
+2019-03-18 20:10:19 -             if(left[0]<=right[0])
+2019-03-18 20:10:19 -             {
+2019-03-18 20:10:19 -                 result.Add(left[0]);
+2019-03-18 20:10:19 -                 left.RemoveAt(0);
+2019-03-18 20:10:19 -             }
+2019-03-18 20:10:19 -             else
+2019-03-18 20:10:19 -             {
+2019-03-18 20:10:19 -                 result.Add(right[0]);
+2019-03-18 20:10:19 -                 right.RemoveAt(0);
+2019-03-18 20:10:19 -             }
+2019-03-18 20:10:19 -         }
+2019-03-18 20:10:19 -         else if(left.Count>0)
+2019-03-18 20:10:19 -         {
+2019-03-18 20:10:19 -             result.Add(left[0]);
+2019-03-18 20:10:19 -             left.RemoveAt(0);
+2019-03-18 20:10:19 -         }
+2019-03-18 20:10:19 -         else if(right.Count>0){
+2019-03-18 20:10:19 -             result.Add(right[0]);
+2019-03-18 20:10:19 -             right.RemoveAt(0);        
+2019-03-18 20:10:19 -         }            
+2019-03-18 20:10:19 -     }
+2019-03-18 20:10:19 -     return result;
+2019-03-18 20:10:19 - }
+2019-03-18 20:10:19 - public int Pop(List<int> list, int index)
+2019-03-18 20:10:19 - {
+2019-03-18 20:10:19 -     int res = list[index];
+2019-03-18 20:10:19 -     list.RemoveAt(index);
+2019-03-18 20:10:19 -     return res;
+2019-03-18 20:10:19 - }
+2019-03-18 20:10:19 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:10:19 - list = MergeSort(arr);
+2019-03-18 20:10:19 - foreach(var i in list)
+2019-03-18 20:10:19 - {
+2019-03-18 20:10:19 -     Console.Write(i+" ");
+2019-03-18 20:10:19 - }
+2019-03-18 20:10:19 - (67,1): error CS0103: The name 'list' does not exist in the current context
+2019-03-18 20:10:19 - (68,18): error CS0103: The name 'list' does not exist in the current context
+2019-03-18 20:10:28 - public List<int> MergeSort(List<int> arr)
+2019-03-18 20:10:28 - {
+2019-03-18 20:10:28 -     if(arr.Count<2) return arr;
+2019-03-18 20:10:28 -     List<int> left = new List<int>();
+2019-03-18 20:10:28 -     List<int> right = new List<int>();
+2019-03-18 20:10:28 -     int mid = arr.Count/2;
+2019-03-18 20:10:28 -     // Dividing the unsorted list
+2019-03-18 20:10:28 -     for (int i = 0; i < mid;i++) 
+2019-03-18 20:10:28 -     {
+2019-03-18 20:10:28 -         left.Add(arr[i]);
+2019-03-18 20:10:28 -     }
+2019-03-18 20:10:28 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 20:10:28 -     {
+2019-03-18 20:10:28 -         right.Add(arr[i]);
+2019-03-18 20:10:28 -     }
+2019-03-18 20:10:28 -     left = MergeSort(left);
+2019-03-18 20:10:28 -     right = MergeSort(right);
+2019-03-18 20:10:28 -     return Merge(left, right);
+2019-03-18 20:10:28 - }
+2019-03-18 20:10:28 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 20:10:28 - {
+2019-03-18 20:10:28 -     List<int> result = new List<int>();
+2019-03-18 20:10:28 -     while(left.Count>0||right.Count>0)
+2019-03-18 20:10:28 -     {
+2019-03-18 20:10:28 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 20:10:28 -         {
+2019-03-18 20:10:28 -             if(left[0]<=right[0])
+2019-03-18 20:10:28 -             {
+2019-03-18 20:10:28 -                 result.Add(left[0]);
+2019-03-18 20:10:28 -                 left.RemoveAt(0);
+2019-03-18 20:10:28 -             }
+2019-03-18 20:10:28 -             else
+2019-03-18 20:10:28 -             {
+2019-03-18 20:10:28 -                 result.Add(right[0]);
+2019-03-18 20:10:28 -                 right.RemoveAt(0);
+2019-03-18 20:10:28 -             }
+2019-03-18 20:10:28 -         }
+2019-03-18 20:10:28 -         else if(left.Count>0)
+2019-03-18 20:10:28 -         {
+2019-03-18 20:10:28 -             result.Add(left[0]);
+2019-03-18 20:10:28 -             left.RemoveAt(0);
+2019-03-18 20:10:28 -         }
+2019-03-18 20:10:28 -         else if(right.Count>0){
+2019-03-18 20:10:28 -             result.Add(right[0]);
+2019-03-18 20:10:28 -             right.RemoveAt(0);        
+2019-03-18 20:10:28 -         }            
+2019-03-18 20:10:28 -     }
+2019-03-18 20:10:28 -     return result;
+2019-03-18 20:10:28 - }
+2019-03-18 20:10:28 - public int Pop(List<int> list, int index)
+2019-03-18 20:10:28 - {
+2019-03-18 20:10:28 -     int res = list[index];
+2019-03-18 20:10:28 -     list.RemoveAt(index);
+2019-03-18 20:10:28 -     return res;
+2019-03-18 20:10:28 - }
+2019-03-18 20:10:28 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 20:10:28 - List<int>list = MergeSort(arr);
+2019-03-18 20:10:28 - foreach(var i in list)
+2019-03-18 20:10:28 - {
+2019-03-18 20:10:28 -     Console.Write(i+" ");
+2019-03-18 20:10:28 - }
