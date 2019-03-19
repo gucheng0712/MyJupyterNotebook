@@ -1,0 +1,1966 @@
+2019-03-18 23:10:30 - using System;
+2019-03-18 23:10:30 - using System.Collections.Generic;
+2019-03-18 23:10:30 - using System.Linq;
+2019-03-18 23:10:30 - using System.Text;
+2019-03-18 23:10:30 - using System.Threading.Tasks;
+2019-03-18 23:10:30 - using ICSharp.Kernel;
+2019-03-18 23:10:30 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-18 23:10:31 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-03-18 23:15:12 - public void PrintSteps(int[] arr, int i)  
+2019-03-18 23:15:12 - {
+2019-03-18 23:15:12 -     Console.Write(string.Format("Step{0}: ", i));
+2019-03-18 23:15:12 -     foreach(var a in arr)
+2019-03-18 23:15:12 -         Console.Write(a+" ");
+2019-03-18 23:15:12 -     Console.WriteLine();
+2019-03-18 23:15:12 - }
+2019-03-18 23:15:12 - public void Swap(ref int a, ref int b)
+2019-03-18 23:15:12 - {
+2019-03-18 23:15:12 -     int temp = a;
+2019-03-18 23:15:12 -     a = b;
+2019-03-18 23:15:12 -     b = temp;
+2019-03-18 23:15:12 - }
+2019-03-18 23:15:15 - public int[] InsertSort(int[] arr)
+2019-03-18 23:15:15 - {
+2019-03-18 23:15:15 -     for (int i = 1; i<arr.Length;i++)
+2019-03-18 23:15:15 -     {
+2019-03-18 23:15:15 -         int temp = arr[i];
+2019-03-18 23:15:15 -         int j = i;
+2019-03-18 23:15:15 -         while(j>0 &&arr[j-1]>temp)
+2019-03-18 23:15:15 -         {
+2019-03-18 23:15:15 -             arr[j]=arr[j-1];
+2019-03-18 23:15:15 -             j--;
+2019-03-18 23:15:15 -         }
+2019-03-18 23:15:15 -         arr[j]=temp;
+2019-03-18 23:15:15 -         PrintSteps(arr,i);
+2019-03-18 23:15:15 -     }
+2019-03-18 23:15:15 -     return arr;
+2019-03-18 23:15:15 - }
+2019-03-18 23:15:15 - // Testing
+2019-03-18 23:15:15 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:15:15 - InsertSort(arr);
+2019-03-18 23:15:17 - public int[] SelectionSort(int[] arr){
+2019-03-18 23:15:17 -     for(int i = 0; i<arr.Length;i++)
+2019-03-18 23:15:17 -     {
+2019-03-18 23:15:17 -         int minIndex = i; // smallest index
+2019-03-18 23:15:17 -         for(int j = i+1;j<arr.Length;j++)
+2019-03-18 23:15:17 -         {
+2019-03-18 23:15:17 -             if(arr[j]<arr[minIndex])
+2019-03-18 23:15:17 -                 minIndex = j;
+2019-03-18 23:15:17 -         }
+2019-03-18 23:15:17 -         // Only swap when minIndex changed
+2019-03-18 23:15:17 -         if(minIndex!=i)
+2019-03-18 23:15:17 -             Swap(ref arr[minIndex], ref arr[i]);
+2019-03-18 23:15:17 -         PrintSteps(arr,i);
+2019-03-18 23:15:17 -     }
+2019-03-18 23:15:17 -     return arr;
+2019-03-18 23:15:17 - }
+2019-03-18 23:15:17 - // Testing
+2019-03-18 23:15:17 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:15:17 - SelectionSort(arr);
+2019-03-18 23:15:20 - public int[] BubbleSort(int[] arr)
+2019-03-18 23:15:20 - {
+2019-03-18 23:15:20 -     int n = arr.Length-1;
+2019-03-18 23:15:20 -     bool swap = false;
+2019-03-18 23:15:20 -     do{
+2019-03-18 23:15:20 -         swap = false;
+2019-03-18 23:15:20 -         for(int i = 0;i< n;i++)
+2019-03-18 23:15:20 -         {
+2019-03-18 23:15:20 -             if(arr[i]>arr[i+1])
+2019-03-18 23:15:20 -             {
+2019-03-18 23:15:20 -                 Swap(ref arr[i], ref arr[i+1]);
+2019-03-18 23:15:20 -                 swap = true;
+2019-03-18 23:15:20 -             }
+2019-03-18 23:15:20 -         }
+2019-03-18 23:15:20 -         PrintSteps(arr,arr.Length-n);
+2019-03-18 23:15:20 -         n--;
+2019-03-18 23:15:20 -     }while(swap);
+2019-03-18 23:15:20 -     return arr;
+2019-03-18 23:15:20 - }
+2019-03-18 23:15:20 - // Testing
+2019-03-18 23:15:20 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:15:20 - BubbleSort(arr);
+2019-03-18 23:15:22 - public List<int> MergeSort(List<int> arr)
+2019-03-18 23:15:22 - {
+2019-03-18 23:15:22 -     if(arr.Count<2) return arr;
+2019-03-18 23:15:22 -     List<int> left = new List<int>();
+2019-03-18 23:15:22 -     List<int> right = new List<int>();
+2019-03-18 23:15:22 -     int mid = arr.Count/2;
+2019-03-18 23:15:22 -     // Dividing the unsorted list
+2019-03-18 23:15:22 -     for (int i = 0; i < mid;i++) 
+2019-03-18 23:15:22 -     {
+2019-03-18 23:15:22 -         left.Add(arr[i]);
+2019-03-18 23:15:22 -     }
+2019-03-18 23:15:22 -     for (int i = mid; i < arr.Count; i++)
+2019-03-18 23:15:22 -     {
+2019-03-18 23:15:22 -         right.Add(arr[i]);
+2019-03-18 23:15:22 -     }  
+2019-03-18 23:15:22 -     left = MergeSort(left);
+2019-03-18 23:15:22 -     right = MergeSort(right);
+2019-03-18 23:15:22 -     return Merge(left, right);
+2019-03-18 23:15:22 - }
+2019-03-18 23:15:22 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-18 23:15:22 - {
+2019-03-18 23:15:22 -     List<int> result = new List<int>();
+2019-03-18 23:15:22 -     while(left.Count>0||right.Count>0)
+2019-03-18 23:15:22 -     {
+2019-03-18 23:15:22 -         // 1st Scenario
+2019-03-18 23:15:22 -         if (left.Count > 0 && right.Count > 0)
+2019-03-18 23:15:22 -         {
+2019-03-18 23:15:22 -             if(left[0]<=right[0])
+2019-03-18 23:15:22 -             {
+2019-03-18 23:15:22 -                 result.Add(left[0]);
+2019-03-18 23:15:22 -                 left.RemoveAt(0);
+2019-03-18 23:15:22 -             }
+2019-03-18 23:15:22 -             else
+2019-03-18 23:15:22 -             {
+2019-03-18 23:15:22 -                 result.Add(right[0]);
+2019-03-18 23:15:22 -                 right.RemoveAt(0);
+2019-03-18 23:15:22 -             }
+2019-03-18 23:15:22 -         }
+2019-03-18 23:15:22 -         else if(left.Count>0)// 2ed Scenario
+2019-03-18 23:15:22 -         {
+2019-03-18 23:15:22 -             result.Add(left[0]);
+2019-03-18 23:15:22 -             left.RemoveAt(0);
+2019-03-18 23:15:22 -         }
+2019-03-18 23:15:22 -         else if(right.Count>0)// 3ed Scenario
+2019-03-18 23:15:22 -         {
+2019-03-18 23:15:22 -             result.Add(right[0]);
+2019-03-18 23:15:22 -             right.RemoveAt(0);        
+2019-03-18 23:15:22 -         }            
+2019-03-18 23:15:22 -     }
+2019-03-18 23:15:22 -     return result;
+2019-03-18 23:15:22 - }
+2019-03-18 23:15:22 - public int Pop(List<int> list, int index)
+2019-03-18 23:15:22 - {
+2019-03-18 23:15:22 -     int res = list[index];
+2019-03-18 23:15:22 -     list.RemoveAt(index);
+2019-03-18 23:15:22 -     return res;
+2019-03-18 23:15:22 - }
+2019-03-18 23:15:22 - // Testing
+2019-03-18 23:15:22 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-18 23:15:22 - List<int>list = MergeSort(arr);
+2019-03-18 23:15:22 - foreach(var i in list)
+2019-03-18 23:15:22 - {
+2019-03-18 23:15:22 -     Console.Write(i+" ");
+2019-03-18 23:15:22 - }
+2019-03-18 23:17:31 -     /* This function takes last element as pivot, 
+2019-03-18 23:17:31 -     places the pivot element at its correct 
+2019-03-18 23:17:31 -     position in sorted array, and places all 
+2019-03-18 23:17:31 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:17:31 -     pivot and all greater elements to right 
+2019-03-18 23:17:31 -     of pivot */
+2019-03-18 23:17:31 -     static int partition(int []arr, int low, 
+2019-03-18 23:17:31 -                                    int high) 
+2019-03-18 23:17:31 -     { 
+2019-03-18 23:17:31 -         int pivot = arr[high];  
+2019-03-18 23:17:31 -         // index of smaller element 
+2019-03-18 23:17:31 -         int i = (low - 1);  
+2019-03-18 23:17:31 -         for (int j = low; j < high; j++) 
+2019-03-18 23:17:31 -         { 
+2019-03-18 23:17:31 -             // If current element is smaller  
+2019-03-18 23:17:31 -             // than or equal to pivot 
+2019-03-18 23:17:31 -             if (arr[j] > pivot) 
+2019-03-18 23:17:31 -             { 
+2019-03-18 23:17:31 -                 i++; 
+2019-03-18 23:17:31 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:17:31 -                 int temp = arr[i]; 
+2019-03-18 23:17:31 -                 arr[i] = arr[j]; 
+2019-03-18 23:17:31 -                 arr[j] = temp; 
+2019-03-18 23:17:31 -             } 
+2019-03-18 23:17:31 -         } 
+2019-03-18 23:17:31 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:17:31 -         int temp1 = arr[i+1]; 
+2019-03-18 23:17:31 -         arr[i+1] = pivot; 
+2019-03-18 23:17:31 -         pivot = temp1; 
+2019-03-18 23:17:31 -         return i+1; 
+2019-03-18 23:17:31 -     } 
+2019-03-18 23:17:31 -     /* The main function that implements QuickSort() 
+2019-03-18 23:17:31 -     arr[] --> Array to be sorted, 
+2019-03-18 23:17:31 -     low --> Starting index, 
+2019-03-18 23:17:31 -     high --> Ending index */
+2019-03-18 23:17:31 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:17:31 -     { 
+2019-03-18 23:17:31 -         if (low < high) 
+2019-03-18 23:17:31 -         { 
+2019-03-18 23:17:31 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:17:31 -             now at right place */
+2019-03-18 23:17:31 -             int pi = partition(arr, low, high); 
+2019-03-18 23:17:31 -             // Recursively sort elements before 
+2019-03-18 23:17:31 -             // partition and after partition 
+2019-03-18 23:17:31 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:17:31 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:17:31 -         } 
+2019-03-18 23:17:31 -     } 
+2019-03-18 23:17:31 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:17:31 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:17:55 -     /* This function takes last element as pivot, 
+2019-03-18 23:17:55 -     places the pivot element at its correct 
+2019-03-18 23:17:55 -     position in sorted array, and places all 
+2019-03-18 23:17:55 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:17:55 -     pivot and all greater elements to right 
+2019-03-18 23:17:55 -     of pivot */
+2019-03-18 23:17:55 -     static int partition(int []arr, int low, 
+2019-03-18 23:17:55 -                                    int high) 
+2019-03-18 23:17:55 -     { 
+2019-03-18 23:17:55 -         int pivot = arr[high];  
+2019-03-18 23:17:55 -         // index of smaller element 
+2019-03-18 23:17:55 -         int i = (low - 1);  
+2019-03-18 23:17:55 -         for (int j = low; j < high; j++) 
+2019-03-18 23:17:55 -         { 
+2019-03-18 23:17:55 -             // If current element is smaller  
+2019-03-18 23:17:55 -             // than or equal to pivot 
+2019-03-18 23:17:55 -             if (arr[j] > pivot) 
+2019-03-18 23:17:55 -             { 
+2019-03-18 23:17:55 -                 i++; 
+2019-03-18 23:17:55 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:17:55 -                 int temp = arr[i]; 
+2019-03-18 23:17:55 -                 arr[i] = arr[j]; 
+2019-03-18 23:17:55 -                 arr[j] = temp; 
+2019-03-18 23:17:55 -             } 
+2019-03-18 23:17:55 -         } 
+2019-03-18 23:17:55 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:17:55 -         int temp1 = arr[i+1]; 
+2019-03-18 23:17:55 -         arr[i+1] = pivot; 
+2019-03-18 23:17:55 -         pivot = temp1; 
+2019-03-18 23:17:55 -         return i+1; 
+2019-03-18 23:17:55 -     } 
+2019-03-18 23:17:55 -     /* The main function that implements QuickSort() 
+2019-03-18 23:17:55 -     arr[] --> Array to be sorted, 
+2019-03-18 23:17:55 -     low --> Starting index, 
+2019-03-18 23:17:55 -     high --> Ending index */
+2019-03-18 23:17:55 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:17:55 -     { 
+2019-03-18 23:17:55 -         if (low < high) 
+2019-03-18 23:17:55 -         { 
+2019-03-18 23:17:55 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:17:55 -             now at right place */
+2019-03-18 23:17:55 -             int pi = partition(arr, low, high); 
+2019-03-18 23:17:55 -             // Recursively sort elements before 
+2019-03-18 23:17:55 -             // partition and after partition 
+2019-03-18 23:17:55 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:17:55 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:17:55 -         } 
+2019-03-18 23:17:55 -     } 
+2019-03-18 23:17:55 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:17:55 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:17:55 - foreach(var i in arr){
+2019-03-18 23:17:55 -     Console.Write(i+' ');
+2019-03-18 23:17:55 - }
+2019-03-18 23:18:15 -     /* This function takes last element as pivot, 
+2019-03-18 23:18:15 -     places the pivot element at its correct 
+2019-03-18 23:18:15 -     position in sorted array, and places all 
+2019-03-18 23:18:15 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:18:15 -     pivot and all greater elements to right 
+2019-03-18 23:18:15 -     of pivot */
+2019-03-18 23:18:15 -     static int partition(int []arr, int low, 
+2019-03-18 23:18:15 -                                    int high) 
+2019-03-18 23:18:15 -     { 
+2019-03-18 23:18:15 -         int pivot = arr[high];  
+2019-03-18 23:18:15 -         // index of smaller element 
+2019-03-18 23:18:15 -         int i = (low - 1);  
+2019-03-18 23:18:15 -         for (int j = low; j < high; j++) 
+2019-03-18 23:18:15 -         { 
+2019-03-18 23:18:15 -             // If current element is smaller  
+2019-03-18 23:18:15 -             // than or equal to pivot 
+2019-03-18 23:18:15 -             if (arr[j] > pivot) 
+2019-03-18 23:18:15 -             { 
+2019-03-18 23:18:15 -                 i++; 
+2019-03-18 23:18:15 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:18:15 -                 int temp = arr[i]; 
+2019-03-18 23:18:15 -                 arr[i] = arr[j]; 
+2019-03-18 23:18:15 -                 arr[j] = temp; 
+2019-03-18 23:18:15 -             } 
+2019-03-18 23:18:15 -         } 
+2019-03-18 23:18:15 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:18:15 -         int temp1 = arr[i+1]; 
+2019-03-18 23:18:15 -         arr[i+1] = pivot; 
+2019-03-18 23:18:15 -         arr[high] = temp1; 
+2019-03-18 23:18:15 -         return i+1; 
+2019-03-18 23:18:15 -     } 
+2019-03-18 23:18:15 -     /* The main function that implements QuickSort() 
+2019-03-18 23:18:15 -     arr[] --> Array to be sorted, 
+2019-03-18 23:18:15 -     low --> Starting index, 
+2019-03-18 23:18:15 -     high --> Ending index */
+2019-03-18 23:18:15 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:18:15 -     { 
+2019-03-18 23:18:15 -         if (low < high) 
+2019-03-18 23:18:15 -         { 
+2019-03-18 23:18:15 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:18:15 -             now at right place */
+2019-03-18 23:18:15 -             int pi = partition(arr, low, high); 
+2019-03-18 23:18:15 -             // Recursively sort elements before 
+2019-03-18 23:18:15 -             // partition and after partition 
+2019-03-18 23:18:15 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:18:15 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:18:15 -         } 
+2019-03-18 23:18:15 -     } 
+2019-03-18 23:18:15 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:18:15 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:18:15 - foreach(var i in arr){
+2019-03-18 23:18:15 -     Console.Write(i+' ');
+2019-03-18 23:18:15 - }
+2019-03-18 23:18:28 -     /* This function takes last element as pivot, 
+2019-03-18 23:18:28 -     places the pivot element at its correct 
+2019-03-18 23:18:28 -     position in sorted array, and places all 
+2019-03-18 23:18:28 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:18:28 -     pivot and all greater elements to right 
+2019-03-18 23:18:28 -     of pivot */
+2019-03-18 23:18:28 -     static int partition(int []arr, int low, 
+2019-03-18 23:18:28 -                                    int high) 
+2019-03-18 23:18:28 -     { 
+2019-03-18 23:18:28 -         int pivot = arr[high];  
+2019-03-18 23:18:28 -         // index of smaller element 
+2019-03-18 23:18:28 -         int i = (low - 1);  
+2019-03-18 23:18:28 -         for (int j = low; j < high; j++) 
+2019-03-18 23:18:28 -         { 
+2019-03-18 23:18:28 -             // If current element is smaller  
+2019-03-18 23:18:28 -             // than or equal to pivot 
+2019-03-18 23:18:28 -             if (arr[j] > pivot) 
+2019-03-18 23:18:28 -             { 
+2019-03-18 23:18:28 -                 i++; 
+2019-03-18 23:18:28 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:18:28 -                 int temp = arr[i]; 
+2019-03-18 23:18:28 -                 arr[i] = arr[j]; 
+2019-03-18 23:18:28 -                 arr[j] = temp; 
+2019-03-18 23:18:28 -             } 
+2019-03-18 23:18:28 -         } 
+2019-03-18 23:18:28 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:18:28 -         int temp1 = arr[i+1]; 
+2019-03-18 23:18:28 -         arr[i+1] = pivot; 
+2019-03-18 23:18:28 -         arr[high] = temp1; 
+2019-03-18 23:18:28 -         return i+1; 
+2019-03-18 23:18:28 -     } 
+2019-03-18 23:18:28 -     /* The main function that implements QuickSort() 
+2019-03-18 23:18:28 -     arr[] --> Array to be sorted, 
+2019-03-18 23:18:28 -     low --> Starting index, 
+2019-03-18 23:18:28 -     high --> Ending index */
+2019-03-18 23:18:28 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:18:28 -     { 
+2019-03-18 23:18:28 -         if (low < high) 
+2019-03-18 23:18:28 -         { 
+2019-03-18 23:18:28 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:18:28 -             now at right place */
+2019-03-18 23:18:28 -             int pi = partition(arr, low, high); 
+2019-03-18 23:18:28 -             // Recursively sort elements before 
+2019-03-18 23:18:28 -             // partition and after partition 
+2019-03-18 23:18:28 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:18:28 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:18:28 -         } 
+2019-03-18 23:18:28 -     } 
+2019-03-18 23:18:28 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:18:28 - arr quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:18:28 - foreach(var i in arr){
+2019-03-18 23:18:28 -     Console.Write(i+' ');
+2019-03-18 23:18:28 - }
+2019-03-18 23:18:28 - (60,18): error CS1001: Identifier expected
+2019-03-18 23:18:28 - (60,20): error CS1031: Type expected
+2019-03-18 23:18:28 - (60,20): error CS1001: Identifier expected
+2019-03-18 23:18:28 - (60,20): error CS1003: Syntax error, ',' expected
+2019-03-18 23:18:28 - (60,33): error CS1001: Identifier expected
+2019-03-18 23:18:28 - (60,33): error CS1003: Syntax error, ',' expected
+2019-03-18 23:18:46 -     /* This function takes last element as pivot, 
+2019-03-18 23:18:46 -     places the pivot element at its correct 
+2019-03-18 23:18:46 -     position in sorted array, and places all 
+2019-03-18 23:18:46 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:18:46 -     pivot and all greater elements to right 
+2019-03-18 23:18:46 -     of pivot */
+2019-03-18 23:18:46 -     static int partition(int []arr, int low, 
+2019-03-18 23:18:46 -                                    int high) 
+2019-03-18 23:18:46 -     { 
+2019-03-18 23:18:46 -         int pivot = arr[high];  
+2019-03-18 23:18:46 -         // index of smaller element 
+2019-03-18 23:18:46 -         int i = (low - 1);  
+2019-03-18 23:18:46 -         for (int j = low; j < high; j++) 
+2019-03-18 23:18:46 -         { 
+2019-03-18 23:18:46 -             // If current element is smaller  
+2019-03-18 23:18:46 -             // than or equal to pivot 
+2019-03-18 23:18:46 -             if (arr[j] > pivot) 
+2019-03-18 23:18:46 -             { 
+2019-03-18 23:18:46 -                 i++; 
+2019-03-18 23:18:46 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:18:46 -                 int temp = arr[i]; 
+2019-03-18 23:18:46 -                 arr[i] = arr[j]; 
+2019-03-18 23:18:46 -                 arr[j] = temp; 
+2019-03-18 23:18:46 -             } 
+2019-03-18 23:18:46 -         } 
+2019-03-18 23:18:46 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:18:46 -         int temp1 = arr[i+1]; 
+2019-03-18 23:18:46 -         arr[i+1] = pivot; 
+2019-03-18 23:18:46 -         arr[high] = temp1; 
+2019-03-18 23:18:46 -         return i+1; 
+2019-03-18 23:18:46 -     } 
+2019-03-18 23:18:46 -     /* The main function that implements QuickSort() 
+2019-03-18 23:18:46 -     arr[] --> Array to be sorted, 
+2019-03-18 23:18:46 -     low --> Starting index, 
+2019-03-18 23:18:46 -     high --> Ending index */
+2019-03-18 23:18:46 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:18:46 -     { 
+2019-03-18 23:18:46 -         if (low < high) 
+2019-03-18 23:18:46 -         { 
+2019-03-18 23:18:46 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:18:46 -             now at right place */
+2019-03-18 23:18:46 -             int pi = partition(arr, low, high); 
+2019-03-18 23:18:46 -             // Recursively sort elements before 
+2019-03-18 23:18:46 -             // partition and after partition 
+2019-03-18 23:18:46 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:18:46 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:18:46 -         } 
+2019-03-18 23:18:46 -     } 
+2019-03-18 23:18:46 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:18:46 - int[] l= quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:18:46 - foreach(var i in l){
+2019-03-18 23:18:46 -     Console.Write(i+' ');
+2019-03-18 23:18:46 - }
+2019-03-18 23:18:46 - (60,10): error CS0029: Cannot implicitly convert type 'void' to 'int[]'
+2019-03-18 23:19:02 -     /* This function takes last element as pivot, 
+2019-03-18 23:19:02 -     places the pivot element at its correct 
+2019-03-18 23:19:02 -     position in sorted array, and places all 
+2019-03-18 23:19:02 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:19:02 -     pivot and all greater elements to right 
+2019-03-18 23:19:02 -     of pivot */
+2019-03-18 23:19:02 -     static int partition(int []arr, int low, 
+2019-03-18 23:19:02 -                                    int high) 
+2019-03-18 23:19:02 -     { 
+2019-03-18 23:19:02 -         int pivot = arr[high];  
+2019-03-18 23:19:02 -         // index of smaller element 
+2019-03-18 23:19:02 -         int i = (low - 1);  
+2019-03-18 23:19:02 -         for (int j = low; j < high; j++) 
+2019-03-18 23:19:02 -         { 
+2019-03-18 23:19:02 -             // If current element is smaller  
+2019-03-18 23:19:02 -             // than or equal to pivot 
+2019-03-18 23:19:02 -             if (arr[j] > pivot) 
+2019-03-18 23:19:02 -             { 
+2019-03-18 23:19:02 -                 i++; 
+2019-03-18 23:19:02 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:19:02 -                 int temp = arr[i]; 
+2019-03-18 23:19:02 -                 arr[i] = arr[j]; 
+2019-03-18 23:19:02 -                 arr[j] = temp; 
+2019-03-18 23:19:02 -             } 
+2019-03-18 23:19:02 -         } 
+2019-03-18 23:19:02 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:19:02 -         int temp1 = arr[i+1]; 
+2019-03-18 23:19:02 -         arr[i+1] = pivot; 
+2019-03-18 23:19:02 -         arr[high] = temp1; 
+2019-03-18 23:19:02 -         return i+1; 
+2019-03-18 23:19:02 -     } 
+2019-03-18 23:19:02 -     /* The main function that implements QuickSort() 
+2019-03-18 23:19:02 -     arr[] --> Array to be sorted, 
+2019-03-18 23:19:02 -     low --> Starting index, 
+2019-03-18 23:19:02 -     high --> Ending index */
+2019-03-18 23:19:02 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:19:02 -     { 
+2019-03-18 23:19:02 -         if (low < high) 
+2019-03-18 23:19:02 -         { 
+2019-03-18 23:19:02 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:19:02 -             now at right place */
+2019-03-18 23:19:02 -             int pi = partition(arr, low, high); 
+2019-03-18 23:19:02 -             // Recursively sort elements before 
+2019-03-18 23:19:02 -             // partition and after partition 
+2019-03-18 23:19:02 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:19:02 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:19:02 -         } 
+2019-03-18 23:19:02 -     } 
+2019-03-18 23:19:02 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:19:02 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:19:02 - foreach(var i in l){
+2019-03-18 23:19:02 -     Console.Write(i+' ');
+2019-03-18 23:19:02 - }
+2019-03-18 23:19:02 - (61,18): error CS0103: The name 'l' does not exist in the current context
+2019-03-18 23:19:09 -     /* This function takes last element as pivot, 
+2019-03-18 23:19:09 -     places the pivot element at its correct 
+2019-03-18 23:19:09 -     position in sorted array, and places all 
+2019-03-18 23:19:09 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:19:09 -     pivot and all greater elements to right 
+2019-03-18 23:19:09 -     of pivot */
+2019-03-18 23:19:09 -     static int partition(int []arr, int low, 
+2019-03-18 23:19:09 -                                    int high) 
+2019-03-18 23:19:09 -     { 
+2019-03-18 23:19:09 -         int pivot = arr[high];  
+2019-03-18 23:19:09 -         // index of smaller element 
+2019-03-18 23:19:09 -         int i = (low - 1);  
+2019-03-18 23:19:09 -         for (int j = low; j < high; j++) 
+2019-03-18 23:19:09 -         { 
+2019-03-18 23:19:09 -             // If current element is smaller  
+2019-03-18 23:19:09 -             // than or equal to pivot 
+2019-03-18 23:19:09 -             if (arr[j] > pivot) 
+2019-03-18 23:19:09 -             { 
+2019-03-18 23:19:09 -                 i++; 
+2019-03-18 23:19:09 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:19:09 -                 int temp = arr[i]; 
+2019-03-18 23:19:09 -                 arr[i] = arr[j]; 
+2019-03-18 23:19:09 -                 arr[j] = temp; 
+2019-03-18 23:19:09 -             } 
+2019-03-18 23:19:09 -         } 
+2019-03-18 23:19:09 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:19:09 -         int temp1 = arr[i+1]; 
+2019-03-18 23:19:09 -         arr[i+1] = pivot; 
+2019-03-18 23:19:09 -         arr[high] = temp1; 
+2019-03-18 23:19:09 -         return i+1; 
+2019-03-18 23:19:09 -     } 
+2019-03-18 23:19:09 -     /* The main function that implements QuickSort() 
+2019-03-18 23:19:09 -     arr[] --> Array to be sorted, 
+2019-03-18 23:19:09 -     low --> Starting index, 
+2019-03-18 23:19:09 -     high --> Ending index */
+2019-03-18 23:19:09 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:19:09 -     { 
+2019-03-18 23:19:09 -         if (low < high) 
+2019-03-18 23:19:09 -         { 
+2019-03-18 23:19:09 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:19:09 -             now at right place */
+2019-03-18 23:19:09 -             int pi = partition(arr, low, high); 
+2019-03-18 23:19:09 -             // Recursively sort elements before 
+2019-03-18 23:19:09 -             // partition and after partition 
+2019-03-18 23:19:09 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:19:09 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:19:09 -         } 
+2019-03-18 23:19:09 -     } 
+2019-03-18 23:19:09 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:19:09 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:19:09 - foreach(var i in arr){
+2019-03-18 23:19:09 -     Console.Write(i+' ');
+2019-03-18 23:19:09 - }
+2019-03-18 23:19:42 -     /* This function takes last element as pivot, 
+2019-03-18 23:19:42 -     places the pivot element at its correct 
+2019-03-18 23:19:42 -     position in sorted array, and places all 
+2019-03-18 23:19:42 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:19:42 -     pivot and all greater elements to right 
+2019-03-18 23:19:42 -     of pivot */
+2019-03-18 23:19:42 -     static int partition(int []arr, int low, 
+2019-03-18 23:19:42 -                                    int high) 
+2019-03-18 23:19:42 -     { 
+2019-03-18 23:19:42 -         int pivot = arr[high];  
+2019-03-18 23:19:42 -         // index of smaller element 
+2019-03-18 23:19:42 -         int i = (low - 1);  
+2019-03-18 23:19:42 -         for (int j = low; j < high; j++) 
+2019-03-18 23:19:42 -         { 
+2019-03-18 23:19:42 -             // If current element is smaller  
+2019-03-18 23:19:42 -             // than or equal to pivot 
+2019-03-18 23:19:42 -             if (arr[j] <= pivot) 
+2019-03-18 23:19:42 -             { 
+2019-03-18 23:19:42 -                 i++; 
+2019-03-18 23:19:42 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:19:42 -                 int temp = arr[i]; 
+2019-03-18 23:19:42 -                 arr[i] = arr[j]; 
+2019-03-18 23:19:42 -                 arr[j] = temp; 
+2019-03-18 23:19:42 -             } 
+2019-03-18 23:19:42 -         } 
+2019-03-18 23:19:42 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:19:42 -         int temp1 = arr[i+1]; 
+2019-03-18 23:19:42 -         arr[i+1] = arr[high]; 
+2019-03-18 23:19:42 -         arr[high] = temp1; 
+2019-03-18 23:19:42 -         return i+1; 
+2019-03-18 23:19:42 -     } 
+2019-03-18 23:19:42 -     /* The main function that implements QuickSort() 
+2019-03-18 23:19:42 -     arr[] --> Array to be sorted, 
+2019-03-18 23:19:42 -     low --> Starting index, 
+2019-03-18 23:19:42 -     high --> Ending index */
+2019-03-18 23:19:42 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:19:42 -     { 
+2019-03-18 23:19:42 -         if (low < high) 
+2019-03-18 23:19:42 -         { 
+2019-03-18 23:19:42 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:19:42 -             now at right place */
+2019-03-18 23:19:42 -             int pi = partition(arr, low, high); 
+2019-03-18 23:19:42 -             // Recursively sort elements before 
+2019-03-18 23:19:42 -             // partition and after partition 
+2019-03-18 23:19:42 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:19:42 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:19:42 -         } 
+2019-03-18 23:19:42 -     } 
+2019-03-18 23:19:42 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:19:42 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:19:42 - foreach(var i in arr){
+2019-03-18 23:19:42 -     Console.Write(i+' ');
+2019-03-18 23:19:42 - }
+2019-03-18 23:20:20 -     /* This function takes last element as pivot, 
+2019-03-18 23:20:20 -     places the pivot element at its correct 
+2019-03-18 23:20:20 -     position in sorted array, and places all 
+2019-03-18 23:20:20 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:20:20 -     pivot and all greater elements to right 
+2019-03-18 23:20:20 -     of pivot */
+2019-03-18 23:20:20 -     static int partition(int []arr, int low, 
+2019-03-18 23:20:20 -                                    int high) 
+2019-03-18 23:20:20 -     { 
+2019-03-18 23:20:20 -         int pivot = arr[high];  
+2019-03-18 23:20:20 -         // index of smaller element 
+2019-03-18 23:20:20 -         int i = (low - 1);  
+2019-03-18 23:20:20 -         for (int j = low; j < high; j++) 
+2019-03-18 23:20:20 -         { 
+2019-03-18 23:20:20 -             // If current element is smaller  
+2019-03-18 23:20:20 -             // than or equal to pivot 
+2019-03-18 23:20:20 -             if (arr[j] <= pivot) 
+2019-03-18 23:20:20 -             { 
+2019-03-18 23:20:20 -                 i++; 
+2019-03-18 23:20:20 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:20:20 -                 int temp = arr[i]; 
+2019-03-18 23:20:20 -                 arr[i] = arr[j]; 
+2019-03-18 23:20:20 -                 arr[j] = temp; 
+2019-03-18 23:20:20 -             } 
+2019-03-18 23:20:20 -         } 
+2019-03-18 23:20:20 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:20:20 -         int temp1 = arr[i+1]; 
+2019-03-18 23:20:20 -         arr[i+1] = arr[high]; 
+2019-03-18 23:20:20 -         arr[high] = temp1; 
+2019-03-18 23:20:20 -         return i+1; 
+2019-03-18 23:20:20 -     } 
+2019-03-18 23:20:20 -     /* The main function that implements QuickSort() 
+2019-03-18 23:20:20 -     arr[] --> Array to be sorted, 
+2019-03-18 23:20:20 -     low --> Starting index, 
+2019-03-18 23:20:20 -     high --> Ending index */
+2019-03-18 23:20:20 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:20:20 -     { 
+2019-03-18 23:20:20 -         if (low < high) 
+2019-03-18 23:20:20 -         { 
+2019-03-18 23:20:20 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:20:20 -             now at right place */
+2019-03-18 23:20:20 -             int pi = partition(arr, low, high); 
+2019-03-18 23:20:20 -             // Recursively sort elements before 
+2019-03-18 23:20:20 -             // partition and after partition 
+2019-03-18 23:20:20 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:20:20 -             foreach(var i in arr){
+2019-03-18 23:20:20 -     Console.Write(i+' ');
+2019-03-18 23:20:20 - }
+2019-03-18 23:20:20 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:20:20 -         } 
+2019-03-18 23:20:20 -     } 
+2019-03-18 23:20:20 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:20:20 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:20:33 -     /* This function takes last element as pivot, 
+2019-03-18 23:20:33 -     places the pivot element at its correct 
+2019-03-18 23:20:33 -     position in sorted array, and places all 
+2019-03-18 23:20:33 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:20:33 -     pivot and all greater elements to right 
+2019-03-18 23:20:33 -     of pivot */
+2019-03-18 23:20:33 -     static int partition(int []arr, int low, 
+2019-03-18 23:20:33 -                                    int high) 
+2019-03-18 23:20:33 -     { 
+2019-03-18 23:20:33 -         int pivot = arr[high];  
+2019-03-18 23:20:33 -         // index of smaller element 
+2019-03-18 23:20:33 -         int i = (low - 1);  
+2019-03-18 23:20:33 -         for (int j = low; j < high; j++) 
+2019-03-18 23:20:33 -         { 
+2019-03-18 23:20:33 -             // If current element is smaller  
+2019-03-18 23:20:33 -             // than or equal to pivot 
+2019-03-18 23:20:33 -             if (arr[j] <= pivot) 
+2019-03-18 23:20:33 -             { 
+2019-03-18 23:20:33 -                 i++; 
+2019-03-18 23:20:33 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:20:33 -                 int temp = arr[i]; 
+2019-03-18 23:20:33 -                 arr[i] = arr[j]; 
+2019-03-18 23:20:33 -                 arr[j] = temp; 
+2019-03-18 23:20:33 -             } 
+2019-03-18 23:20:33 -         } 
+2019-03-18 23:20:33 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:20:33 -         int temp1 = arr[i+1]; 
+2019-03-18 23:20:33 -         arr[i+1] = arr[high]; 
+2019-03-18 23:20:33 -         arr[high] = temp1; 
+2019-03-18 23:20:33 -         return i+1; 
+2019-03-18 23:20:33 -     } 
+2019-03-18 23:20:33 -     /* The main function that implements QuickSort() 
+2019-03-18 23:20:33 -     arr[] --> Array to be sorted, 
+2019-03-18 23:20:33 -     low --> Starting index, 
+2019-03-18 23:20:33 -     high --> Ending index */
+2019-03-18 23:20:33 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:20:33 -     { 
+2019-03-18 23:20:33 -         if (low < high) 
+2019-03-18 23:20:33 -         { 
+2019-03-18 23:20:33 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:20:33 -             now at right place */
+2019-03-18 23:20:33 -             int pi = partition(arr, low, high); 
+2019-03-18 23:20:33 -             // Recursively sort elements before 
+2019-03-18 23:20:33 -             // partition and after partition 
+2019-03-18 23:20:33 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:20:33 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:20:33 -         } 
+2019-03-18 23:20:33 -     } 
+2019-03-18 23:20:33 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:20:33 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:20:33 - foreach(var i in arr){
+2019-03-18 23:20:33 -     Console.Write(i+"");
+2019-03-18 23:20:33 - }
+2019-03-18 23:20:37 -     /* This function takes last element as pivot, 
+2019-03-18 23:20:37 -     places the pivot element at its correct 
+2019-03-18 23:20:37 -     position in sorted array, and places all 
+2019-03-18 23:20:37 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:20:37 -     pivot and all greater elements to right 
+2019-03-18 23:20:37 -     of pivot */
+2019-03-18 23:20:37 -     static int partition(int []arr, int low, 
+2019-03-18 23:20:37 -                                    int high) 
+2019-03-18 23:20:37 -     { 
+2019-03-18 23:20:37 -         int pivot = arr[high];  
+2019-03-18 23:20:37 -         // index of smaller element 
+2019-03-18 23:20:37 -         int i = (low - 1);  
+2019-03-18 23:20:37 -         for (int j = low; j < high; j++) 
+2019-03-18 23:20:37 -         { 
+2019-03-18 23:20:37 -             // If current element is smaller  
+2019-03-18 23:20:37 -             // than or equal to pivot 
+2019-03-18 23:20:37 -             if (arr[j] <= pivot) 
+2019-03-18 23:20:37 -             { 
+2019-03-18 23:20:37 -                 i++; 
+2019-03-18 23:20:37 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:20:37 -                 int temp = arr[i]; 
+2019-03-18 23:20:37 -                 arr[i] = arr[j]; 
+2019-03-18 23:20:37 -                 arr[j] = temp; 
+2019-03-18 23:20:37 -             } 
+2019-03-18 23:20:37 -         } 
+2019-03-18 23:20:37 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:20:37 -         int temp1 = arr[i+1]; 
+2019-03-18 23:20:37 -         arr[i+1] = arr[high]; 
+2019-03-18 23:20:37 -         arr[high] = temp1; 
+2019-03-18 23:20:37 -         return i+1; 
+2019-03-18 23:20:37 -     } 
+2019-03-18 23:20:37 -     /* The main function that implements QuickSort() 
+2019-03-18 23:20:37 -     arr[] --> Array to be sorted, 
+2019-03-18 23:20:37 -     low --> Starting index, 
+2019-03-18 23:20:37 -     high --> Ending index */
+2019-03-18 23:20:37 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:20:37 -     { 
+2019-03-18 23:20:37 -         if (low < high) 
+2019-03-18 23:20:37 -         { 
+2019-03-18 23:20:37 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:20:37 -             now at right place */
+2019-03-18 23:20:37 -             int pi = partition(arr, low, high); 
+2019-03-18 23:20:37 -             // Recursively sort elements before 
+2019-03-18 23:20:37 -             // partition and after partition 
+2019-03-18 23:20:37 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:20:37 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:20:37 -         } 
+2019-03-18 23:20:37 -     } 
+2019-03-18 23:20:37 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:20:37 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:20:37 - foreach(var i in arr){
+2019-03-18 23:20:37 -     Console.Write(i+" ");
+2019-03-18 23:20:37 - }
+2019-03-18 23:20:57 -     /* This function takes last element as pivot, 
+2019-03-18 23:20:57 -     places the pivot element at its correct 
+2019-03-18 23:20:57 -     position in sorted array, and places all 
+2019-03-18 23:20:57 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:20:57 -     pivot and all greater elements to right 
+2019-03-18 23:20:57 -     of pivot */
+2019-03-18 23:20:57 -     static int partition(int []arr, int low, 
+2019-03-18 23:20:57 -                                    int high) 
+2019-03-18 23:20:57 -     { 
+2019-03-18 23:20:57 -         int pivot = arr[high];  
+2019-03-18 23:20:57 -         // index of smaller element 
+2019-03-18 23:20:57 -         int i = (low - 1);  
+2019-03-18 23:20:57 -         for (int j = low; j < high; j++) 
+2019-03-18 23:20:57 -         { 
+2019-03-18 23:20:57 -             // If current element is smaller  
+2019-03-18 23:20:57 -             // than or equal to pivot 
+2019-03-18 23:20:57 -             if (arr[j] > pivot) 
+2019-03-18 23:20:57 -             { 
+2019-03-18 23:20:57 -                 i++; 
+2019-03-18 23:20:57 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:20:57 -                 int temp = arr[i]; 
+2019-03-18 23:20:57 -                 arr[i] = arr[j]; 
+2019-03-18 23:20:57 -                 arr[j] = temp; 
+2019-03-18 23:20:57 -             } 
+2019-03-18 23:20:57 -         } 
+2019-03-18 23:20:57 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:20:57 -         int temp1 = arr[i+1]; 
+2019-03-18 23:20:57 -         arr[i+1] = arr[high]; 
+2019-03-18 23:20:57 -         arr[high] = temp1; 
+2019-03-18 23:20:57 -         return i+1; 
+2019-03-18 23:20:57 -     } 
+2019-03-18 23:20:57 -     /* The main function that implements QuickSort() 
+2019-03-18 23:20:57 -     arr[] --> Array to be sorted, 
+2019-03-18 23:20:57 -     low --> Starting index, 
+2019-03-18 23:20:57 -     high --> Ending index */
+2019-03-18 23:20:57 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:20:57 -     { 
+2019-03-18 23:20:57 -         if (low < high) 
+2019-03-18 23:20:57 -         { 
+2019-03-18 23:20:57 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:20:57 -             now at right place */
+2019-03-18 23:20:57 -             int pi = partition(arr, low, high); 
+2019-03-18 23:20:57 -             // Recursively sort elements before 
+2019-03-18 23:20:57 -             // partition and after partition 
+2019-03-18 23:20:57 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:20:57 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:20:57 -         } 
+2019-03-18 23:20:57 -     } 
+2019-03-18 23:20:57 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:20:57 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:20:57 - foreach(var i in arr){
+2019-03-18 23:20:57 -     Console.Write(i+" ");
+2019-03-18 23:20:57 - }
+2019-03-18 23:21:12 -     /* This function takes last element as pivot, 
+2019-03-18 23:21:12 -     places the pivot element at its correct 
+2019-03-18 23:21:12 -     position in sorted array, and places all 
+2019-03-18 23:21:12 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:21:12 -     pivot and all greater elements to right 
+2019-03-18 23:21:12 -     of pivot */
+2019-03-18 23:21:12 -     static int partition(int []arr, int low, 
+2019-03-18 23:21:12 -                                    int high) 
+2019-03-18 23:21:12 -     { 
+2019-03-18 23:21:12 -         int pivot = arr[high];  
+2019-03-18 23:21:12 -         // index of smaller element 
+2019-03-18 23:21:12 -         int i = (low - 1);  
+2019-03-18 23:21:12 -         for (int j = low; j < high; j++) 
+2019-03-18 23:21:12 -         { 
+2019-03-18 23:21:12 -             // If current element is smaller  
+2019-03-18 23:21:12 -             // than or equal to pivot 
+2019-03-18 23:21:12 -             if (arr[j] > pivot) 
+2019-03-18 23:21:12 -             { 
+2019-03-18 23:21:12 -                 i++; 
+2019-03-18 23:21:12 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:21:12 -                 int temp = arr[i]; 
+2019-03-18 23:21:12 -                 arr[i] = arr[j]; 
+2019-03-18 23:21:12 -                 arr[j] = temp; 
+2019-03-18 23:21:12 -             } 
+2019-03-18 23:21:12 -         } 
+2019-03-18 23:21:12 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:21:12 -         int temp1 = arr[i+1]; 
+2019-03-18 23:21:12 -         arr[i+1] = arr[low]; 
+2019-03-18 23:21:12 -         arr[low] = temp1; 
+2019-03-18 23:21:12 -         return i+1; 
+2019-03-18 23:21:12 -     } 
+2019-03-18 23:21:12 -     /* The main function that implements QuickSort() 
+2019-03-18 23:21:12 -     arr[] --> Array to be sorted, 
+2019-03-18 23:21:12 -     low --> Starting index, 
+2019-03-18 23:21:12 -     high --> Ending index */
+2019-03-18 23:21:12 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:21:12 -     { 
+2019-03-18 23:21:12 -         if (low < high) 
+2019-03-18 23:21:12 -         { 
+2019-03-18 23:21:12 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:21:12 -             now at right place */
+2019-03-18 23:21:12 -             int pi = partition(arr, low, high); 
+2019-03-18 23:21:12 -             // Recursively sort elements before 
+2019-03-18 23:21:12 -             // partition and after partition 
+2019-03-18 23:21:12 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:21:12 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:21:12 -         } 
+2019-03-18 23:21:12 -     } 
+2019-03-18 23:21:12 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:21:12 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:21:12 - foreach(var i in arr){
+2019-03-18 23:21:12 -     Console.Write(i+" ");
+2019-03-18 23:21:12 - }
+2019-03-18 23:21:29 -     /* This function takes last element as pivot, 
+2019-03-18 23:21:29 -     places the pivot element at its correct 
+2019-03-18 23:21:29 -     position in sorted array, and places all 
+2019-03-18 23:21:29 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:21:29 -     pivot and all greater elements to right 
+2019-03-18 23:21:29 -     of pivot */
+2019-03-18 23:21:29 -     static int partition(int []arr, int low, 
+2019-03-18 23:21:29 -                                    int high) 
+2019-03-18 23:21:29 -     { 
+2019-03-18 23:21:29 -         int pivot = arr[low];  
+2019-03-18 23:21:29 -         // index of smaller element 
+2019-03-18 23:21:29 -         int i = (low - 1);  
+2019-03-18 23:21:29 -         for (int j = low; j < high; j++) 
+2019-03-18 23:21:29 -         { 
+2019-03-18 23:21:29 -             // If current element is smaller  
+2019-03-18 23:21:29 -             // than or equal to pivot 
+2019-03-18 23:21:29 -             if (arr[j] > pivot) 
+2019-03-18 23:21:29 -             { 
+2019-03-18 23:21:29 -                 i++; 
+2019-03-18 23:21:29 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:21:29 -                 int temp = arr[i]; 
+2019-03-18 23:21:29 -                 arr[i] = arr[j]; 
+2019-03-18 23:21:29 -                 arr[j] = temp; 
+2019-03-18 23:21:29 -             } 
+2019-03-18 23:21:29 -         } 
+2019-03-18 23:21:29 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:21:29 -         int temp1 = arr[i+1]; 
+2019-03-18 23:21:29 -         arr[i+1] = arr[low]; 
+2019-03-18 23:21:29 -         arr[low] = temp1; 
+2019-03-18 23:21:29 -         return i+1; 
+2019-03-18 23:21:29 -     } 
+2019-03-18 23:21:29 -     /* The main function that implements QuickSort() 
+2019-03-18 23:21:29 -     arr[] --> Array to be sorted, 
+2019-03-18 23:21:29 -     low --> Starting index, 
+2019-03-18 23:21:29 -     high --> Ending index */
+2019-03-18 23:21:29 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:21:29 -     { 
+2019-03-18 23:21:29 -         if (low < high) 
+2019-03-18 23:21:29 -         { 
+2019-03-18 23:21:29 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:21:29 -             now at right place */
+2019-03-18 23:21:29 -             int pi = partition(arr, low, high); 
+2019-03-18 23:21:29 -             // Recursively sort elements before 
+2019-03-18 23:21:29 -             // partition and after partition 
+2019-03-18 23:21:29 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:21:29 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:21:29 -         } 
+2019-03-18 23:21:29 -     } 
+2019-03-18 23:21:29 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:21:29 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:21:29 - foreach(var i in arr){
+2019-03-18 23:21:29 -     Console.Write(i+" ");
+2019-03-18 23:21:29 - }
+2019-03-18 23:22:01 -     /* This function takes last element as pivot, 
+2019-03-18 23:22:01 -     places the pivot element at its correct 
+2019-03-18 23:22:01 -     position in sorted array, and places all 
+2019-03-18 23:22:01 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:22:01 -     pivot and all greater elements to right 
+2019-03-18 23:22:01 -     of pivot */
+2019-03-18 23:22:01 -     static int partition(int []arr, int low, 
+2019-03-18 23:22:01 -                                    int high) 
+2019-03-18 23:22:01 -     { 
+2019-03-18 23:22:01 -         int pivot = arr[low];  
+2019-03-18 23:22:01 -         // index of smaller element 
+2019-03-18 23:22:01 -         int i = (low - 1);  
+2019-03-18 23:22:01 -         for (int j = low; j < high; j++) 
+2019-03-18 23:22:01 -         { 
+2019-03-18 23:22:01 -             // If current element is smaller  
+2019-03-18 23:22:01 -             // than or equal to pivot 
+2019-03-18 23:22:01 -             if (arr[j] > pivot) 
+2019-03-18 23:22:01 -             { 
+2019-03-18 23:22:01 -                 i++; 
+2019-03-18 23:22:01 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:22:01 -                 int temp = arr[i]; 
+2019-03-18 23:22:01 -                 arr[i] = arr[j]; 
+2019-03-18 23:22:01 -                 arr[j] = temp; 
+2019-03-18 23:22:01 -             } 
+2019-03-18 23:22:01 -         } 
+2019-03-18 23:22:01 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:22:01 -         int temp1 = arr[i+1]; 
+2019-03-18 23:22:01 -         arr[i+1] = pivot; 
+2019-03-18 23:22:01 -         pivot = temp1; 
+2019-03-18 23:22:01 -         return i+1; 
+2019-03-18 23:22:01 -     } 
+2019-03-18 23:22:01 -     /* The main function that implements QuickSort() 
+2019-03-18 23:22:01 -     arr[] --> Array to be sorted, 
+2019-03-18 23:22:01 -     low --> Starting index, 
+2019-03-18 23:22:01 -     high --> Ending index */
+2019-03-18 23:22:01 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:22:01 -     { 
+2019-03-18 23:22:01 -         if (low < high) 
+2019-03-18 23:22:01 -         { 
+2019-03-18 23:22:01 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:22:01 -             now at right place */
+2019-03-18 23:22:01 -             int pi = partition(arr, low, high); 
+2019-03-18 23:22:01 -             // Recursively sort elements before 
+2019-03-18 23:22:01 -             // partition and after partition 
+2019-03-18 23:22:01 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:22:01 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:22:01 -         } 
+2019-03-18 23:22:01 -     } 
+2019-03-18 23:22:01 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:22:01 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:22:01 - foreach(var i in arr){
+2019-03-18 23:22:01 -     Console.Write(i+" ");
+2019-03-18 23:22:01 - }
+2019-03-18 23:23:17 -     /* This function takes last element as pivot, 
+2019-03-18 23:23:17 -     places the pivot element at its correct 
+2019-03-18 23:23:17 -     position in sorted array, and places all 
+2019-03-18 23:23:17 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:23:17 -     pivot and all greater elements to right 
+2019-03-18 23:23:17 -     of pivot */
+2019-03-18 23:23:17 -     static int partition(int []arr, int low, int high) 
+2019-03-18 23:23:17 -     { 
+2019-03-18 23:23:17 -         int pivot = arr[low];  
+2019-03-18 23:23:17 -         // index of smaller element 
+2019-03-18 23:23:17 -         int i = (high + 1);  
+2019-03-18 23:23:17 -         for (int j = low; j < high; j++) 
+2019-03-18 23:23:17 -         { 
+2019-03-18 23:23:17 -             // If current element is smaller  
+2019-03-18 23:23:17 -             // than or equal to pivot 
+2019-03-18 23:23:17 -             if (arr[j] > pivot) 
+2019-03-18 23:23:17 -             { 
+2019-03-18 23:23:17 -                 i--; 
+2019-03-18 23:23:17 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:23:17 -                 int temp = arr[i]; 
+2019-03-18 23:23:17 -                 arr[i] = arr[j]; 
+2019-03-18 23:23:17 -                 arr[j] = temp; 
+2019-03-18 23:23:17 -             } 
+2019-03-18 23:23:17 -         } 
+2019-03-18 23:23:17 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:23:17 -         int temp1 = arr[i+1]; 
+2019-03-18 23:23:17 -         arr[i+1] = pivot; 
+2019-03-18 23:23:17 -         pivot = temp1; 
+2019-03-18 23:23:17 -         return i+1; 
+2019-03-18 23:23:17 -     } 
+2019-03-18 23:23:17 -     /* The main function that implements QuickSort() 
+2019-03-18 23:23:17 -     arr[] --> Array to be sorted, 
+2019-03-18 23:23:17 -     low --> Starting index, 
+2019-03-18 23:23:17 -     high --> Ending index */
+2019-03-18 23:23:17 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:23:17 -     { 
+2019-03-18 23:23:17 -         if (low < high) 
+2019-03-18 23:23:17 -         { 
+2019-03-18 23:23:17 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:23:17 -             now at right place */
+2019-03-18 23:23:17 -             int pi = partition(arr, low, high); 
+2019-03-18 23:23:17 -             // Recursively sort elements before 
+2019-03-18 23:23:17 -             // partition and after partition 
+2019-03-18 23:23:17 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:23:17 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:23:17 -         } 
+2019-03-18 23:23:17 -     } 
+2019-03-18 23:23:17 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:23:17 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:23:17 - foreach(var i in arr){
+2019-03-18 23:23:17 -     Console.Write(i+" ");
+2019-03-18 23:23:17 - }
+2019-03-18 23:23:17 - One or more errors occurred.
+2019-03-18 23:23:17 - Index was outside the bounds of the array.
+2019-03-18 23:23:23 -     /* This function takes last element as pivot, 
+2019-03-18 23:23:23 -     places the pivot element at its correct 
+2019-03-18 23:23:23 -     position in sorted array, and places all 
+2019-03-18 23:23:23 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:23:23 -     pivot and all greater elements to right 
+2019-03-18 23:23:23 -     of pivot */
+2019-03-18 23:23:23 -     static int partition(int []arr, int low, int high) 
+2019-03-18 23:23:23 -     { 
+2019-03-18 23:23:23 -         int pivot = arr[low];  
+2019-03-18 23:23:23 -         // index of smaller element 
+2019-03-18 23:23:23 -         int i = (high - 1);  
+2019-03-18 23:23:23 -         for (int j = low; j < high; j++) 
+2019-03-18 23:23:23 -         { 
+2019-03-18 23:23:23 -             // If current element is smaller  
+2019-03-18 23:23:23 -             // than or equal to pivot 
+2019-03-18 23:23:23 -             if (arr[j] > pivot) 
+2019-03-18 23:23:23 -             { 
+2019-03-18 23:23:23 -                 i--; 
+2019-03-18 23:23:23 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:23:23 -                 int temp = arr[i]; 
+2019-03-18 23:23:23 -                 arr[i] = arr[j]; 
+2019-03-18 23:23:23 -                 arr[j] = temp; 
+2019-03-18 23:23:23 -             } 
+2019-03-18 23:23:23 -         } 
+2019-03-18 23:23:23 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:23:23 -         int temp1 = arr[i+1]; 
+2019-03-18 23:23:23 -         arr[i+1] = pivot; 
+2019-03-18 23:23:23 -         pivot = temp1; 
+2019-03-18 23:23:23 -         return i+1; 
+2019-03-18 23:23:23 -     } 
+2019-03-18 23:23:23 -     /* The main function that implements QuickSort() 
+2019-03-18 23:23:23 -     arr[] --> Array to be sorted, 
+2019-03-18 23:23:23 -     low --> Starting index, 
+2019-03-18 23:23:23 -     high --> Ending index */
+2019-03-18 23:23:23 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:23:23 -     { 
+2019-03-18 23:23:23 -         if (low < high) 
+2019-03-18 23:23:23 -         { 
+2019-03-18 23:23:23 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:23:23 -             now at right place */
+2019-03-18 23:23:23 -             int pi = partition(arr, low, high); 
+2019-03-18 23:23:23 -             // Recursively sort elements before 
+2019-03-18 23:23:23 -             // partition and after partition 
+2019-03-18 23:23:23 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:23:23 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:23:23 -         } 
+2019-03-18 23:23:23 -     } 
+2019-03-18 23:23:23 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:23:23 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:23:23 - foreach(var i in arr){
+2019-03-18 23:23:23 -     Console.Write(i+" ");
+2019-03-18 23:23:23 - }
+2019-03-18 23:24:46 -     /* This function takes last element as pivot, 
+2019-03-18 23:24:46 -     places the pivot element at its correct 
+2019-03-18 23:24:46 -     position in sorted array, and places all 
+2019-03-18 23:24:46 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:24:46 -     pivot and all greater elements to right 
+2019-03-18 23:24:46 -     of pivot */
+2019-03-18 23:24:46 -     static int partition(int []arr, int low, int high) 
+2019-03-18 23:24:46 -     { 
+2019-03-18 23:24:46 -         int pivot = arr[low];  
+2019-03-18 23:24:46 -         // index of smaller element 
+2019-03-18 23:24:46 -         int i = (high);  
+2019-03-18 23:24:46 -         for (int j = low; j < high; j++) 
+2019-03-18 23:24:46 -         { 
+2019-03-18 23:24:46 -             // If current element is smaller  
+2019-03-18 23:24:46 -             // than or equal to pivot 
+2019-03-18 23:24:46 -             if (arr[j] > pivot) 
+2019-03-18 23:24:46 -             { 
+2019-03-18 23:24:46 -                 i--; 
+2019-03-18 23:24:46 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:24:46 -                 int temp = arr[i]; 
+2019-03-18 23:24:46 -                 arr[i] = arr[j]; 
+2019-03-18 23:24:46 -                 arr[j] = temp; 
+2019-03-18 23:24:46 -             } 
+2019-03-18 23:24:46 -         } 
+2019-03-18 23:24:46 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:24:46 -         int temp1 = arr[i+1]; 
+2019-03-18 23:24:46 -         arr[i+1] = pivot; 
+2019-03-18 23:24:46 -         pivot = temp1; 
+2019-03-18 23:24:46 -         return i+1; 
+2019-03-18 23:24:46 -     } 
+2019-03-18 23:24:46 -     /* The main function that implements QuickSort() 
+2019-03-18 23:24:46 -     arr[] --> Array to be sorted, 
+2019-03-18 23:24:46 -     low --> Starting index, 
+2019-03-18 23:24:46 -     high --> Ending index */
+2019-03-18 23:24:46 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:24:46 -     { 
+2019-03-18 23:24:46 -         if (low < high) 
+2019-03-18 23:24:46 -         { 
+2019-03-18 23:24:46 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:24:46 -             now at right place */
+2019-03-18 23:24:46 -             int pi = partition(arr, low, high); 
+2019-03-18 23:24:46 -             // Recursively sort elements before 
+2019-03-18 23:24:46 -             // partition and after partition 
+2019-03-18 23:24:46 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:24:46 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:24:46 -         } 
+2019-03-18 23:24:46 -     } 
+2019-03-18 23:24:46 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:24:46 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:24:46 - foreach(var i in arr){
+2019-03-18 23:24:46 -     Console.Write(i+" ");
+2019-03-18 23:24:46 - }
+2019-03-18 23:24:46 - One or more errors occurred.
+2019-03-18 23:24:46 - Index was outside the bounds of the array.
+2019-03-18 23:25:47 -     /* This function takes last element as pivot, 
+2019-03-18 23:25:47 -     places the pivot element at its correct 
+2019-03-18 23:25:47 -     position in sorted array, and places all 
+2019-03-18 23:25:47 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:25:47 -     pivot and all greater elements to right 
+2019-03-18 23:25:47 -     of pivot */
+2019-03-18 23:25:47 -     static int partition(int []arr, int low, int high) 
+2019-03-18 23:25:47 -     { 
+2019-03-18 23:25:47 -         int pivot = arr[low];  
+2019-03-18 23:25:47 -         // index of smaller element 
+2019-03-18 23:25:47 -         int i = (low);  
+2019-03-18 23:25:47 -         for (int j = low; j < high; j++) 
+2019-03-18 23:25:47 -         { 
+2019-03-18 23:25:47 -             // If current element is smaller  
+2019-03-18 23:25:47 -             // than or equal to pivot 
+2019-03-18 23:25:47 -             if (arr[j] > pivot) 
+2019-03-18 23:25:47 -             { 
+2019-03-18 23:25:47 -                 i--; 
+2019-03-18 23:25:47 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:25:47 -                 int temp = arr[i]; 
+2019-03-18 23:25:47 -                 arr[i] = arr[j]; 
+2019-03-18 23:25:47 -                 arr[j] = temp; 
+2019-03-18 23:25:47 -             } 
+2019-03-18 23:25:47 -         } 
+2019-03-18 23:25:47 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:25:47 -         int temp1 = arr[i+1]; 
+2019-03-18 23:25:47 -         arr[i+1] = pivot; 
+2019-03-18 23:25:47 -         pivot = temp1; 
+2019-03-18 23:25:47 -         return i+1; 
+2019-03-18 23:25:47 -     } 
+2019-03-18 23:25:47 -     /* The main function that implements QuickSort() 
+2019-03-18 23:25:47 -     arr[] --> Array to be sorted, 
+2019-03-18 23:25:47 -     low --> Starting index, 
+2019-03-18 23:25:47 -     high --> Ending index */
+2019-03-18 23:25:47 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:25:47 -     { 
+2019-03-18 23:25:47 -         if (low < high) 
+2019-03-18 23:25:47 -         { 
+2019-03-18 23:25:47 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:25:47 -             now at right place */
+2019-03-18 23:25:47 -             int pi = partition(arr, low, high); 
+2019-03-18 23:25:47 -             // Recursively sort elements before 
+2019-03-18 23:25:47 -             // partition and after partition 
+2019-03-18 23:25:47 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:25:47 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:25:47 -         } 
+2019-03-18 23:25:47 -     } 
+2019-03-18 23:25:47 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:25:47 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:25:47 - foreach(var i in arr){
+2019-03-18 23:25:47 -     Console.Write(i+" ");
+2019-03-18 23:25:47 - }
+2019-03-18 23:25:53 -     /* This function takes last element as pivot, 
+2019-03-18 23:25:53 -     places the pivot element at its correct 
+2019-03-18 23:25:53 -     position in sorted array, and places all 
+2019-03-18 23:25:53 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:25:53 -     pivot and all greater elements to right 
+2019-03-18 23:25:53 -     of pivot */
+2019-03-18 23:25:53 -     static int partition(int []arr, int low, int high) 
+2019-03-18 23:25:53 -     { 
+2019-03-18 23:25:53 -         int pivot = arr[low];  
+2019-03-18 23:25:53 -         // index of smaller element 
+2019-03-18 23:25:53 -         int i = (low-1);  
+2019-03-18 23:25:53 -         for (int j = low; j < high; j++) 
+2019-03-18 23:25:53 -         { 
+2019-03-18 23:25:53 -             // If current element is smaller  
+2019-03-18 23:25:53 -             // than or equal to pivot 
+2019-03-18 23:25:53 -             if (arr[j] > pivot) 
+2019-03-18 23:25:53 -             { 
+2019-03-18 23:25:53 -                 i--; 
+2019-03-18 23:25:53 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:25:53 -                 int temp = arr[i]; 
+2019-03-18 23:25:53 -                 arr[i] = arr[j]; 
+2019-03-18 23:25:53 -                 arr[j] = temp; 
+2019-03-18 23:25:53 -             } 
+2019-03-18 23:25:53 -         } 
+2019-03-18 23:25:53 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:25:53 -         int temp1 = arr[i+1]; 
+2019-03-18 23:25:53 -         arr[i+1] = pivot; 
+2019-03-18 23:25:53 -         pivot = temp1; 
+2019-03-18 23:25:53 -         return i+1; 
+2019-03-18 23:25:53 -     } 
+2019-03-18 23:25:53 -     /* The main function that implements QuickSort() 
+2019-03-18 23:25:53 -     arr[] --> Array to be sorted, 
+2019-03-18 23:25:53 -     low --> Starting index, 
+2019-03-18 23:25:53 -     high --> Ending index */
+2019-03-18 23:25:53 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:25:53 -     { 
+2019-03-18 23:25:53 -         if (low < high) 
+2019-03-18 23:25:53 -         { 
+2019-03-18 23:25:53 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:25:53 -             now at right place */
+2019-03-18 23:25:53 -             int pi = partition(arr, low, high); 
+2019-03-18 23:25:53 -             // Recursively sort elements before 
+2019-03-18 23:25:53 -             // partition and after partition 
+2019-03-18 23:25:53 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:25:53 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:25:53 -         } 
+2019-03-18 23:25:53 -     } 
+2019-03-18 23:25:53 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:25:53 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:25:53 - foreach(var i in arr){
+2019-03-18 23:25:53 -     Console.Write(i+" ");
+2019-03-18 23:25:53 - }
+2019-03-18 23:25:53 - One or more errors occurred.
+2019-03-18 23:25:53 - Index was outside the bounds of the array.
+2019-03-18 23:26:04 -     /* This function takes last element as pivot, 
+2019-03-18 23:26:04 -     places the pivot element at its correct 
+2019-03-18 23:26:04 -     position in sorted array, and places all 
+2019-03-18 23:26:04 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:26:04 -     pivot and all greater elements to right 
+2019-03-18 23:26:04 -     of pivot */
+2019-03-18 23:26:04 -     static int partition(int []arr, int low, int high) 
+2019-03-18 23:26:04 -     { 
+2019-03-18 23:26:04 -         int pivot = arr[low];  
+2019-03-18 23:26:04 -         // index of smaller element 
+2019-03-18 23:26:04 -         int i = (low - 1);  
+2019-03-18 23:26:04 -         for (int j = low; j < high; j++) 
+2019-03-18 23:26:04 -         { 
+2019-03-18 23:26:04 -             // If current element is smaller  
+2019-03-18 23:26:04 -             // than or equal to pivot 
+2019-03-18 23:26:04 -             if (arr[j] > pivot) 
+2019-03-18 23:26:04 -             { 
+2019-03-18 23:26:04 -                 i++; 
+2019-03-18 23:26:04 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:26:04 -                 int temp = arr[i]; 
+2019-03-18 23:26:04 -                 arr[i] = arr[j]; 
+2019-03-18 23:26:04 -                 arr[j] = temp; 
+2019-03-18 23:26:04 -             } 
+2019-03-18 23:26:04 -         } 
+2019-03-18 23:26:04 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:26:04 -         int temp1 = arr[i+1]; 
+2019-03-18 23:26:04 -         arr[i+1] = pivot; 
+2019-03-18 23:26:04 -         pivot = temp1; 
+2019-03-18 23:26:04 -         return i+1; 
+2019-03-18 23:26:04 -     } 
+2019-03-18 23:26:04 -     /* The main function that implements QuickSort() 
+2019-03-18 23:26:04 -     arr[] --> Array to be sorted, 
+2019-03-18 23:26:04 -     low --> Starting index, 
+2019-03-18 23:26:04 -     high --> Ending index */
+2019-03-18 23:26:04 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:26:04 -     { 
+2019-03-18 23:26:04 -         if (low < high) 
+2019-03-18 23:26:04 -         { 
+2019-03-18 23:26:04 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:26:04 -             now at right place */
+2019-03-18 23:26:04 -             int pi = partition(arr, low, high); 
+2019-03-18 23:26:04 -             // Recursively sort elements before 
+2019-03-18 23:26:04 -             // partition and after partition 
+2019-03-18 23:26:04 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:26:04 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:26:04 -         } 
+2019-03-18 23:26:04 -     } 
+2019-03-18 23:26:04 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:26:04 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:26:04 - foreach(var i in arr){
+2019-03-18 23:26:04 -     Console.Write(i+" ");
+2019-03-18 23:26:04 - }
+2019-03-18 23:29:40 -     /* This function takes last element as pivot, 
+2019-03-18 23:29:40 -     places the pivot element at its correct 
+2019-03-18 23:29:40 -     position in sorted array, and places all 
+2019-03-18 23:29:40 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:29:40 -     pivot and all greater elements to right 
+2019-03-18 23:29:40 -     of pivot */
+2019-03-18 23:29:40 -     static int partition(int []arr, int low, int high) 
+2019-03-18 23:29:40 -     { 
+2019-03-18 23:29:40 -         int pivot = arr[low];  
+2019-03-18 23:29:40 -         // index of smaller element 
+2019-03-18 23:29:40 -         int i = (low - 1);  
+2019-03-18 23:29:40 -         for (int j = low; j < high; j++) 
+2019-03-18 23:29:40 -         { 
+2019-03-18 23:29:40 -             // If current element is smaller  
+2019-03-18 23:29:40 -             // than or equal to pivot 
+2019-03-18 23:29:40 -             if (arr[j] > pivot) 
+2019-03-18 23:29:40 -             { 
+2019-03-18 23:29:40 -                 i++; 
+2019-03-18 23:29:40 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:29:40 -                 int temp = arr[i]; 
+2019-03-18 23:29:40 -                 arr[i] = arr[j]; 
+2019-03-18 23:29:40 -                 arr[j] = temp; 
+2019-03-18 23:29:40 -             } 
+2019-03-18 23:29:40 -         } 
+2019-03-18 23:29:40 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:29:40 -         int temp1 = arr[i+1]; 
+2019-03-18 23:29:40 -         arr[i+1] = pivot; 
+2019-03-18 23:29:40 -         pivot = temp1; 
+2019-03-18 23:29:40 -         return i+1; 
+2019-03-18 23:29:40 -     } 
+2019-03-18 23:29:40 -     /* The main function that implements QuickSort() 
+2019-03-18 23:29:40 -     arr[] --> Array to be sorted, 
+2019-03-18 23:29:40 -     low --> Starting index, 
+2019-03-18 23:29:40 -     high --> Ending index */
+2019-03-18 23:29:40 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:29:40 -     { 
+2019-03-18 23:29:40 -         if (low < high) 
+2019-03-18 23:29:40 -         { 
+2019-03-18 23:29:40 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:29:40 -             now at right place */
+2019-03-18 23:29:40 -             int pi = partition(arr, low, high); 
+2019-03-18 23:29:40 -             // Recursively sort elements before 
+2019-03-18 23:29:40 -             // partition and after partition 
+2019-03-18 23:29:40 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:29:40 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:29:40 -         } 
+2019-03-18 23:29:40 -     } 
+2019-03-18 23:29:40 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:29:40 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:29:40 - foreach(var i in arr){
+2019-03-18 23:29:40 -     Console.Write(i+" ");
+2019-03-18 23:29:40 - }
+2019-03-18 23:29:50 -     /* This function takes last element as pivot, 
+2019-03-18 23:29:50 -     places the pivot element at its correct 
+2019-03-18 23:29:50 -     position in sorted array, and places all 
+2019-03-18 23:29:50 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:29:50 -     pivot and all greater elements to right 
+2019-03-18 23:29:50 -     of pivot */
+2019-03-18 23:29:50 -     static int partition(int []arr, int low, 
+2019-03-18 23:29:50 -                                    int high) 
+2019-03-18 23:29:50 -     { 
+2019-03-18 23:29:50 -         int pivot = arr[high];  
+2019-03-18 23:29:50 -         // index of smaller element 
+2019-03-18 23:29:50 -         int i = (low - 1);  
+2019-03-18 23:29:50 -         for (int j = low; j < high; j++) 
+2019-03-18 23:29:50 -         { 
+2019-03-18 23:29:50 -             // If current element is smaller  
+2019-03-18 23:29:50 -             // than or equal to pivot 
+2019-03-18 23:29:50 -             if (arr[j] <= pivot) 
+2019-03-18 23:29:50 -             { 
+2019-03-18 23:29:50 -                 i++; 
+2019-03-18 23:29:50 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:29:50 -                 int temp = arr[i]; 
+2019-03-18 23:29:50 -                 arr[i] = arr[j]; 
+2019-03-18 23:29:50 -                 arr[j] = temp; 
+2019-03-18 23:29:50 -             } 
+2019-03-18 23:29:50 -         } 
+2019-03-18 23:29:50 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:29:50 -         int temp1 = arr[i+1]; 
+2019-03-18 23:29:50 -         arr[i+1] = arr[high]; 
+2019-03-18 23:29:50 -         arr[high] = temp1; 
+2019-03-18 23:29:50 -         return i+1; 
+2019-03-18 23:29:50 -     } 
+2019-03-18 23:29:50 -     /* The main function that implements QuickSort() 
+2019-03-18 23:29:50 -     arr[] --> Array to be sorted, 
+2019-03-18 23:29:50 -     low --> Starting index, 
+2019-03-18 23:29:50 -     high --> Ending index */
+2019-03-18 23:29:50 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:29:50 -     { 
+2019-03-18 23:29:50 -         if (low < high) 
+2019-03-18 23:29:50 -         { 
+2019-03-18 23:29:50 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:29:50 -             now at right place */
+2019-03-18 23:29:50 -             int pi = partition(arr, low, high); 
+2019-03-18 23:29:50 -             // Recursively sort elements before 
+2019-03-18 23:29:50 -             // partition and after partition 
+2019-03-18 23:29:50 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:29:50 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:29:50 -         } 
+2019-03-18 23:29:50 -     } 
+2019-03-18 23:29:50 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:29:50 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:29:50 - foreach(var i in arr){
+2019-03-18 23:29:50 -     Console.Write(i+" ");
+2019-03-18 23:29:50 - }
+2019-03-18 23:30:41 -     /* This function takes last element as pivot, 
+2019-03-18 23:30:41 -     places the pivot element at its correct 
+2019-03-18 23:30:41 -     position in sorted array, and places all 
+2019-03-18 23:30:41 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:30:41 -     pivot and all greater elements to right 
+2019-03-18 23:30:41 -     of pivot */
+2019-03-18 23:30:41 -     static int partition(int []arr, int low, 
+2019-03-18 23:30:41 -                                    int high) 
+2019-03-18 23:30:41 -     { 
+2019-03-18 23:30:41 -         int pivot = arr[high];  
+2019-03-18 23:30:41 -         // index of smaller element 
+2019-03-18 23:30:41 -         int i = (low - 1);  
+2019-03-18 23:30:41 -         for (int j = low; j < high; j++) 
+2019-03-18 23:30:41 -         { 
+2019-03-18 23:30:41 -             // If current element is smaller  
+2019-03-18 23:30:41 -             // than or equal to pivot 
+2019-03-18 23:30:41 -             if (arr[j] <= pivot) 
+2019-03-18 23:30:41 -             { 
+2019-03-18 23:30:41 -                 i++; 
+2019-03-18 23:30:41 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:30:41 -                 Swap(ref arr[i],ref arr[j]);
+2019-03-18 23:30:41 -             } 
+2019-03-18 23:30:41 -         } 
+2019-03-18 23:30:41 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:30:41 -         int temp1 = arr[i+1]; 
+2019-03-18 23:30:41 -         arr[i+1] = arr[high]; 
+2019-03-18 23:30:41 -         arr[high] = temp1; 
+2019-03-18 23:30:41 -         return i+1; 
+2019-03-18 23:30:41 -     } 
+2019-03-18 23:30:41 -     /* The main function that implements QuickSort() 
+2019-03-18 23:30:41 -     arr[] --> Array to be sorted, 
+2019-03-18 23:30:41 -     low --> Starting index, 
+2019-03-18 23:30:41 -     high --> Ending index */
+2019-03-18 23:30:41 -     static void quickSort(int []arr, int low, int high) 
+2019-03-18 23:30:41 -     { 
+2019-03-18 23:30:41 -         if (low < high) 
+2019-03-18 23:30:41 -         { 
+2019-03-18 23:30:41 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:30:41 -             now at right place */
+2019-03-18 23:30:41 -             int pi = partition(arr, low, high); 
+2019-03-18 23:30:41 -             // Recursively sort elements before 
+2019-03-18 23:30:41 -             // partition and after partition 
+2019-03-18 23:30:41 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:30:41 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:30:41 -         } 
+2019-03-18 23:30:41 -     } 
+2019-03-18 23:30:41 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:30:41 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:30:41 - foreach(var i in arr){
+2019-03-18 23:30:41 -     Console.Write(i+" ");
+2019-03-18 23:30:41 - }
+2019-03-18 23:30:41 - (24,17): error CS0120: An object reference is required for the non-static field, method, or property 'Swap(ref int, ref int)'
+2019-03-18 23:30:55 -     /* This function takes last element as pivot, 
+2019-03-18 23:30:55 -     places the pivot element at its correct 
+2019-03-18 23:30:55 -     position in sorted array, and places all 
+2019-03-18 23:30:55 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:30:55 -     pivot and all greater elements to right 
+2019-03-18 23:30:55 -     of pivot */
+2019-03-18 23:30:55 -     public int partition(int []arr, int low, 
+2019-03-18 23:30:55 -                                    int high) 
+2019-03-18 23:30:55 -     { 
+2019-03-18 23:30:55 -         int pivot = arr[high];  
+2019-03-18 23:30:55 -         // index of smaller element 
+2019-03-18 23:30:55 -         int i = (low - 1);  
+2019-03-18 23:30:55 -         for (int j = low; j < high; j++) 
+2019-03-18 23:30:55 -         { 
+2019-03-18 23:30:55 -             // If current element is smaller  
+2019-03-18 23:30:55 -             // than or equal to pivot 
+2019-03-18 23:30:55 -             if (arr[j] <= pivot) 
+2019-03-18 23:30:55 -             { 
+2019-03-18 23:30:55 -                 i++; 
+2019-03-18 23:30:55 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:30:55 -                 Swap(ref arr[i],ref arr[j]);
+2019-03-18 23:30:55 -             } 
+2019-03-18 23:30:55 -         } 
+2019-03-18 23:30:55 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:30:55 -         int temp1 = arr[i+1]; 
+2019-03-18 23:30:55 -         arr[i+1] = arr[high]; 
+2019-03-18 23:30:55 -         arr[high] = temp1; 
+2019-03-18 23:30:55 -         return i+1; 
+2019-03-18 23:30:55 -     } 
+2019-03-18 23:30:55 -     /* The main function that implements QuickSort() 
+2019-03-18 23:30:55 -     arr[] --> Array to be sorted, 
+2019-03-18 23:30:55 -     low --> Starting index, 
+2019-03-18 23:30:55 -     high --> Ending index */
+2019-03-18 23:30:55 -     public void quickSort(int []arr, int low, int high) 
+2019-03-18 23:30:55 -     { 
+2019-03-18 23:30:55 -         if (low < high) 
+2019-03-18 23:30:55 -         { 
+2019-03-18 23:30:55 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:30:55 -             now at right place */
+2019-03-18 23:30:55 -             int pi = partition(arr, low, high); 
+2019-03-18 23:30:55 -             // Recursively sort elements before 
+2019-03-18 23:30:55 -             // partition and after partition 
+2019-03-18 23:30:55 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:30:55 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:30:55 -         } 
+2019-03-18 23:30:55 -     } 
+2019-03-18 23:30:55 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:30:55 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:30:55 - foreach(var i in arr){
+2019-03-18 23:30:55 -     Console.Write(i+" ");
+2019-03-18 23:30:55 - }
+2019-03-18 23:33:37 -     /* This function takes last element as pivot, 
+2019-03-18 23:33:37 -     places the pivot element at its correct 
+2019-03-18 23:33:37 -     position in sorted array, and places all 
+2019-03-18 23:33:37 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:33:37 -     pivot and all greater elements to right 
+2019-03-18 23:33:37 -     of pivot */
+2019-03-18 23:33:37 -     public int partition(int []arr, int low, 
+2019-03-18 23:33:37 -                                    int high) 
+2019-03-18 23:33:37 -     { 
+2019-03-18 23:33:37 -         int pivot = arr[high];  
+2019-03-18 23:33:37 -         // index of smaller element 
+2019-03-18 23:33:37 -         int i = (low - 1);  
+2019-03-18 23:33:37 -         for (int j = low; j < high; j++) 
+2019-03-18 23:33:37 -         { 
+2019-03-18 23:33:37 -             // If current element is smaller  
+2019-03-18 23:33:37 -             // than or equal to pivot 
+2019-03-18 23:33:37 -             if (arr[j] <= pivot) 
+2019-03-18 23:33:37 -             { 
+2019-03-18 23:33:37 -                 i++; 
+2019-03-18 23:33:37 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:33:37 -                 Swap(ref arr[i],ref arr[j]);
+2019-03-18 23:33:37 -             } 
+2019-03-18 23:33:37 -         } 
+2019-03-18 23:33:37 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:33:37 -         Swap(ref arr[i+1],ref pivot);
+2019-03-18 23:33:37 -         return i+1; 
+2019-03-18 23:33:37 -     } 
+2019-03-18 23:33:37 -     /* The main function that implements QuickSort() 
+2019-03-18 23:33:37 -     arr[] --> Array to be sorted, 
+2019-03-18 23:33:37 -     low --> Starting index, 
+2019-03-18 23:33:37 -     high --> Ending index */
+2019-03-18 23:33:37 -     public void quickSort(int []arr, int low, int high) 
+2019-03-18 23:33:37 -     { 
+2019-03-18 23:33:37 -         if (low < high) 
+2019-03-18 23:33:37 -         { 
+2019-03-18 23:33:37 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:33:37 -             now at right place */
+2019-03-18 23:33:37 -             int pi = partition(arr, low, high); 
+2019-03-18 23:33:37 -             // Recursively sort elements before 
+2019-03-18 23:33:37 -             // partition and after partition 
+2019-03-18 23:33:37 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:33:37 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:33:37 -         } 
+2019-03-18 23:33:37 -     } 
+2019-03-18 23:33:37 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:33:37 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:33:37 - foreach(var i in arr){
+2019-03-18 23:33:37 -     Console.Write(i+" ");
+2019-03-18 23:33:37 - }
+2019-03-18 23:33:46 -     /* This function takes last element as pivot, 
+2019-03-18 23:33:46 -     places the pivot element at its correct 
+2019-03-18 23:33:46 -     position in sorted array, and places all 
+2019-03-18 23:33:46 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:33:46 -     pivot and all greater elements to right 
+2019-03-18 23:33:46 -     of pivot */
+2019-03-18 23:33:46 -     public int partition(int []arr, int low, 
+2019-03-18 23:33:46 -                                    int high) 
+2019-03-18 23:33:46 -     { 
+2019-03-18 23:33:46 -         int pivot = arr[high];  
+2019-03-18 23:33:46 -         // index of smaller element 
+2019-03-18 23:33:46 -         int i = (low - 1);  
+2019-03-18 23:33:46 -         for (int j = low; j < high; j++) 
+2019-03-18 23:33:46 -         { 
+2019-03-18 23:33:46 -             // If current element is smaller  
+2019-03-18 23:33:46 -             // than or equal to pivot 
+2019-03-18 23:33:46 -             if (arr[j] <= pivot) 
+2019-03-18 23:33:46 -             { 
+2019-03-18 23:33:46 -                 i++; 
+2019-03-18 23:33:46 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:33:46 -                 Swap(ref arr[i],ref arr[j]);
+2019-03-18 23:33:46 -             } 
+2019-03-18 23:33:46 -         } 
+2019-03-18 23:33:46 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:33:46 -         Swap(ref arr[i+1],ref arr[high]);
+2019-03-18 23:33:46 -         return i+1; 
+2019-03-18 23:33:46 -     } 
+2019-03-18 23:33:46 -     /* The main function that implements QuickSort() 
+2019-03-18 23:33:46 -     arr[] --> Array to be sorted, 
+2019-03-18 23:33:46 -     low --> Starting index, 
+2019-03-18 23:33:46 -     high --> Ending index */
+2019-03-18 23:33:46 -     public void quickSort(int []arr, int low, int high) 
+2019-03-18 23:33:46 -     { 
+2019-03-18 23:33:46 -         if (low < high) 
+2019-03-18 23:33:46 -         { 
+2019-03-18 23:33:46 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:33:46 -             now at right place */
+2019-03-18 23:33:46 -             int pi = partition(arr, low, high); 
+2019-03-18 23:33:46 -             // Recursively sort elements before 
+2019-03-18 23:33:46 -             // partition and after partition 
+2019-03-18 23:33:46 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:33:46 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:33:46 -         } 
+2019-03-18 23:33:46 -     } 
+2019-03-18 23:33:46 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:33:46 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:33:46 - foreach(var i in arr){
+2019-03-18 23:33:46 -     Console.Write(i+" ");
+2019-03-18 23:33:46 - }
+2019-03-18 23:33:48 -     /* This function takes last element as pivot, 
+2019-03-18 23:33:48 -     places the pivot element at its correct 
+2019-03-18 23:33:48 -     position in sorted array, and places all 
+2019-03-18 23:33:48 -     smaller (smaller than pivot) to left of 
+2019-03-18 23:33:48 -     pivot and all greater elements to right 
+2019-03-18 23:33:48 -     of pivot */
+2019-03-18 23:33:48 -     public int partition(int []arr, int low, 
+2019-03-18 23:33:48 -                                    int high) 
+2019-03-18 23:33:48 -     { 
+2019-03-18 23:33:48 -         int pivot = arr[high];  
+2019-03-18 23:33:48 -         // index of smaller element 
+2019-03-18 23:33:48 -         int i = (low - 1);  
+2019-03-18 23:33:48 -         for (int j = low; j < high; j++) 
+2019-03-18 23:33:48 -         { 
+2019-03-18 23:33:48 -             // If current element is smaller  
+2019-03-18 23:33:48 -             // than or equal to pivot 
+2019-03-18 23:33:48 -             if (arr[j] <= pivot) 
+2019-03-18 23:33:48 -             { 
+2019-03-18 23:33:48 -                 i++; 
+2019-03-18 23:33:48 -                 // swap arr[i] and arr[j] 
+2019-03-18 23:33:48 -                 Swap(ref arr[i],ref arr[j]);
+2019-03-18 23:33:48 -             } 
+2019-03-18 23:33:48 -         } 
+2019-03-18 23:33:48 -         // swap arr[i+1] and arr[high] (or pivot) 
+2019-03-18 23:33:48 -         Swap(ref arr[i+1],ref arr[high]);
+2019-03-18 23:33:48 -         return i+1; 
+2019-03-18 23:33:48 -     } 
+2019-03-18 23:33:48 -     /* The main function that implements QuickSort() 
+2019-03-18 23:33:48 -     arr[] --> Array to be sorted, 
+2019-03-18 23:33:48 -     low --> Starting index, 
+2019-03-18 23:33:48 -     high --> Ending index */
+2019-03-18 23:33:48 -     public void quickSort(int []arr, int low, int high) 
+2019-03-18 23:33:48 -     { 
+2019-03-18 23:33:48 -         if (low < high) 
+2019-03-18 23:33:48 -         { 
+2019-03-18 23:33:48 -             /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:33:48 -             now at right place */
+2019-03-18 23:33:48 -             int pi = partition(arr, low, high); 
+2019-03-18 23:33:48 -             // Recursively sort elements before 
+2019-03-18 23:33:48 -             // partition and after partition 
+2019-03-18 23:33:48 -             quickSort(arr, low, pi-1); 
+2019-03-18 23:33:48 -             quickSort(arr, pi+1, high); 
+2019-03-18 23:33:48 -         } 
+2019-03-18 23:33:48 -     } 
+2019-03-18 23:33:48 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:33:48 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:33:48 - foreach(var i in arr){
+2019-03-18 23:33:48 -     Console.Write(i+" ");
+2019-03-18 23:33:48 - }
+2019-03-18 23:40:22 - /* This function takes last element as pivot, 
+2019-03-18 23:40:22 - places the pivot element at its correct 
+2019-03-18 23:40:22 - position in sorted array, and places all 
+2019-03-18 23:40:22 - smaller (smaller than pivot) to left of 
+2019-03-18 23:40:22 - pivot and all greater elements to right 
+2019-03-18 23:40:22 - of pivot */
+2019-03-18 23:40:22 - public int partition(int []arr, int low, int high) 
+2019-03-18 23:40:22 - { 
+2019-03-18 23:40:22 -     int pivot = arr[high];  
+2019-03-18 23:40:22 -     // index of smaller element 
+2019-03-18 23:40:22 -     int i = (low - 1);  
+2019-03-18 23:40:22 -     for (int j = low; j < high; j++) 
+2019-03-18 23:40:22 -     { 
+2019-03-18 23:40:22 -         if (arr[j] <= pivot) 
+2019-03-18 23:40:22 -         { 
+2019-03-18 23:40:22 -             i++; 
+2019-03-18 23:40:22 -             // swap
+2019-03-18 23:40:22 -             Swap(ref arr[i],ref arr[j]);
+2019-03-18 23:40:22 -         } 
+2019-03-18 23:40:22 -     } 
+2019-03-18 23:40:22 -     // swap 
+2019-03-18 23:40:22 -     //Swap(ref arr[i+1],ref arr[high]);
+2019-03-18 23:40:22 -     return i+1; 
+2019-03-18 23:40:22 - } 
+2019-03-18 23:40:22 - /* The main function that implements QuickSort() 
+2019-03-18 23:40:22 - arr[] --> Array to be sorted, 
+2019-03-18 23:40:22 - low --> Starting index, 
+2019-03-18 23:40:22 - high --> Ending index */
+2019-03-18 23:40:22 - public void quickSort(int []arr, int low, int high) 
+2019-03-18 23:40:22 - { 
+2019-03-18 23:40:22 -     if (low < high) 
+2019-03-18 23:40:22 -     { 
+2019-03-18 23:40:22 -         /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:40:22 -         now at right place */
+2019-03-18 23:40:22 -         int pi = partition(arr, low, high); 
+2019-03-18 23:40:22 -         // Recursively sort elements before 
+2019-03-18 23:40:22 -         // partition and after partition 
+2019-03-18 23:40:22 -         quickSort(arr, low, pi-1); 
+2019-03-18 23:40:22 -         quickSort(arr, pi+1, high); 
+2019-03-18 23:40:22 -     } 
+2019-03-18 23:40:22 - } 
+2019-03-18 23:40:22 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:40:22 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:40:22 - foreach(var i in arr)
+2019-03-18 23:40:22 - {
+2019-03-18 23:40:22 -     Console.Write(i+" ");
+2019-03-18 23:40:22 - }
+2019-03-18 23:40:29 - /* This function takes last element as pivot, 
+2019-03-18 23:40:29 - places the pivot element at its correct 
+2019-03-18 23:40:29 - position in sorted array, and places all 
+2019-03-18 23:40:29 - smaller (smaller than pivot) to left of 
+2019-03-18 23:40:29 - pivot and all greater elements to right 
+2019-03-18 23:40:29 - of pivot */
+2019-03-18 23:40:29 - public int partition(int []arr, int low, int high) 
+2019-03-18 23:40:29 - { 
+2019-03-18 23:40:29 -     int pivot = arr[high];  
+2019-03-18 23:40:29 -     // index of smaller element 
+2019-03-18 23:40:29 -     int i = (low - 1);  
+2019-03-18 23:40:29 -     for (int j = low; j < high; j++) 
+2019-03-18 23:40:29 -     { 
+2019-03-18 23:40:29 -         if (arr[j] <= pivot) 
+2019-03-18 23:40:29 -         { 
+2019-03-18 23:40:29 -             i++; 
+2019-03-18 23:40:29 -             // swap
+2019-03-18 23:40:29 -             Swap(ref arr[i],ref arr[j]);
+2019-03-18 23:40:29 -         } 
+2019-03-18 23:40:29 -     } 
+2019-03-18 23:40:29 -     // swap 
+2019-03-18 23:40:29 -     Swap(ref arr[i+1],ref arr[high]);
+2019-03-18 23:40:29 -     return i+1; 
+2019-03-18 23:40:29 - } 
+2019-03-18 23:40:29 - /* The main function that implements QuickSort() 
+2019-03-18 23:40:29 - arr[] --> Array to be sorted, 
+2019-03-18 23:40:29 - low --> Starting index, 
+2019-03-18 23:40:29 - high --> Ending index */
+2019-03-18 23:40:29 - public void quickSort(int []arr, int low, int high) 
+2019-03-18 23:40:29 - { 
+2019-03-18 23:40:29 -     if (low < high) 
+2019-03-18 23:40:29 -     { 
+2019-03-18 23:40:29 -         /* pi is partitioning index, arr[pi] is  
+2019-03-18 23:40:29 -         now at right place */
+2019-03-18 23:40:29 -         int pi = partition(arr, low, high); 
+2019-03-18 23:40:29 -         // Recursively sort elements before 
+2019-03-18 23:40:29 -         // partition and after partition 
+2019-03-18 23:40:29 -         quickSort(arr, low, pi-1); 
+2019-03-18 23:40:29 -         quickSort(arr, pi+1, high); 
+2019-03-18 23:40:29 -     } 
+2019-03-18 23:40:29 - } 
+2019-03-18 23:40:29 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-18 23:40:29 - quickSort(arr, 0, arr.Length-1);
+2019-03-18 23:40:29 - foreach(var i in arr)
+2019-03-18 23:40:29 - {
+2019-03-18 23:40:29 -     Console.Write(i+" ");
+2019-03-18 23:40:29 - }
+2019-03-19 00:25:46 - public static void QuickSortClean(int[] arr, int low, int high)
+2019-03-19 00:25:46 - {
+2019-03-19 00:25:46 -     if (low >= high) return;
+2019-03-19 00:25:46 -     int first = low, last = high;
+2019-03-19 00:25:46 -     // 此时a[low]被保存到pivot，所以元素a[low]可以当作是一个空位，用于保存数据，
+2019-03-19 00:25:46 -     // 之后每赋值一次，也会有一个位置空出来，
+2019-03-19 00:25:46 -     // 直到last==first，此时arr[last]==arr[first]=pivot
+2019-03-19 00:25:46 -     int pivot = arr[low];
+2019-03-19 00:25:46 -     while (first < last)
+2019-03-19 00:25:46 -     {
+2019-03-19 00:25:46 -         while (first < last && arr[last] >= pivot)
+2019-03-19 00:25:46 -         {
+2019-03-19 00:25:46 -             last--;
+2019-03-19 00:25:46 -         }
+2019-03-19 00:25:46 -         arr[first] = arr[last];
+2019-03-19 00:25:46 -         while (first < last && arr[first] <= pivot)
+2019-03-19 00:25:46 -         {
+2019-03-19 00:25:46 -             first++;
+2019-03-19 00:25:46 -         }
+2019-03-19 00:25:46 -         arr[last] = arr[first];
+2019-03-19 00:25:46 -     }
+2019-03-19 00:25:46 -     // 跳出循环后, 现在i==j了, 这样i就是中间位置的,所以把基准数放在i的位置
+2019-03-19 00:25:46 -     // 这样就分成了两个区间因为 i 的位置已经确定下来了是中间数
+2019-03-19 00:25:46 -     // 就是说在i左边的数虽然不是有序的但比i要小;
+2019-03-19 00:25:46 -     // 而在i右边的数虽然不是有序的但比i要大
+2019-03-19 00:25:46 -     arr[first] = pivot;
+2019-03-19 00:25:46 -     //递归排序数组左边的元素
+2019-03-19 00:25:46 -     QuickSortClean(arr, low, first - 1);
+2019-03-19 00:25:46 -     //递归排序右边的元素
+2019-03-19 00:25:46 -     QuickSortClean(arr, first + 1, high);
+2019-03-19 00:25:46 - }
+2019-03-19 00:25:46 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-19 00:25:46 - QuickSort(arr, 0, arr.Length-1);
+2019-03-19 00:25:46 - foreach(var i in arr)
+2019-03-19 00:25:46 - {
+2019-03-19 00:25:46 -     Console.Write(i+" ");
+2019-03-19 00:25:46 - }
+2019-03-19 00:25:46 - (39,1): error CS0103: The name 'QuickSort' does not exist in the current context
+2019-03-19 00:26:06 - public static void QuickSort(int[] arr, int low, int high)
+2019-03-19 00:26:06 - {
+2019-03-19 00:26:06 -     if (low >= high) return;
+2019-03-19 00:26:06 -     int first = low, last = high;
+2019-03-19 00:26:06 -     // 此时a[low]被保存到pivot，所以元素a[low]可以当作是一个空位，用于保存数据，
+2019-03-19 00:26:06 -     // 之后每赋值一次，也会有一个位置空出来，
+2019-03-19 00:26:06 -     // 直到last==first，此时arr[last]==arr[first]=pivot
+2019-03-19 00:26:06 -     int pivot = arr[low];
+2019-03-19 00:26:06 -     while (first < last)
+2019-03-19 00:26:06 -     {
+2019-03-19 00:26:06 -         while (first < last && arr[last] >= pivot)
+2019-03-19 00:26:06 -         {
+2019-03-19 00:26:06 -             last--;
+2019-03-19 00:26:06 -         }
+2019-03-19 00:26:06 -         arr[first] = arr[last];
+2019-03-19 00:26:06 -         while (first < last && arr[first] <= pivot)
+2019-03-19 00:26:06 -         {
+2019-03-19 00:26:06 -             first++;
+2019-03-19 00:26:06 -         }
+2019-03-19 00:26:06 -         arr[last] = arr[first];
+2019-03-19 00:26:06 -     }
+2019-03-19 00:26:06 -     // 跳出循环后, 现在i==j了, 这样i就是中间位置的,所以把基准数放在i的位置
+2019-03-19 00:26:06 -     // 这样就分成了两个区间因为 i 的位置已经确定下来了是中间数
+2019-03-19 00:26:06 -     // 就是说在i左边的数虽然不是有序的但比i要小;
+2019-03-19 00:26:06 -     // 而在i右边的数虽然不是有序的但比i要大
+2019-03-19 00:26:06 -     arr[first] = pivot;
+2019-03-19 00:26:06 -     //递归排序数组左边的元素
+2019-03-19 00:26:06 -     QuickSort(arr, low, first - 1);
+2019-03-19 00:26:06 -     //递归排序右边的元素
+2019-03-19 00:26:06 -     QuickSort(arr, first + 1, high);
+2019-03-19 00:26:06 - }
+2019-03-19 00:26:06 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-19 00:26:06 - QuickSort(arr, 0, arr.Length-1);
+2019-03-19 00:26:06 - foreach(var i in arr)
+2019-03-19 00:26:06 - {
+2019-03-19 00:26:06 -     Console.Write(i+" ");
+2019-03-19 00:26:06 - }
+2019-03-19 00:30:29 - public void Partition(int[] arr, int low, int high){
+2019-03-19 00:30:29 -     int first = low, last = high;
+2019-03-19 00:30:29 -     // 此时a[low]被保存到pivot，所以元素a[low]可以当作是一个空位，用于保存数据，
+2019-03-19 00:30:29 -     // 之后每赋值一次，也会有一个位置空出来，
+2019-03-19 00:30:29 -     // 直到last==first，此时arr[last]==arr[first]=pivot
+2019-03-19 00:30:29 -     int pivot = arr[low];
+2019-03-19 00:30:29 -     while (first < last)
+2019-03-19 00:30:29 -     {
+2019-03-19 00:30:29 -         while (first < last && arr[last] >= pivot)
+2019-03-19 00:30:29 -         {
+2019-03-19 00:30:29 -             last--;
+2019-03-19 00:30:29 -         }
+2019-03-19 00:30:29 -         arr[first] = arr[last];
+2019-03-19 00:30:29 -         while (first < last && arr[first] <= pivot)
+2019-03-19 00:30:29 -         {
+2019-03-19 00:30:29 -             first++;
+2019-03-19 00:30:29 -         }
+2019-03-19 00:30:29 -         arr[last] = arr[first];
+2019-03-19 00:30:29 -     }
+2019-03-19 00:30:29 -     // 跳出循环后, 现在i==j了, 这样i就是中间位置的,所以把基准数放在i的位置
+2019-03-19 00:30:29 -     // 这样就分成了两个区间因为 i 的位置已经确定下来了是中间数
+2019-03-19 00:30:29 -     // 就是说在i左边的数虽然不是有序的但比i要小;
+2019-03-19 00:30:29 -     // 而在i右边的数虽然不是有序的但比i要大
+2019-03-19 00:30:29 -    return arr[first];
+2019-03-19 00:30:29 - }
+2019-03-19 00:30:29 - public void QuickSort(int[] arr, int low, int high)
+2019-03-19 00:30:29 - {
+2019-03-19 00:30:29 -     if (low >= high) return;
+2019-03-19 00:30:29 -     int pi = Partition(arr,low,high);
+2019-03-19 00:30:29 -     //递归排序数组左边的元素
+2019-03-19 00:30:29 -     QuickSort(arr, low, pi - 1);
+2019-03-19 00:30:29 -     //递归排序右边的元素
+2019-03-19 00:30:29 -     QuickSort(arr, pi + 1, high);
+2019-03-19 00:30:29 - }
+2019-03-19 00:30:29 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-19 00:30:29 - QuickSort(arr, 0, arr.Length-1);
+2019-03-19 00:30:29 - foreach(var i in arr)
+2019-03-19 00:30:29 - {
+2019-03-19 00:30:29 -     Console.Write(i+" ");
+2019-03-19 00:30:29 - }
+2019-03-19 00:30:29 - (28,4): error CS0127: Since 'Partition(int[], int, int)' returns void, a return keyword must not be followed by an object expression
+2019-03-19 00:30:29 - (35,14): error CS0029: Cannot implicitly convert type 'void' to 'int'
+2019-03-19 00:30:42 - public int Partition(int[] arr, int low, int high){
+2019-03-19 00:30:42 -     int first = low, last = high;
+2019-03-19 00:30:42 -     // 此时a[low]被保存到pivot，所以元素a[low]可以当作是一个空位，用于保存数据，
+2019-03-19 00:30:42 -     // 之后每赋值一次，也会有一个位置空出来，
+2019-03-19 00:30:42 -     // 直到last==first，此时arr[last]==arr[first]=pivot
+2019-03-19 00:30:42 -     int pivot = arr[low];
+2019-03-19 00:30:42 -     while (first < last)
+2019-03-19 00:30:42 -     {
+2019-03-19 00:30:42 -         while (first < last && arr[last] >= pivot)
+2019-03-19 00:30:42 -         {
+2019-03-19 00:30:42 -             last--;
+2019-03-19 00:30:42 -         }
+2019-03-19 00:30:42 -         arr[first] = arr[last];
+2019-03-19 00:30:42 -         while (first < last && arr[first] <= pivot)
+2019-03-19 00:30:42 -         {
+2019-03-19 00:30:42 -             first++;
+2019-03-19 00:30:42 -         }
+2019-03-19 00:30:42 -         arr[last] = arr[first];
+2019-03-19 00:30:42 -     }
+2019-03-19 00:30:42 -     // 跳出循环后, 现在i==j了, 这样i就是中间位置的,所以把基准数放在i的位置
+2019-03-19 00:30:42 -     // 这样就分成了两个区间因为 i 的位置已经确定下来了是中间数
+2019-03-19 00:30:42 -     // 就是说在i左边的数虽然不是有序的但比i要小;
+2019-03-19 00:30:42 -     // 而在i右边的数虽然不是有序的但比i要大
+2019-03-19 00:30:42 -    return arr[first];
+2019-03-19 00:30:42 - }
+2019-03-19 00:30:42 - public void QuickSort(int[] arr, int low, int high)
+2019-03-19 00:30:42 - {
+2019-03-19 00:30:42 -     if (low >= high) return;
+2019-03-19 00:30:42 -     int pi = Partition(arr,low,high);
+2019-03-19 00:30:42 -     //递归排序数组左边的元素
+2019-03-19 00:30:42 -     QuickSort(arr, low, pi - 1);
+2019-03-19 00:30:42 -     //递归排序右边的元素
+2019-03-19 00:30:42 -     QuickSort(arr, pi + 1, high);
+2019-03-19 00:30:42 - }
+2019-03-19 00:30:42 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-19 00:30:42 - QuickSort(arr, 0, arr.Length-1);
+2019-03-19 00:30:42 - foreach(var i in arr)
+2019-03-19 00:30:42 - {
+2019-03-19 00:30:42 -     Console.Write(i+" ");
+2019-03-19 00:30:42 - }
+2019-03-19 00:30:45 - using System;
+2019-03-19 00:30:45 - using System.Collections.Generic;
+2019-03-19 00:30:45 - using System.Linq;
+2019-03-19 00:30:45 - using System.Text;
+2019-03-19 00:30:45 - using System.Threading.Tasks;
+2019-03-19 00:30:45 - using ICSharp.Kernel;
+2019-03-19 00:30:45 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-19 00:30:54 - shutdown request
+2019-03-19 00:30:55 - using System;
+2019-03-19 00:30:55 - using System.Collections.Generic;
+2019-03-19 00:30:55 - using System.Linq;
+2019-03-19 00:30:55 - using System.Text;
+2019-03-19 00:30:55 - using System.Threading.Tasks;
+2019-03-19 00:30:55 - using ICSharp.Kernel;
+2019-03-19 00:30:55 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-19 00:31:11 - public int Partition(int[] arr, int low, int high){
+2019-03-19 00:31:11 -     int first = low, last = high;
+2019-03-19 00:31:11 -     // 此时a[low]被保存到pivot，所以元素a[low]可以当作是一个空位，用于保存数据，
+2019-03-19 00:31:11 -     // 之后每赋值一次，也会有一个位置空出来，
+2019-03-19 00:31:11 -     // 直到last==first，此时arr[last]==arr[first]=pivot
+2019-03-19 00:31:11 -     int pivot = arr[low];
+2019-03-19 00:31:11 -     while (first < last)
+2019-03-19 00:31:11 -     {
+2019-03-19 00:31:11 -         while (first < last && arr[last] >= pivot)
+2019-03-19 00:31:11 -         {
+2019-03-19 00:31:11 -             last--;
+2019-03-19 00:31:11 -         }
+2019-03-19 00:31:11 -         arr[first] = arr[last];
+2019-03-19 00:31:11 -         while (first < last && arr[first] <= pivot)
+2019-03-19 00:31:11 -         {
+2019-03-19 00:31:11 -             first++;
+2019-03-19 00:31:11 -         }
+2019-03-19 00:31:11 -         arr[last] = arr[first];
+2019-03-19 00:31:11 -     }
+2019-03-19 00:31:11 -     // 跳出循环后, 现在i==j了, 这样i就是中间位置的,所以把基准数放在i的位置
+2019-03-19 00:31:11 -     // 这样就分成了两个区间因为 i 的位置已经确定下来了是中间数
+2019-03-19 00:31:11 -     // 就是说在i左边的数虽然不是有序的但比i要小;
+2019-03-19 00:31:11 -     // 而在i右边的数虽然不是有序的但比i要大
+2019-03-19 00:31:11 -    return first;
+2019-03-19 00:31:11 - }
+2019-03-19 00:31:11 - public void QuickSort(int[] arr, int low, int high)
+2019-03-19 00:31:11 - {
+2019-03-19 00:31:11 -     if (low >= high) return;
+2019-03-19 00:31:11 -     int pi = Partition(arr,low,high);
+2019-03-19 00:31:11 -     //递归排序数组左边的元素
+2019-03-19 00:31:11 -     QuickSort(arr, low, pi - 1);
+2019-03-19 00:31:11 -     //递归排序右边的元素
+2019-03-19 00:31:11 -     QuickSort(arr, pi + 1, high);
+2019-03-19 00:31:11 - }
+2019-03-19 00:31:11 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-19 00:31:11 - QuickSort(arr, 0, arr.Length-1);
+2019-03-19 00:31:11 - foreach(var i in arr)
+2019-03-19 00:31:11 - {
+2019-03-19 00:31:11 -     Console.Write(i+" ");
+2019-03-19 00:31:11 - }
+2019-03-19 00:32:57 - public int Partition(int[] arr, int low, int high){
+2019-03-19 00:32:57 -     int first = low, last = high;
+2019-03-19 00:32:57 -     // 此时a[low]被保存到pivot，所以元素a[low]可以当作是一个空位，用于保存数据，
+2019-03-19 00:32:57 -     // 之后每赋值一次，也会有一个位置空出来，
+2019-03-19 00:32:57 -     // 直到last==first，此时arr[last]==arr[first]=pivot
+2019-03-19 00:32:57 -     int pivot = arr[low];
+2019-03-19 00:32:57 -     while (first < last)
+2019-03-19 00:32:57 -     {
+2019-03-19 00:32:57 -         while (first < last && arr[last] >= pivot)
+2019-03-19 00:32:57 -         {
+2019-03-19 00:32:57 -             last--;
+2019-03-19 00:32:57 -         }
+2019-03-19 00:32:57 -         arr[first] = arr[last];
+2019-03-19 00:32:57 -         while (first < last && arr[first] <= pivot)
+2019-03-19 00:32:57 -         {
+2019-03-19 00:32:57 -             first++;
+2019-03-19 00:32:57 -         }
+2019-03-19 00:32:57 -         arr[last] = arr[first];
+2019-03-19 00:32:57 -     }
+2019-03-19 00:32:57 -     arr[first] = pivot;
+2019-03-19 00:32:57 -     // 跳出循环后, 现在i==j了, 这样i就是中间位置的,所以把基准数放在i的位置
+2019-03-19 00:32:57 -     // 这样就分成了两个区间因为 i 的位置已经确定下来了是中间数
+2019-03-19 00:32:57 -     // 就是说在i左边的数虽然不是有序的但比i要小;
+2019-03-19 00:32:57 -     // 而在i右边的数虽然不是有序的但比i要大
+2019-03-19 00:32:57 -    return first;
+2019-03-19 00:32:57 - }
+2019-03-19 00:32:57 - public void QuickSort(int[] arr, int low, int high)
+2019-03-19 00:32:57 - {
+2019-03-19 00:32:57 -     if (low >= high) return;
+2019-03-19 00:32:57 -     int pi = Partition(arr,low,high);
+2019-03-19 00:32:57 -     //递归排序数组左边的元素
+2019-03-19 00:32:57 -     QuickSort(arr, low, pi - 1);
+2019-03-19 00:32:57 -     //递归排序右边的元素
+2019-03-19 00:32:57 -     QuickSort(arr, pi + 1, high);
+2019-03-19 00:32:57 - }
+2019-03-19 00:32:57 - int[] arr = new int[] {8,6,4,5,2,7,1};
+2019-03-19 00:32:57 - QuickSort(arr, 0, arr.Length-1);
+2019-03-19 00:32:57 - foreach(var i in arr)
+2019-03-19 00:32:57 - {
+2019-03-19 00:32:57 -     Console.Write(i+" ");
+2019-03-19 00:32:57 - }
+2019-03-19 02:05:34 - Unexpected content type on shell. msg_type is comm_info_request 
