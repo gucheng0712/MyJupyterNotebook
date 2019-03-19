@@ -2965,3 +2965,52 @@
 2019-03-18 16:24:55 -     return arr;
 2019-03-18 16:24:55 - }
 2019-03-18 16:24:55 - SelectionSort(arr);
+2019-03-18 17:31:08 - using System;
+2019-03-18 17:31:08 - using System.Collections.Generic;
+2019-03-18 17:31:08 - using System.Linq;
+2019-03-18 17:31:08 - using System.Text;
+2019-03-18 17:31:08 - using System.Threading.Tasks;
+2019-03-18 17:31:08 - using ICSharp.Kernel;
+2019-03-18 17:31:08 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-18 17:32:21 - using System;
+2019-03-18 17:32:21 - using System.Collections.Generic;
+2019-03-18 17:32:21 - using System.Linq;
+2019-03-18 17:32:21 - using System.Text;
+2019-03-18 17:32:21 - using System.Threading.Tasks;
+2019-03-18 17:32:21 - using ICSharp.Kernel;
+2019-03-18 17:32:21 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-18 17:58:47 - using System;
+2019-03-18 17:58:47 - using System.Collections.Generic;
+2019-03-18 17:58:47 - using System.Linq;
+2019-03-18 17:58:47 - using System.Text;
+2019-03-18 17:58:47 - using System.Threading.Tasks;
+2019-03-18 17:58:47 - using ICSharp.Kernel;
+2019-03-18 17:58:47 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-18 17:58:58 - using System;
+2019-03-18 17:58:58 - using System.Collections.Generic;
+2019-03-18 17:58:58 - using System.Linq;
+2019-03-18 17:58:58 - using System.Text;
+2019-03-18 17:58:58 - using System.Threading.Tasks;
+2019-03-18 17:58:58 - using ICSharp.Kernel;
+2019-03-18 17:58:58 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-18 21:13:09 - using System;
+2019-03-18 21:13:09 - using System.Collections.Generic;
+2019-03-18 21:13:09 - using System.Linq;
+2019-03-18 21:13:09 - using System.Text;
+2019-03-18 21:13:09 - using System.Threading.Tasks;
+2019-03-18 21:13:09 - using ICSharp.Kernel;
+2019-03-18 21:13:09 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-18 21:24:37 - using System;
+2019-03-18 21:24:37 - using System.Collections.Generic;
+2019-03-18 21:24:37 - using System.Linq;
+2019-03-18 21:24:37 - using System.Text;
+2019-03-18 21:24:37 - using System.Threading.Tasks;
+2019-03-18 21:24:37 - using ICSharp.Kernel;
+2019-03-18 21:24:37 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-18 21:27:08 - using System;
+2019-03-18 21:27:08 - using System.Collections.Generic;
+2019-03-18 21:27:08 - using System.Linq;
+2019-03-18 21:27:08 - using System.Text;
+2019-03-18 21:27:08 - using System.Threading.Tasks;
+2019-03-18 21:27:08 - using ICSharp.Kernel;
+2019-03-18 21:27:08 - // Adding default usings. This file is included for each notebook when it starts.
