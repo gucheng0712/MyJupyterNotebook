@@ -1964,3 +1964,5 @@
 2019-03-19 00:32:57 -     Console.Write(i+" ");
 2019-03-19 00:32:57 - }
 2019-03-19 02:05:34 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-03-19 15:09:35 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-03-20 11:32:23 - shutdown request
