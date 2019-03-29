@@ -1966,3 +1966,145 @@
 2019-03-19 02:05:34 - Unexpected content type on shell. msg_type is comm_info_request 
 2019-03-19 15:09:35 - Unexpected content type on shell. msg_type is comm_info_request 
 2019-03-20 11:32:23 - shutdown request
+2019-03-21 02:32:49 - using System;
+2019-03-21 02:32:49 - using System.Collections.Generic;
+2019-03-21 02:32:49 - using System.Linq;
+2019-03-21 02:32:49 - using System.Text;
+2019-03-21 02:32:49 - using System.Threading.Tasks;
+2019-03-21 02:32:49 - using ICSharp.Kernel;
+2019-03-21 02:32:49 - // Adding default usings. This file is included for each notebook when it starts.
+2019-03-21 02:32:50 - Unexpected content type on shell. msg_type is comm_info_request 
+2019-03-21 02:33:59 - public List<int> MergeSort(List<int> arr)
+2019-03-21 02:33:59 - {
+2019-03-21 02:33:59 -     if(arr.Count<2) return arr;
+2019-03-21 02:33:59 -     List<int> left = new List<int>();
+2019-03-21 02:33:59 -     List<int> right = new List<int>();
+2019-03-21 02:33:59 -     int mid = arr.Count/2;
+2019-03-21 02:33:59 -     // Dividing the unsorted list
+2019-03-21 02:33:59 -     for (int i = 0; i < mid;i++) 
+2019-03-21 02:33:59 -     {
+2019-03-21 02:33:59 -         left.Add(arr[i]);
+2019-03-21 02:33:59 -     }
+2019-03-21 02:33:59 -     for (int i = mid; i < arr.Count; i++)
+2019-03-21 02:33:59 -     {
+2019-03-21 02:33:59 -         right.Add(arr[i]);
+2019-03-21 02:33:59 -     }  
+2019-03-21 02:33:59 -     left = MergeSort(left);
+2019-03-21 02:33:59 -     right = MergeSort(right);
+2019-03-21 02:33:59 -     return Merge(left, right);
+2019-03-21 02:33:59 - }
+2019-03-21 02:33:59 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-21 02:33:59 - {
+2019-03-21 02:33:59 -     List<int> result = new List<int>();
+2019-03-21 02:33:59 -     while(left.Count>0||right.Count>0)
+2019-03-21 02:33:59 -     {
+2019-03-21 02:33:59 -         // 1st Scenario
+2019-03-21 02:33:59 -         if (left.Count > 0 && right.Count > 0)
+2019-03-21 02:33:59 -         {
+2019-03-21 02:33:59 -             if(left[0]<=right[0])
+2019-03-21 02:33:59 -             {
+2019-03-21 02:33:59 -                 result.Add(left[0]);
+2019-03-21 02:33:59 -                 left.RemoveAt(0);
+2019-03-21 02:33:59 -             }
+2019-03-21 02:33:59 -             else
+2019-03-21 02:33:59 -             {
+2019-03-21 02:33:59 -                 result.Add(right[0]);
+2019-03-21 02:33:59 -                 right.RemoveAt(0);
+2019-03-21 02:33:59 -             }
+2019-03-21 02:33:59 -         }
+2019-03-21 02:33:59 -         else if(left.Count>0)// 2ed Scenario
+2019-03-21 02:33:59 -         {
+2019-03-21 02:33:59 -             result.Add(left[0]);
+2019-03-21 02:33:59 -             left.RemoveAt(0);
+2019-03-21 02:33:59 -         }
+2019-03-21 02:33:59 -         else if(right.Count>0)// 3ed Scenario
+2019-03-21 02:33:59 -         {
+2019-03-21 02:33:59 -             result.Add(right[0]);
+2019-03-21 02:33:59 -             right.RemoveAt(0);        
+2019-03-21 02:33:59 -         }            
+2019-03-21 02:33:59 -     }
+2019-03-21 02:33:59 -     foreach(var i in result)
+2019-03-21 02:33:59 -     {
+2019-03-21 02:33:59 -         Console.Write(i+" ");
+2019-03-21 02:33:59 -     }
+2019-03-21 02:33:59 -     Console.WriteLine();
+2019-03-21 02:33:59 -     return result;
+2019-03-21 02:33:59 - }
+2019-03-21 02:33:59 - public int Pop(List<int> list, int index)
+2019-03-21 02:33:59 - {
+2019-03-21 02:33:59 -     int res = list[index];
+2019-03-21 02:33:59 -     list.RemoveAt(index);
+2019-03-21 02:33:59 -     return res;
+2019-03-21 02:33:59 - }
+2019-03-21 02:33:59 - // Testing
+2019-03-21 02:33:59 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-21 02:33:59 - List<int>list = MergeSort(arr);
+2019-03-21 02:33:59 - foreach(var i in list)
+2019-03-21 02:33:59 - {
+2019-03-21 02:33:59 -     Console.Write(i+" ");
+2019-03-21 02:33:59 - }
+2019-03-21 02:34:23 - public List<int> MergeSort(List<int> arr)
+2019-03-21 02:34:23 - {
+2019-03-21 02:34:23 -     if(arr.Count<2) return arr;
+2019-03-21 02:34:23 -     List<int> left = new List<int>();
+2019-03-21 02:34:23 -     List<int> right = new List<int>();
+2019-03-21 02:34:23 -     int mid = arr.Count/2;
+2019-03-21 02:34:23 -     // Dividing the unsorted list
+2019-03-21 02:34:23 -     for (int i = 0; i < mid;i++) 
+2019-03-21 02:34:23 -     {
+2019-03-21 02:34:23 -         left.Add(arr[i]);
+2019-03-21 02:34:23 -     }
+2019-03-21 02:34:23 -     for (int i = mid; i < arr.Count; i++)
+2019-03-21 02:34:23 -     {
+2019-03-21 02:34:23 -         right.Add(arr[i]);
+2019-03-21 02:34:23 -     }  
+2019-03-21 02:34:23 -     left = MergeSort(left);
+2019-03-21 02:34:23 -     right = MergeSort(right);
+2019-03-21 02:34:23 -     return Merge(left, right);
+2019-03-21 02:34:23 - }
+2019-03-21 02:34:23 - public List<int> Merge(List<int> left, List<int> right)
+2019-03-21 02:34:23 - {
+2019-03-21 02:34:23 -     List<int> result = new List<int>();
+2019-03-21 02:34:23 -     while(left.Count>0||right.Count>0)
+2019-03-21 02:34:23 -     {
+2019-03-21 02:34:23 -         // 1st Scenario
+2019-03-21 02:34:23 -         if (left.Count > 0 && right.Count > 0)
+2019-03-21 02:34:23 -         {
+2019-03-21 02:34:23 -             if(left[0]<=right[0])
+2019-03-21 02:34:23 -             {
+2019-03-21 02:34:23 -                 result.Add(left[0]);
+2019-03-21 02:34:23 -                 left.RemoveAt(0);
+2019-03-21 02:34:23 -             }
+2019-03-21 02:34:23 -             else
+2019-03-21 02:34:23 -             {
+2019-03-21 02:34:23 -                 result.Add(right[0]);
+2019-03-21 02:34:23 -                 right.RemoveAt(0);
+2019-03-21 02:34:23 -             }
+2019-03-21 02:34:23 -         }
+2019-03-21 02:34:23 -         else if(left.Count>0)// 2ed Scenario
+2019-03-21 02:34:23 -         {
+2019-03-21 02:34:23 -             result.Add(left[0]);
+2019-03-21 02:34:23 -             left.RemoveAt(0);
+2019-03-21 02:34:23 -         }
+2019-03-21 02:34:23 -         else if(right.Count>0)// 3ed Scenario
+2019-03-21 02:34:23 -         {
+2019-03-21 02:34:23 -             result.Add(right[0]);
+2019-03-21 02:34:23 -             right.RemoveAt(0);        
+2019-03-21 02:34:23 -         }            
+2019-03-21 02:34:23 -     }
+2019-03-21 02:34:23 -     foreach(var i in result)
+2019-03-21 02:34:23 -     {
+2019-03-21 02:34:23 -         Console.Write(i+" ");
+2019-03-21 02:34:23 -     }
+2019-03-21 02:34:23 -     Console.WriteLine();
+2019-03-21 02:34:23 -     return result;
+2019-03-21 02:34:23 - }
+2019-03-21 02:34:23 - public int Pop(List<int> list, int index)
+2019-03-21 02:34:23 - {
+2019-03-21 02:34:23 -     int res = list[index];
+2019-03-21 02:34:23 -     list.RemoveAt(index);
+2019-03-21 02:34:23 -     return res;
+2019-03-21 02:34:23 - }
+2019-03-21 02:34:23 - // Testing
+2019-03-21 02:34:23 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
+2019-03-21 02:34:23 - List<int>list = MergeSort(arr);
