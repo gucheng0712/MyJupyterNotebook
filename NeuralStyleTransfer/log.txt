@@ -1,0 +1,6 @@
+[21:34:27] ------- Init Cemu 1.13.1d -------
+[21:34:27] mlc01 path: D:\Program Files\Zelda\mlc01\
+[21:34:27] CPU: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
+[21:34:27] RAM: 16242MB
+[21:34:27] Used CPU extensions: SSSE3, SSE4.1, AVX2, AES-NI
+[21:34:27] Cemuhook version: 0.5.6.6
