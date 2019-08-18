@@ -2108,3 +2108,11 @@
 2019-03-21 02:34:23 - // Testing
 2019-03-21 02:34:23 - List<int> arr = new List<int>(){8,6,4,5,2,7,1};
 2019-03-21 02:34:23 - List<int>list = MergeSort(arr);
+2019-06-25 00:17:10 - using System;
+2019-06-25 00:17:10 - using System.Collections.Generic;
+2019-06-25 00:17:10 - using System.Linq;
+2019-06-25 00:17:10 - using System.Text;
+2019-06-25 00:17:10 - using System.Threading.Tasks;
+2019-06-25 00:17:10 - using ICSharp.Kernel;
+2019-06-25 00:17:10 - // Adding default usings. This file is included for each notebook when it starts.
+2019-06-25 00:17:11 - Unexpected content type on shell. msg_type is comm_info_request 
